@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+// using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,23 +10,24 @@ public class PlayerController : MonoBehaviour
 
     private float inputMovement;
 
+    private void Awake()
+    {
+        playerInput = new PlayerInput();
+    }
     // Start is called before the first frame update
     void Start()
     {
-        playerInput = new PlayerInput();
-        playerPos = new Vector3(transform.position.x, transform.position.y, 0);
+       playerPos = new Vector3(transform.position.x, transform.position.y, 0);
     }
 
     private void OnEnable()
     {
-        //TODO Fix this code
-
-       // playerInput.Enable();
+        playerInput.Enable();
     }
 
     private void OnDisable()
     {
-       // playerInput.Disable();
+        playerInput.Disable();
     }
 
     // Update is called once per frame
@@ -40,6 +41,8 @@ public class PlayerController : MonoBehaviour
 
     public void playerMove()
     {
+        inputMovement = playerInput.Player.Move.ReadValue<float>(); 
+
         Vector3 currPosition = transform.position;
         currPosition.x += inputMovement * Time.deltaTime * 5f;
         transform.position = currPosition;
@@ -47,13 +50,13 @@ public class PlayerController : MonoBehaviour
 
     //Start Input functions
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            inputMovement = context.ReadValue<float>();
+    //public void OnMove(InputAction.CallbackContext context)
+    //{
+    //    if (context.performed)
+    //    {
+    //        inputMovement = context.ReadValue<float>();
 
 
-        }
-    }
+    //    }
+    //}
 }
