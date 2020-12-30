@@ -9,10 +9,12 @@ public class PlayerController : MonoBehaviour
     private Vector3 playerPos;
 
     public GameObject missleBullet;
-    private Rigidbody missleRB;
+    private Rigidbody2D missleRB;
 
     private float inputMovement;
     public float fireAction;
+    private readonly float firingCooldown = 1f;
+    private float cooldownTimer;
 
     private bool isFiring = false;
 
@@ -40,7 +42,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //player move event
         playerMove();
+
+        //fire event
         OnFire();
     }
 
@@ -64,20 +69,19 @@ public class PlayerController : MonoBehaviour
 
         //use the float value from firing to launch missles and reduce spamming by using a bool
 
-        if (fireAction == 1)
-        {
-            if (isFiring == false) {
-                isFiring = true;
-                GameObject laserObject = Instantiate(missleBullet, transform.position, missleBullet.transform.rotation, transform.parent);
-                missleRB = laserObject.GetComponent<Rigidbody>();
-                missleRB.velocity = new Vector2(0, 3f);
-                Destroy(laserObject, 5f);
-            }
+        cooldownTimer -= Time.deltaTime;
+ 
+        if (cooldownTimer <= 0 && fireAction == 1)
+       {
+            cooldownTimer = firingCooldown;
+           
+            GameObject laserObject = Instantiate(missleBullet, transform.position, missleBullet.transform.rotation, transform.parent);
+            missleRB = laserObject.GetComponent<Rigidbody2D>();
+            missleRB.velocity = new Vector2(0, 3f);
+            Destroy(laserObject, 5f);
+
         }
-        else
-        {
-            isFiring = false;
-        }
+
 
     }
 }
