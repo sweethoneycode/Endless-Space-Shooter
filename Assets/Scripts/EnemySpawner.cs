@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
     private readonly float firingCooldown = 1f;
     private float cooldownTimer;
     private Vector3 meteorScale;
+    private float enemySpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +26,11 @@ public class EnemySpawner : MonoBehaviour
     {
         Vector3 enemyPOS = meteorPrefab.transform.position;
 
-        float randomScale = Random.Range(0.2f, 0.5f);
+        float randomScale = Random.Range(0.2f, 0.8f);
 
         meteorScale = new Vector3(randomScale, randomScale, 1);
 
-        enemyPOS.x += Random.Range(-5, 5);
+        enemyPOS.x += Random.Range(-7, 7);
         
         cooldownTimer -= Time.deltaTime;
 
@@ -39,9 +40,7 @@ public class EnemySpawner : MonoBehaviour
 
             GameObject enemyToSpawn = Instantiate(meteorPrefab, enemyPOS, meteorPrefab.transform.rotation, transform);
             enemyToSpawn.transform.localScale = meteorScale;
-
             
-            Destroy(enemyToSpawn, 5f);
         }
     }
 }

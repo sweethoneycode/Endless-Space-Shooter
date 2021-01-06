@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     private bool isFiring = false;
 
+    public GameObject explosionPrefab;
+
     private void Awake()
     {
         playerInput = new PlayerInput();
@@ -48,6 +50,24 @@ public class PlayerController : MonoBehaviour
         //fire event
         OnFire();
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //TODO determine amount of damage
+
+        Debug.Log("Collided " + collision.tag);
+
+        if (collision.CompareTag("Enemy"))
+        {
+            GameObject explosionInstance = Instantiate(explosionPrefab);
+            explosionInstance.transform.position = transform.position;
+            Destroy(explosionInstance, 1f);
+
+            Destroy(gameObject);
+        }
+    }
+
+    
 
     //Move the Player
 
