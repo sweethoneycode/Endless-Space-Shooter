@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-// using UnityEngine.InputSystem;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     public PlayerInput playerInput;
     private Vector3 playerPos;
 
-    public GameObject missleBullet;
+    [SerializeField] private ProjectileController missleBullet;
     private Rigidbody2D missleRB;
 
     private float inputMovement;
@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject explosionPrefab;
 
+    private bool projectileEnabled = true;
+
     private void Awake()
     {
         playerInput = new PlayerInput();
@@ -28,7 +30,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerPos = new Vector3(transform.position.x, transform.position.y, 0);
-
+        EventBroker.ProjectileOutOfBounds += EnableProjectile;
+        
     }
 
     private void OnEnable()
@@ -39,6 +42,13 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         playerInput.Disable();
+        EventBroker.ProjectileOutOfBounds += EnableProjectile;
+    }
+
+    public void EnableProjectile()
+    {
+        projectileEnabled = true;
+        //availableBullet.SetActive(projectileEnabled);
     }
 
     // Update is called once per frame
@@ -48,20 +58,25 @@ public class PlayerController : MonoBehaviour
         playerMove();
 
         //fire event
-        OnFire();
+        if (projectileEnabled)
+        {
+            OnFire();
+        }
+ 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //TODO determine amount of damage
 
-        Debug.Log("Collided " + collision.tag);
-
+   
         if (collision.CompareTag("Enemy"))
         {
             GameObject explosionInstance = Instantiate(explosionPrefab);
             explosionInstance.transform.position = transform.position;
             Destroy(explosionInstance, 1f);
+
+            EventBroker.CallPlayerDeath();
 
             Destroy(gameObject);
         }
@@ -95,8 +110,9 @@ public class PlayerController : MonoBehaviour
        {
             cooldownTimer = firingCooldown;
            
-            GameObject laserObject = Instantiate(missleBullet, transform.position, missleBullet.transform.rotation, transform.parent);
+            ProjectileController laserObject = Instantiate(missleBullet, transform.position, missleBullet.transform.rotation, transform.parent);
             missleRB = laserObject.GetComponent<Rigidbody2D>();
+
             missleRB.velocity = new Vector2(0, 3f);
             Destroy(laserObject, 5f);
 

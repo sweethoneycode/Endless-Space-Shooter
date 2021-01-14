@@ -7,9 +7,13 @@ public class GameContoller : MonoBehaviour
 {
     public GameObject scoreText;
     public GameObject timerText;
-    private float timer;
 
+    private float timer;
     public float playerScore = 0;
+
+    private float playerLives = 3;
+
+    private bool DecreasePlayerLife;
 
     private void Awake()
     {
@@ -17,18 +21,38 @@ public class GameContoller : MonoBehaviour
         scoreText.GetComponent<TMP_Text>().text = "Score: " + playerScore;
     }
 
+    private void Start()
+    {
+        EventBroker.PlayerDeath += PlayerHasDied;
+        Debug.Log("Player Lives " + playerLives);
+    }
+
+    private void OnDisable()
+    {
+        EventBroker.PlayerDeath -= PlayerHasDied;
+    }
+
+    private void PlayerHasDied()
+    {
+        DecreasePlayerLife = true;
+    }
+
+    private void UpdateLives()
+    {
+        if (DecreasePlayerLife)
+        {
+            playerLives--;
+            DecreasePlayerLife = false;
+
+            Debug.Log("Player Lives " + playerLives);
+        }
+    }
+
     public void UpdateScore(float kill)
     {
         playerScore += kill;
 
         scoreText.GetComponent<TMP_Text>().text = "Score: " + playerScore;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-
     }
 
     // Update is called once per frame
