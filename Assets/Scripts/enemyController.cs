@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,13 +15,16 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.CompareTag("Missle"))
         {
+
             GameObject explosionInstance = Instantiate(explosionPrefab);
             explosionInstance.transform.position = transform.position;
 
             Destroy(explosionInstance, 1f);
-            gameContoller.UpdateScore(1);
+
+            EventBroker.CallCallUpdateScore();
 
             Destroy(gameObject);
             Destroy(collision.gameObject);
@@ -37,7 +41,10 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         enemyRB = GetComponent<Rigidbody2D>();
+
     }
+
+
 
     // Update is called once per frame
     void Update()

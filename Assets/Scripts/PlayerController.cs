@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private readonly float firingCooldown = 1f;
     private float cooldownTimer;
 
-    private bool isFiring = false;
+  //  private bool isFiring = false;
 
     public GameObject explosionPrefab;
 
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         playerInput.Disable();
-        EventBroker.ProjectileOutOfBounds += EnableProjectile;
+        EventBroker.ProjectileOutOfBounds -= EnableProjectile;
     }
 
     public void EnableProjectile()
@@ -69,7 +69,8 @@ public class PlayerController : MonoBehaviour
     {
         //TODO determine amount of damage
 
-   
+     
+
         if (collision.CompareTag("Enemy"))
         {
             GameObject explosionInstance = Instantiate(explosionPrefab);
@@ -78,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
             EventBroker.CallPlayerDeath();
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 
