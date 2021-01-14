@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
             EventBroker.CallPlayerDeath();
 
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 
