@@ -20,6 +20,7 @@ public class HUDController : MonoBehaviour
     [SerializeField]
     [Space]
     private Image[] shipImages;
+    private int numberOfShips;
 
     private GameContoller gameSceneController;
 
@@ -27,7 +28,6 @@ public class HUDController : MonoBehaviour
     private float timer;
     public int playerScore = 0;
 
-    private int playerLives = 3;
 
     private bool DecreasePlayerLife = false;
     private bool EnemyHasDied = false;
@@ -36,16 +36,19 @@ public class HUDController : MonoBehaviour
 
     private void Start()
     {
+        numberOfShips = shipImages.Length;
         EventBroker.UpdatePlayerScore += UpdateScore;
         EventBroker.PlayerDeath += PlayerHasDied;
-
-        //scoreText.GetComponent<TMP_Text>().text = "Timer: " + timerText;
-        //scoreText.GetComponent<TMP_Text>().text = "Score: " + playerScore;
+        EventBroker.PlayerLives += HideShip;
     }
 
-    public void HideShip(int imageIndex)
+    public void HideShip()
     {
-        shipImages[imageIndex].gameObject.SetActive(false);
+        if (numberOfShips > 0)
+        {
+            numberOfShips--;
+            shipImages[numberOfShips].gameObject.SetActive(false);
+        }
     }
 
     public void UpdateScore()
@@ -54,20 +57,6 @@ public class HUDController : MonoBehaviour
         EnemyHasDied = false;
         scoreText.text = playerScore.ToString("D5");
     }
-
-    private void UpdateLives()
-    {
-        if (DecreasePlayerLife && playerLives > 0)
-        {
-            playerLives--;
-
-            HideShip(playerLives);
-            DecreasePlayerLife = false;
-        }
-        //   Debug.Log("Player Lives " + playerLives);
-
-    }
-
 
 
     private void PlayerHasDied()
@@ -80,19 +69,9 @@ public class HUDController : MonoBehaviour
         EnemyHasDied = true;
     }
 
-    //public void UpdateScore()
-    //{
-    //    playerScore++;
-    //    EnemyHasDied = false;
-    //    scoreText.GetComponent<TMP_Text>().text = "Score: " + playerScore;
-
-    //}
-
     // Update is called once per frame
     void Update()
     {
-
-        UpdateLives();
 
         if (EnemyHasDied)
         {

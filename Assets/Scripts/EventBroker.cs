@@ -4,6 +4,7 @@ public class EventBroker
 {
     public static event Action ProjectileOutOfBounds;
     public static event Action PlayerDeath;
+    public static event Action PlayerLives;
     public static event Action UpdatePlayerScore;
 
     public static void CallProjectileOutOfBounds()
@@ -16,6 +17,12 @@ public class EventBroker
     {
         if (PlayerDeath != null)
             PlayerDeath();
+    }
+
+    public static void CallPlayerLives()
+    {
+        if (PlayerLives != null)
+            PlayerLives();
     }
 
     public static void CallCallUpdateScore()

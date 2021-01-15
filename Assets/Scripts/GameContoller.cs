@@ -5,8 +5,6 @@ using TMPro;
 
 public class GameContoller : MonoBehaviour
 {
-    public TMP_Text scoreText;
-    public TMP_Text timerText;
 
    [SerializeField] private PlayerController playerToSpawn;
 
@@ -20,14 +18,12 @@ public class GameContoller : MonoBehaviour
 
     private void Awake()
     {
-
         SpawnPlayer();
     }
 
     private void Start()
     {
         EventBroker.PlayerDeath += PlayerHasDied;
-        EventBroker.UpdatePlayerScore += EnemyDied;
     }
 
     private void OnDisable()
@@ -37,23 +33,22 @@ public class GameContoller : MonoBehaviour
 
     private void PlayerHasDied()
     {
+
         DecreasePlayerLife = true;
     }
 
-    private void EnemyDied()
-    {
-        EnemyHasDied = true;
-    }
 
     private void UpdateLives()
     {
 
         playerLives--;
         DecreasePlayerLife = false;
+        EventBroker.CallPlayerLives();
 
-        Debug.Log("Player Lives " + playerLives);
-
-        SpawnPlayer();
+        if (playerLives > 0)
+        {
+            SpawnPlayer();
+        }
 
     }
 
@@ -72,6 +67,7 @@ public class GameContoller : MonoBehaviour
     {
         if (DecreasePlayerLife && playerLives > 0)
         {
+
             UpdateLives();
         }
     }
