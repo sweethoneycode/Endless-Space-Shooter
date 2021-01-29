@@ -9,11 +9,28 @@ public class EnemySpawner : MonoBehaviour
     private float cooldownTimer;
     private Vector3 meteorScale;
     private float enemySpeed;
+    private bool stopSpawn = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        EventBroker.EndGame += StopSpawnEnemy;
+        EventBroker.RestartGame += StartSpawnEnemy;
+    }
+
+    private void StartSpawnEnemy()
+    {
+        stopSpawn = false;
+    }
+
+    private void OnDisable()
+    {
+        EventBroker.EndGame -= StopSpawnEnemy;
+    }
+
+    private void StopSpawnEnemy()
+    {
+        stopSpawn = true;
     }
 
     // Update is called once per frame
@@ -34,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
         
         cooldownTimer -= Time.deltaTime;
 
-        if (cooldownTimer <= 0)
+        if (cooldownTimer <= 0 && !stopSpawn)
         {
             cooldownTimer = firingCooldown;
 

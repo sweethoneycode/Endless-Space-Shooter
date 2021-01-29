@@ -6,6 +6,8 @@ public class EventBroker
     public static event Action PlayerDeath;
     public static event Action PlayerLives;
     public static event Action UpdatePlayerScore;
+    public static event Action EndGame;
+    public static event Action RestartGame;
 
     public static void CallProjectileOutOfBounds()
     {
@@ -29,5 +31,17 @@ public class EventBroker
     {
         if (UpdatePlayerScore != null)
             UpdatePlayerScore();
+    }
+
+    public static void CallEndGame()
+    {
+        if (EndGame != null)
+            EndGame();
+    }
+
+    public static void CallRestartGame()
+    {
+        if (RestartGame != null)
+            RestartGame();
     }
 }

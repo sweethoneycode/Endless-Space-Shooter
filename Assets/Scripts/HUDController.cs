@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class HUDController : MonoBehaviour
 {
@@ -12,9 +13,10 @@ public class HUDController : MonoBehaviour
     [Space]
     public TMP_Text scoreText;
     public TMP_Text timerText;
+    public GameObject endScreen;
 
     //   public StatusText statusText;
-    public Button restartButton;
+  //  public Button restartButton;
 
     [Header("Ship Counter")]
     [SerializeField]
@@ -28,7 +30,7 @@ public class HUDController : MonoBehaviour
     private float timer;
     public int playerScore = 0;
 
-
+    private bool isGameOver = false;
     private bool DecreasePlayerLife = false;
     private bool EnemyHasDied = false;
 
@@ -40,8 +42,26 @@ public class HUDController : MonoBehaviour
         EventBroker.UpdatePlayerScore += UpdateScore;
         EventBroker.PlayerDeath += PlayerHasDied;
         EventBroker.PlayerLives += HideShip;
+        EventBroker.EndGame += GameOver;
+
     }
 
+    private void GameOver()
+    {
+        isGameOver = true;
+    }
+
+    private void OnDisable()
+    {
+        EventBroker.EndGame -= GameOver;
+    }
+
+    private void showShips()
+    {
+        for (int i = 0; i < 3; i++){
+            shipImages[i].gameObject.SetActive(true);
+        }
+    }
     public void HideShip()
     {
         if (numberOfShips > 0)
@@ -49,6 +69,15 @@ public class HUDController : MonoBehaviour
             numberOfShips--;
             shipImages[numberOfShips].gameObject.SetActive(false);
         }
+    }
+
+    public void ResetGame()
+    {
+        EventBroker.CallRestartGame();
+        isGameOver = false;
+        timer = 0;
+        showShips();
+
     }
 
     public void UpdateScore()
@@ -72,14 +101,25 @@ public class HUDController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isGameOver)
+        {
+            endScreen.SetActive(true);
+        }
+        else
+        {
+            endScreen.SetActive(false);
+        }
 
         if (EnemyHasDied)
         {
             UpdateScore();
         }
 
-
-        timer++;
-        timerText.text = "Timer: " + timer;
+        if (!isGameOver)
+        {
+           
+            timer++;
+            timerText.text = "Timer: " + timer;
+        }
     }
 }

@@ -7,6 +7,8 @@ public class EnemyController : MonoBehaviour
 {
     public Vector3 enemyPOS = new Vector3(0,10,0);
     private Rigidbody2D enemyRB;
+    [SerializeField] AudioClip explosionSound;
+
     public float enemySpeed = 1f;
 
     public GameContoller gameContoller;
@@ -18,16 +20,18 @@ public class EnemyController : MonoBehaviour
 
         if (collision.CompareTag("Missle"))
         {
-
+            
             GameObject explosionInstance = Instantiate(explosionPrefab);
             explosionInstance.transform.position = transform.position;
+
+            GetComponent<AudioSource>().PlayOneShot(explosionSound);
 
             Destroy(explosionInstance, 1f);
 
             EventBroker.CallCallUpdateScore();
 
             Destroy(gameObject);
-            Destroy(collision.gameObject);
+            Destroy(collision.gameObject,2f);
         }
         
     }
@@ -41,10 +45,25 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         enemyRB = GetComponent<Rigidbody2D>();
-
+        EventBroker.EndGame += DestroyEnemy;
     }
 
+    private void DestroyEnemy()
+    {
+        GameObject explosionInstance = Instantiate(explosionPrefab);
+        explosionInstance.transform.position = transform.position;
 
+        GetComponent<AudioSource>().Play();
+
+        Destroy(explosionInstance, 1f);
+
+        Destroy(transform.gameObject,1f);
+    }
+
+    private void OnDisable()
+    {
+        EventBroker.EndGame -= DestroyEnemy;
+    }
 
     // Update is called once per frame
     void Update()
