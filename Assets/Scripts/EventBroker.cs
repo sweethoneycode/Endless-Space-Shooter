@@ -8,6 +8,13 @@ public class EventBroker
     public static event Action UpdatePlayerScore;
     public static event Action EndGame;
     public static event Action RestartGame;
+    public static event Action StartGame;
+
+    public static void CallStartGame()
+    {
+        if (StartGame != null)
+            StartGame();
+    }
 
     public static void CallProjectileOutOfBounds()
     {

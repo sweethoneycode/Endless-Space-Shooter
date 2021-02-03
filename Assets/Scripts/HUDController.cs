@@ -14,6 +14,7 @@ public class HUDController : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text timerText;
     public GameObject endScreen;
+    public GameObject startScreen;
 
     //   public StatusText statusText;
   //  public Button restartButton;
@@ -31,6 +32,8 @@ public class HUDController : MonoBehaviour
     public int playerScore = 0;
 
     private bool isGameOver = false;
+    private bool isGameStart = false;
+
     private bool DecreasePlayerLife = false;
     private bool EnemyHasDied = false;
 
@@ -77,7 +80,16 @@ public class HUDController : MonoBehaviour
         isGameOver = false;
         timer = 0;
         showShips();
+        playerScore = 0;
 
+    }
+
+    public void StartNewGame()
+    {
+        EventBroker.CallStartGame();
+        isGameStart = true;
+        timer = 0;
+        showShips();
     }
 
     public void UpdateScore()
@@ -101,6 +113,11 @@ public class HUDController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isGameStart)
+        {
+            startScreen.SetActive(false);
+        }
+
         if (isGameOver)
         {
             endScreen.SetActive(true);
@@ -115,7 +132,7 @@ public class HUDController : MonoBehaviour
             UpdateScore();
         }
 
-        if (!isGameOver)
+        if (!isGameOver && isGameStart)
         {
            
             timer++;

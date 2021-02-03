@@ -20,13 +20,14 @@ public class GameContoller : MonoBehaviour
 
     private void Awake()
     {
-        SpawnPlayer();
+
     }
 
     private void Start()
     {
         EventBroker.PlayerDeath += PlayerHasDied;
         EventBroker.RestartGame += NewGame;
+        EventBroker.StartGame += NewGame;
     }
 
     private void NewGame()

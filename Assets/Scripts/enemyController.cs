@@ -20,18 +20,13 @@ public class EnemyController : MonoBehaviour
 
         if (collision.CompareTag("Missle"))
         {
-            
-            GameObject explosionInstance = Instantiate(explosionPrefab);
-            explosionInstance.transform.position = transform.position;
-
-            GetComponent<AudioSource>().PlayOneShot(explosionSound);
-
-            Destroy(explosionInstance, 1f);
 
             EventBroker.CallCallUpdateScore();
 
-            Destroy(gameObject);
-            Destroy(collision.gameObject,2f);
+            DestroyEnemy();
+
+
+            Destroy(collision.gameObject);
         }
         
     }
@@ -53,11 +48,11 @@ public class EnemyController : MonoBehaviour
         GameObject explosionInstance = Instantiate(explosionPrefab);
         explosionInstance.transform.position = transform.position;
 
-        GetComponent<AudioSource>().Play();
+        GetComponent<AudioSource>().PlayOneShot(explosionSound);
 
         Destroy(explosionInstance, 1f);
 
-        Destroy(transform.gameObject,1f);
+        Destroy(transform.gameObject,0.2f);
     }
 
     private void OnDisable()
