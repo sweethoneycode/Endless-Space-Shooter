@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ProjectileController missleBullet;
     private Rigidbody2D missleRB;
 
+    private Vector2 dPadInputMovement;
     private float inputMovement;
     public float fireAction;
     private readonly float firingCooldown = 1f;
@@ -90,6 +91,7 @@ public class PlayerController : MonoBehaviour
     public void playerMove()
     {
         //using new input system
+    dPadInputMovement.x = playerInput.Player.Move.ReadValue<float>();
 
         inputMovement = playerInput.Player.Move.ReadValue<float>();
 
@@ -101,6 +103,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnFire()
     {
+        
         fireAction = playerInput.Player.Fire.ReadValue<float>();
 
         //use the float value from firing to launch missles and reduce spamming by using a bool

@@ -42,6 +42,9 @@ public class HUDController : MonoBehaviour
     private void Start()
     {
         numberOfShips = shipImages.Length;
+        
+        //Subscribe to events
+
         EventBroker.UpdatePlayerScore += UpdateScore;
         EventBroker.PlayerDeath += PlayerHasDied;
         EventBroker.PlayerLives += HideShip;
@@ -77,10 +80,12 @@ public class HUDController : MonoBehaviour
     public void ResetGame()
     {
         EventBroker.CallRestartGame();
+
         isGameOver = false;
         timer = 0;
         showShips();
         playerScore = 0;
+        UpdateScore();
 
     }
 

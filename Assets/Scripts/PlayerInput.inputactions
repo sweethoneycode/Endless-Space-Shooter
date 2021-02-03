@@ -65,12 +65,56 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "DPad",
+                    "id": "5eba8f43-47d1-483f-89fb-ceb90758931a",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "c805a8e7-14a3-4236-b7a9-30ce7d8388f3",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "c46b2f17-8587-4ae8-8504-b5482aacb3e9",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "932afc00-ef89-45d1-bd95-39cd3c614aa9",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f04f4ea3-ef0e-48ef-a307-d2b6b6e897be",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
                     "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -98,34 +142,19 @@
                     "isPartOfComposite": false
                 }
             ]
-        },
+        }
+    ],
+    "controlSchemes": [
         {
-            "name": "New action map",
-            "id": "170f2b78-70ec-4529-9fb9-ebed462838ef",
-            "actions": [
+            "name": "New control scheme",
+            "bindingGroup": "New control scheme",
+            "devices": [
                 {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "5c9c9e31-fdb4-4e9d-b9b0-0802592ed5bb",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "73028d87-5d26-4def-b60f-ec7dcb861593",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
-                    "isPartOfComposite": false
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
                 }
             ]
         }
-    ],
-    "controlSchemes": []
+    ]
 }

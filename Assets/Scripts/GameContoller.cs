@@ -12,11 +12,11 @@ public class GameContoller : MonoBehaviour
     private float timer;
     public float playerScore = 0;
 
-    private float playerLives = 3;
+   [SerializeField] private float playerLives = 3;
 
-    private bool DecreasePlayerLife = false;
-    private bool EnemyHasDied = false;
-    private bool isNewGame = false;
+   [SerializeField] private bool DecreasePlayerLife = false;
+   // private bool EnemyHasDied = false;
+  //  private bool isNewGame = false;
 
     private void Awake()
     {
@@ -54,6 +54,8 @@ public class GameContoller : MonoBehaviour
         if (DecreasePlayerLife)
         {
             playerLives--;
+            
+
             DecreasePlayerLife = false;
 
             EventBroker.CallPlayerLives();
