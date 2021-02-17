@@ -34,7 +34,6 @@ public class HUDController : MonoBehaviour
     private bool isGameOver = false;
     private bool isGameStart = false;
 
-    private bool DecreasePlayerLife = false;
     private bool EnemyHasDied = false;
 
     #endregion
@@ -46,7 +45,6 @@ public class HUDController : MonoBehaviour
         //Subscribe to events
 
         EventBroker.UpdatePlayerScore += UpdateScore;
-        EventBroker.PlayerDeath += PlayerHasDied;
         EventBroker.PlayerLives += HideShip;
         EventBroker.EndGame += GameOver;
 
@@ -102,12 +100,6 @@ public class HUDController : MonoBehaviour
         playerScore++;
         EnemyHasDied = false;
         scoreText.text = playerScore.ToString("D5");
-    }
-
-
-    private void PlayerHasDied()
-    {
-        DecreasePlayerLife = true;
     }
 
     private void EnemyDied()

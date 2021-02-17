@@ -9,7 +9,6 @@ public class EnemySpawner : MonoBehaviour
     private float cooldownTimer;
     private Vector3 meteorScale;
     private float enemySpeed;
-    private bool stopSpawn = true;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void StartSpawnEnemy()
     {
-        stopSpawn = false;
+        StartCoroutine(SpawnEnemies());
     }
 
     private void OnDisable()
@@ -31,34 +30,58 @@ public class EnemySpawner : MonoBehaviour
 
     private void StopSpawnEnemy()
     {
-        stopSpawn = true;
+        StopAllCoroutines();
     }
 
     // Update is called once per frame
     void Update()
     {
-        SpawnEnemy();
+
     }
 
-    public void SpawnEnemy()
+    private IEnumerator SpawnEnemies()
     {
-        Vector3 enemyPOS = meteorPrefab.transform.position;
 
-        float randomScale = Random.Range(0.2f, 0.8f);
+        WaitForSeconds wait = new WaitForSeconds(3f);
+        yield return wait;
 
-        meteorScale = new Vector3(randomScale, randomScale, 1);
-
-        enemyPOS.x += Random.Range(-7, 7);
-        
-        cooldownTimer -= Time.deltaTime;
-
-        if (cooldownTimer <= 0 && !stopSpawn)
+        for (int i = 0; i < 1000; i++)
         {
-            cooldownTimer = firingCooldown;
+            Vector3 enemyPOS = meteorPrefab.transform.position;
+
+            float randomScale = Random.Range(0.2f, 0.8f);
+
+            meteorScale = new Vector3(randomScale, randomScale, 1);
+
+            enemyPOS.x += Random.Range(-7, 7);
 
             GameObject enemyToSpawn = Instantiate(meteorPrefab, enemyPOS, meteorPrefab.transform.rotation, transform);
             enemyToSpawn.transform.localScale = meteorScale;
-            
+            yield return wait;
         }
+
+        
     }
+
+    // TODO: Impliment IEnumerator for Enemy Spawner and features
+
+    //private IEnumerator SpawnEnemies()
+    //{
+    //    WaitForSeconds wait = new WaitForSeconds(currentLevel.enemySpawnDelay);
+    //    yield return wait;
+
+    //    for (int i = 0; i < currentLevel.numberOfEnemies; i++)
+    //    {
+    //        Vector2 spawnPosition = ScreenBounds.RandomTopPosition();
+
+    //        EnemyController enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+    //        enemy.gameObject.layer = LayerMask.NameToLayer("Enemy");
+    //        enemy.shotSpeed = currentLevel.enemyShotSpeed;
+    //        enemy.speed = currentLevel.enemySpeed;
+    //        enemy.shotdelayTime = currentLevel.enemyShotDelay;
+    //        enemy.angerdelayTime = currentLevel.enemyAngerDelay;
+
+    //        yield return wait;
+    //    }
+    //}
 }

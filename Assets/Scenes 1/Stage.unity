@@ -1690,6 +1690,7 @@ MonoBehaviour:
   playerScore: 0
   playerLives: 3
   DecreasePlayerLife: 0
+  playerSpeed: 8
 --- !u!82 &1265543561
 AudioSource:
   m_ObjectHideFlags: 0

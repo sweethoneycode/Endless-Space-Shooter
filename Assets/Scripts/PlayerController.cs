@@ -17,11 +17,14 @@ public class PlayerController : MonoBehaviour
     private readonly float firingCooldown = 1f;
     private float cooldownTimer;
 
-  //  private bool isFiring = false;
+    // private bool isFiring = false;
 
     public GameObject explosionPrefab;
 
     private bool projectileEnabled = true;
+
+    //Set by GameSceneController
+    [HideInInspector] public float speed;
 
     private void Awake()
     {
@@ -96,7 +99,7 @@ public class PlayerController : MonoBehaviour
         inputMovement = playerInput.Player.Move.ReadValue<float>();
 
         Vector3 currPosition = transform.position;
-        currPosition.x += inputMovement * Time.deltaTime * 5f;
+        currPosition.x += inputMovement * Time.deltaTime * speed;
         transform.position = currPosition;
 
     }

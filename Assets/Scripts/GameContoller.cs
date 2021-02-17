@@ -15,8 +15,16 @@ public class GameContoller : MonoBehaviour
    [SerializeField] private float playerLives = 3;
 
    [SerializeField] private bool DecreasePlayerLife = false;
-   // private bool EnemyHasDied = false;
-  //  private bool isNewGame = false;
+
+    private WaitForSeconds shipSpawnDelay = new WaitForSeconds(2);
+
+    [Header("Player ship settings")]
+    [Space]
+    [Range(3, 8)]
+    public float playerSpeed = 7;
+
+    // private bool EnemyHasDied = false;
+    //  private bool isNewGame = false;
 
     private void Awake()
     {
@@ -33,7 +41,9 @@ public class GameContoller : MonoBehaviour
     private void NewGame()
     {
         playerLives = 3;
-        SpawnPlayer();
+        //SpawnPlayer();
+
+        StartCoroutine(SpawnShip(false));
     }
 
     private void OnDisable()
@@ -62,11 +72,12 @@ public class GameContoller : MonoBehaviour
             
             if (playerLives > 0)
             {
-                SpawnPlayer();
+                StartCoroutine(SpawnShip(true));
             }
 
             if (playerLives == 0)
             {
+                StopAllCoroutines();
                 EventBroker.CallEndGame();
             }
         }
@@ -75,14 +86,16 @@ public class GameContoller : MonoBehaviour
 
     }
 
-    private void SpawnPlayer()
+    private IEnumerator SpawnShip(bool delayed)
     {
+        if (delayed)
+            yield return shipSpawnDelay;
 
-        Vector3 playerPOS = new Vector3(-1, -3, 1);
-        PlayerController player = Instantiate(playerToSpawn);
-        player.transform.position = playerPOS;
-        player.gameObject.SetActive(true);
+        PlayerController ship = Instantiate(playerToSpawn, new Vector2(0, -3.67f), Quaternion.identity);
+       ship.speed = playerSpeed;
+       // ship.shieldDuration = shieldDuration;
 
+        yield return null;
     }
 
     // Update is called once per frame
