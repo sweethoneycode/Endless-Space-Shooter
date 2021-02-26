@@ -40,7 +40,7 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos: []
-  m_VirtualRealitySplashScreen: {fileID: 0}
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 237190ce95fed6845bd9521b207a8757, type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
@@ -56,8 +56,8 @@ PlayerSettings:
   androidShowActivityIndicatorOnLoading: -1
   iosUseCustomAppBackgroundBehavior: 0
   iosAllowHTTPDownload: 1
-  allowedAutorotateToPortrait: 1
-  allowedAutorotateToPortraitUpsideDown: 1
+  allowedAutorotateToPortrait: 0
+  allowedAutorotateToPortraitUpsideDown: 0
   allowedAutorotateToLandscapeRight: 1
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
@@ -128,6 +128,10 @@ PlayerSettings:
     Others: 1
   bundleVersion: 1.0
   preloadedAssets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -666,17 +670,18 @@ PlayerSettings:
   metroCertificateIssuer: DefaultCompany
   metroCertificateNotAfter: 80013f633018d801
   metroApplicationDescription: 2D_BuiltInRenderer
-  wsaImages: {}
-  metroTileShortName: 
+  wsaImages:
+    65936: Assets/Sprites/icon-200 1.png
+  metroTileShortName: Endless Space Game
   metroTileShowName: 0
-  metroMediumTileShowName: 0
-  metroLargeTileShowName: 0
-  metroWideTileShowName: 0
+  metroMediumTileShowName: 1
+  metroLargeTileShowName: 1
+  metroWideTileShowName: 1
   metroSupportStreamingInstall: 0
   metroLastRequiredScene: 0
   metroDefaultTileSize: 1
   metroTileForegroundText: 2
-  metroTileBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21568628, a: 0}
+  metroTileBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
   metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628, a: 1}
   metroSplashScreenUseBackgroundColor: 0
   platformCapabilities:

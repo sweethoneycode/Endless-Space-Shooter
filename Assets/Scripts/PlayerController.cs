@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         playerPos = new Vector3(transform.position.x, transform.position.y, 0);
         EventBroker.ProjectileOutOfBounds += EnableProjectile;
-        
+
     }
 
     private void OnEnable()
@@ -66,14 +66,14 @@ public class PlayerController : MonoBehaviour
         {
             OnFire();
         }
- 
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //TODO determine amount of damage
 
-     
+
 
         if (collision.CompareTag("Enemy"))
         {
@@ -87,14 +87,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+
 
     //Move the Player
 
     public void playerMove()
     {
         //using new input system
-    dPadInputMovement.x = playerInput.Player.Move.ReadValue<float>();
+        dPadInputMovement.x = playerInput.Player.Move.ReadValue<float>();
 
         inputMovement = playerInput.Player.Move.ReadValue<float>();
 
@@ -106,17 +106,17 @@ public class PlayerController : MonoBehaviour
 
     public void OnFire()
     {
-        
+
         fireAction = playerInput.Player.Fire.ReadValue<float>();
 
         //use the float value from firing to launch missles and reduce spamming by using a bool
 
         cooldownTimer -= Time.deltaTime;
- 
+
         if (cooldownTimer <= 0 && fireAction == 1)
-       {
+        {
             cooldownTimer = firingCooldown;
-           
+
             ProjectileController laserObject = Instantiate(missleBullet, transform.position, missleBullet.transform.rotation, transform.parent);
             missleRB = laserObject.GetComponent<Rigidbody2D>();
 

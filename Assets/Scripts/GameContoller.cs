@@ -26,6 +26,11 @@ public class GameContoller : MonoBehaviour
     // private bool EnemyHasDied = false;
     //  private bool isNewGame = false;
 
+    private bool pressedPause;
+
+    public PlayerInput playerInput;
+
+
     private void Awake()
     {
 
@@ -36,6 +41,17 @@ public class GameContoller : MonoBehaviour
         EventBroker.PlayerDeath += PlayerHasDied;
         EventBroker.RestartGame += NewGame;
         EventBroker.StartGame += NewGame;
+
+        playerInput = new PlayerInput();
+    }
+
+    public void PauseTheGame()
+    {
+        float checkPause = playerInput.Player.Pause.ReadValue<float>();
+
+        Debug.Log("Pause " + checkPause);
+
+        //EventBroker.CallPauseGame();
     }
 
     private void NewGame()
@@ -61,6 +77,8 @@ public class GameContoller : MonoBehaviour
 
     private void UpdateLives()
     {
+        PauseTheGame();
+
         if (DecreasePlayerLife)
         {
             playerLives--;

@@ -9,6 +9,13 @@ public class EventBroker
     public static event Action EndGame;
     public static event Action RestartGame;
     public static event Action StartGame;
+    public static event Action PauseGame;
+
+    public static void CallPauseGame()
+    {
+        if (PauseGame != null)
+            PauseGame();
+    }
 
     public static void CallStartGame()
     {

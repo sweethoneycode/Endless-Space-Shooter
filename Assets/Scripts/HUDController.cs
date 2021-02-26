@@ -15,9 +15,10 @@ public class HUDController : MonoBehaviour
     public TMP_Text timerText;
     public GameObject endScreen;
     public GameObject startScreen;
+    public GameObject pauseScreen;
 
     //   public StatusText statusText;
-  //  public Button restartButton;
+    //  public Button restartButton;
 
     [Header("Ship Counter")]
     [SerializeField]
@@ -36,10 +37,14 @@ public class HUDController : MonoBehaviour
 
     private bool EnemyHasDied = false;
 
+
+
     #endregion
 
     private void Start()
     {
+ 
+
         numberOfShips = shipImages.Length;
         
         //Subscribe to events
@@ -87,6 +92,8 @@ public class HUDController : MonoBehaviour
 
     }
 
+
+
     public void StartNewGame()
     {
         EventBroker.CallStartGame();
@@ -110,6 +117,8 @@ public class HUDController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (isGameStart)
         {
             startScreen.SetActive(false);
@@ -131,7 +140,6 @@ public class HUDController : MonoBehaviour
 
         if (!isGameOver && isGameStart)
         {
-           
             timer++;
             timerText.text = "Timer: " + timer;
         }

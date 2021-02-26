@@ -36,7 +36,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Pause"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""91159c43-e766-4c6b-b4e5-07604c400cf2"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -135,7 +135,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""01cc560e-c16f-4c9f-ae31-0ecb1848c1f1"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""path"": ""<Keyboard>/z"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject meteorPrefab;
-    private readonly float firingCooldown = 1f;
     private float cooldownTimer;
     private Vector3 meteorScale;
     private float enemySpeed;
