@@ -77,7 +77,7 @@ public class GameContoller : MonoBehaviour
 
     private void UpdateLives()
     {
-        PauseTheGame();
+       // PauseTheGame();
 
         if (DecreasePlayerLife)
         {
