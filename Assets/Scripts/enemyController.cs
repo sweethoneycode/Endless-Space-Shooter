@@ -45,7 +45,7 @@ public class EnemyController : MonoBehaviour
 
     private void DestroyEnemy()
     {
-        GameObject explosionInstance = Instantiate(explosionPrefab);
+       GameObject explosionInstance = Instantiate(explosionPrefab);
         explosionInstance.transform.position = transform.position;
 
         GetComponent<AudioSource>().PlayOneShot(explosionSound);

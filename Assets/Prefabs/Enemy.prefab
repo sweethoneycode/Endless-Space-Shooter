@@ -92,8 +92,8 @@ GameObject:
   m_Component:
   - component: {fileID: 944008490480360136}
   - component: {fileID: 944008490480360138}
-  - component: {fileID: 944008490480360139}
   - component: {fileID: 944008490480360141}
+  - component: {fileID: 1918919373321120230}
   - component: {fileID: 3537854290650902155}
   m_Layer: 0
   m_Name: Enemy
@@ -143,23 +143,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2450569, y: 2.1822824}
   m_EdgeRadius: 0
---- !u!114 &944008490480360139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 944008490480360137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 650b1fa4b862c0c439b8caa93d3478c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPOS: {x: 0, y: 10, z: 0}
-  explosionSound: {fileID: 8300000, guid: 66a334b277986c34695ce4c51531b712, type: 3}
-  enemySpeed: 2
-  gameContoller: {fileID: 0}
-  explosionPrefab: {fileID: 1613842365161332, guid: 5ed6748782991c14dafb9292f1af700f, type: 3}
 --- !u!50 &944008490480360141
 Rigidbody2D:
   serializedVersion: 4
@@ -181,6 +164,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1918919373321120230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944008490480360137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650b1fa4b862c0c439b8caa93d3478c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPOS: {x: 0, y: 10, z: 0}
+  explosionSound: {fileID: 8300000, guid: 66a334b277986c34695ce4c51531b712, type: 3}
+  enemySpeed: 1
+  gameContoller: {fileID: 0}
 --- !u!82 &3537854290650902155
 AudioSource:
   m_ObjectHideFlags: 0

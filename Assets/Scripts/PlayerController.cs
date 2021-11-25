@@ -41,12 +41,25 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         playerInput.Enable();
+        EventBroker.PauseGame += PauseTheGame;
     }
 
     private void OnDisable()
     {
         playerInput.Disable();
         EventBroker.ProjectileOutOfBounds -= EnableProjectile;
+        EventBroker.PauseGame -= PauseTheGame;
+    }
+
+    public void PauseTheGame()
+    {
+ 
+            float checkPause = playerInput.Player.Pause.ReadValue<float>();
+            Debug.Log("Pause " + checkPause);
+
+
+        //  Time.timeScale = 0;
+        //EventBroker.CallPauseGame();
     }
 
     public void EnableProjectile()
@@ -58,6 +71,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PauseTheGame();
+
         //player move event
         playerMove();
 

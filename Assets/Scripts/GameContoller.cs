@@ -11,6 +11,7 @@ public class GameContoller : MonoBehaviour
 
     private float timer;
     public float playerScore = 0;
+    public float checkPause;
 
    [SerializeField] private float playerLives = 3;
 
@@ -45,14 +46,7 @@ public class GameContoller : MonoBehaviour
         playerInput = new PlayerInput();
     }
 
-    public void PauseTheGame()
-    {
-        float checkPause = playerInput.Player.Pause.ReadValue<float>();
-
-        Debug.Log("Pause " + checkPause);
-
-        //EventBroker.CallPauseGame();
-    }
+   
 
     private void NewGame()
     {
@@ -66,6 +60,7 @@ public class GameContoller : MonoBehaviour
     {
         EventBroker.PlayerDeath -= PlayerHasDied;
         EventBroker.RestartGame -= NewGame;
+        
     }
 
     private void PlayerHasDied()
@@ -77,7 +72,7 @@ public class GameContoller : MonoBehaviour
 
     private void UpdateLives()
     {
-       // PauseTheGame();
+       
 
         if (DecreasePlayerLife)
         {

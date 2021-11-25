@@ -29,7 +29,10 @@ public class HUDController : MonoBehaviour
     private GameContoller gameSceneController;
 
 
-    private float timer;
+    private float timer = 0.0f;
+    private float waitTime = 2.0f;
+    private float visualTime = 0.0f;
+
     public int playerScore = 0;
 
     private bool isGameOver = false;
@@ -140,8 +143,19 @@ public class HUDController : MonoBehaviour
 
         if (!isGameOver && isGameStart)
         {
-            timer++;
-            timerText.text = "Timer: " + timer;
+            timer += Time.deltaTime * Time.deltaTime;
+
+            if (timer > waitTime)
+            {
+                visualTime = Mathf.FloorToInt(timer); ;
+
+                // Remove the recorded 2 seconds.
+                timer = timer - waitTime;
+                timerText.text = "Timer: " + Mathf.FloorToInt(timer);
+            }
+
+ 
+ 
         }
     }
 }
