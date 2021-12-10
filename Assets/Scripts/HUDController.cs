@@ -112,7 +112,7 @@ public class HUDController : MonoBehaviour
     {
         playerScore++;
         EnemyHasDied = false;
-        scoreText.text = playerScore.ToString("D5");
+        scoreText.text = playerScore.ToString("D1");
     }
 
     private void EnemyDied()

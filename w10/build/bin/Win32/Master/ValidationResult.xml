@@ -1,133 +1,133 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type='text/xsl' href='C:\ProgramData\Windows App Certification Kit\results.xsl'?>
-<REPORT xml:lang="en-US" OVERALL_RESULT="PASS" VERSION="10.0.19041.685" LATEST_VERSION="TRUE" UPDATE_DOWNLOAD_URL="" TOOLSET_ARCHITECTURE="x64" SecureBoot="FALSE" APP_TYPE="UapApp" PUBLISHER_DISPLAY_NAME="CN=8CBE3CE9-0284-4C5E-AA82-9567CCC3800F" APP_NAME="" APP_VERSION="" OSVERSION="10.0.19044.0" OS="Microsoft Windows 10 Home" PER_USER_APPLICATION="" PARTIAL_RUN="FALSE" LCID="1033" X64_ONLY="FALSE" VALIDATION_TYPE="UI" ReportGenerationTime="12/8/2021 8:20:41 AM" ID="e7567769c42059b1cdd25b6a234dff02">
+<REPORT xml:lang="en-US" OVERALL_RESULT="PASS" VERSION="10.0.19041.685" LATEST_VERSION="TRUE" UPDATE_DOWNLOAD_URL="" TOOLSET_ARCHITECTURE="x64" SecureBoot="FALSE" APP_TYPE="UapApp" PUBLISHER_DISPLAY_NAME="CN=8CBE3CE9-0284-4C5E-AA82-9567CCC3800F" APP_NAME="" APP_VERSION="" OSVERSION="10.0.19044.0" OS="Microsoft Windows 10 Home" PER_USER_APPLICATION="" PARTIAL_RUN="FALSE" LCID="1033" X64_ONLY="FALSE" VALIDATION_TYPE="UI" ReportGenerationTime="12/10/2021 10:27:48 AM" ID="0d15514f93094bdec91f08b493727cac">
   <REQUIREMENTS>
     <REQUIREMENT NUMBER="10" TITLE="Deployment and launch tests" RATIONALE="Application failures such as crashes and hangs are a major disruption to users and cause frustration. Eliminating such failures improves application stability and reliability, and overall, provides users with a better application experience.">
-      <TEST INDEX="50" NAME="Bytecode generation" DESCRIPTION="Byte code generation should be able to complete successfully for packages containing an HTML5 Windows Store app." EXECUTIONTIME="00h:00m:01s.08ms" OPTIONAL="FALSE">
+      <TEST INDEX="50" NAME="Bytecode generation" DESCRIPTION="Byte code generation should be able to complete successfully for packages containing an HTML5 Windows Store app." EXECUTIONTIME="00h:00m:01s.04ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
-      <TEST INDEX="81" NAME="Platform version launch" DESCRIPTION="App should not mis-use OSVersionInfo API to provide users functionality that is specific to the OS." EXECUTIONTIME="00h:00m:21s.46ms" OPTIONAL="FALSE">
+      <TEST INDEX="81" NAME="Platform version launch" DESCRIPTION="App should not mis-use OSVersionInfo API to provide users functionality that is specific to the OS." EXECUTIONTIME="00h:00m:20s.53ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
-      <TEST INDEX="47" NAME="App launch" DESCRIPTION="App launch tests." EXECUTIONTIME="00h:00m:19s.86ms" OPTIONAL="FALSE">
+      <TEST INDEX="47" NAME="App launch" DESCRIPTION="App launch tests." EXECUTIONTIME="00h:00m:19s.73ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
-      <TEST INDEX="21" NAME="Crashes and hangs" DESCRIPTION="Do not crash or hang during the testing process." EXECUTIONTIME="00h:00m:03s.32ms" OPTIONAL="FALSE">
+      <TEST INDEX="21" NAME="Crashes and hangs" DESCRIPTION="Do not crash or hang during the testing process." EXECUTIONTIME="00h:00m:03s.35ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="12" TITLE="Package compliance test" RATIONALE="The package does not satisfy Store compliance rules.">
-      <TEST INDEX="77" NAME="Application count" DESCRIPTION="One package should not define more than one app in the manifest." EXECUTIONTIME="00h:00m:01s.16ms" OPTIONAL="FALSE">
+      <TEST INDEX="77" NAME="Application count" DESCRIPTION="One package should not define more than one app in the manifest." EXECUTIONTIME="00h:00m:01s.07ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
-      <TEST INDEX="31" NAME="App manifest" DESCRIPTION="App manifest must include valid entries for all required fields." EXECUTIONTIME="00h:00m:02s.03ms" OPTIONAL="FALSE">
+      <TEST INDEX="31" NAME="App manifest" DESCRIPTION="App manifest must include valid entries for all required fields." EXECUTIONTIME="00h:00m:01s.62ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
-      <TEST INDEX="91" NAME="Enterprise Features" DESCRIPTION="Check if any enterprise-only features are in the package." EXECUTIONTIME="00h:00m:01s.05ms" OPTIONAL="FALSE">
+      <TEST INDEX="91" NAME="Enterprise Features" DESCRIPTION="Check if any enterprise-only features are in the package." EXECUTIONTIME="00h:00m:01s.03ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
-      <TEST INDEX="90" NAME="Resource Packages" DESCRIPTION="Check if any resource packages contain PE files." EXECUTIONTIME="00h:00m:01s.06ms" OPTIONAL="FALSE">
+      <TEST INDEX="90" NAME="Resource Packages" DESCRIPTION="Check if any resource packages contain PE files." EXECUTIONTIME="00h:00m:01s.01ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
-      <TEST INDEX="83" NAME="Restricted namespace" DESCRIPTION="Check if any restricted namespace is referenced in the app package manifest." EXECUTIONTIME="00h:00m:01s.03ms" OPTIONAL="FALSE">
+      <TEST INDEX="83" NAME="Restricted namespace" DESCRIPTION="Check if any restricted namespace is referenced in the app package manifest." EXECUTIONTIME="00h:00m:00s.97ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="14" TITLE="Windows security features test" RATIONALE="Applications must opt-into Windows security features.">
-      <TEST INDEX="33" NAME="Binary analyzer" DESCRIPTION="Analysis of security features enabled on binaries" EXECUTIONTIME="00h:00m:02s.51ms" OPTIONAL="FALSE">
+      <TEST INDEX="33" NAME="Binary analyzer" DESCRIPTION="Analysis of security features enabled on binaries" EXECUTIONTIME="00h:00m:01s.22ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
-      <TEST INDEX="70" NAME="Banned file analyzer" DESCRIPTION="Analysis of application to detect known insecure files" EXECUTIONTIME="00h:00m:01s.28ms" OPTIONAL="FALSE">
+      <TEST INDEX="70" NAME="Banned file analyzer" DESCRIPTION="Analysis of application to detect known insecure files" EXECUTIONTIME="00h:00m:01s.17ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
-      <TEST INDEX="62" NAME="Private code signing" DESCRIPTION="App should not package private code signing key files." EXECUTIONTIME="00h:00m:01s.30ms" OPTIONAL="FALSE">
+      <TEST INDEX="62" NAME="Private code signing" DESCRIPTION="App should not package private code signing key files." EXECUTIONTIME="00h:00m:01s.20ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="15" TITLE="Supported API test" RATIONALE="The application should only refer to the APIs allowed by the Windows SDK for Windows Store Apps.">
-      <TEST INDEX="38" NAME="Supported APIs" DESCRIPTION="Windows Store App must only use supported platform APIs." EXECUTIONTIME="00h:00m:08s.71ms" OPTIONAL="FALSE">
+      <TEST INDEX="38" NAME="Supported APIs" DESCRIPTION="Windows Store App must only use supported platform APIs." EXECUTIONTIME="00h:00m:08s.62ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="19" TITLE="App manifest resources tests" RATIONALE="The App Package Manifest should have valid resources defined in the resources.pri file, as per the App Packaging Specification and App Manifest Schema.">
-      <TEST INDEX="45" NAME="App resources" DESCRIPTION="The package should have valid resources defined in the resources.pri file." EXECUTIONTIME="00h:00m:00s.81ms" OPTIONAL="FALSE">
+      <TEST INDEX="45" NAME="App resources" DESCRIPTION="The package should have valid resources defined in the resources.pri file." EXECUTIONTIME="00h:00m:00s.76ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
-      <TEST INDEX="61" NAME="Branding" DESCRIPTION="App should not use the default images packed by windows SDK samples or Visual Studio." EXECUTIONTIME="00h:00m:01s.63ms" OPTIONAL="FALSE">
+      <TEST INDEX="61" NAME="Branding" DESCRIPTION="App should not use the default images packed by windows SDK samples or Visual Studio." EXECUTIONTIME="00h:00m:01s.54ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="20" TITLE="Debug configuration test" RATIONALE="The App should not install any debug binaries.">
-      <TEST INDEX="46" NAME="Debug configuration" DESCRIPTION="The App should not install any debug binaries." EXECUTIONTIME="00h:00m:01s.40ms" OPTIONAL="FALSE">
+      <TEST INDEX="46" NAME="Debug configuration" DESCRIPTION="The App should not install any debug binaries." EXECUTIONTIME="00h:00m:01s.44ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="21" TITLE="File encoding test" RATIONALE="Packages containing an HTML5 Windows Store app must have correct file encoding.">
-      <TEST INDEX="49" NAME="UTF-8 file encoding" DESCRIPTION="Packages containing an HTML5 Windows Store app must have correct file encoding." EXECUTIONTIME="00h:00m:01s.25ms" OPTIONAL="FALSE">
+      <TEST INDEX="49" NAME="UTF-8 file encoding" DESCRIPTION="Packages containing an HTML5 Windows Store app must have correct file encoding." EXECUTIONTIME="00h:00m:01s.02ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="23" TITLE="App Capabilities test" RATIONALE="Packages declaring special-use capabilities will have to provide justifications during the onboarding process.">
-      <TEST INDEX="52" NAME="Special use capabilities" DESCRIPTION="Packages declaring special-use capabilities will have to provide justifications during the onboarding process." EXECUTIONTIME="00h:00m:01s.06ms" OPTIONAL="FALSE">
+      <TEST INDEX="52" NAME="Special use capabilities" DESCRIPTION="Packages declaring special-use capabilities will have to provide justifications during the onboarding process." EXECUTIONTIME="00h:00m:01s.02ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="24" TITLE="Windows Runtime metadata validation" RATIONALE="Metadata needs to be conformant and consistent across all generation sources.">
-      <TEST INDEX="56" NAME="ExclusiveTo attribute" DESCRIPTION="A class must not implement an interface that is marked ExclusiveTo another class." EXECUTIONTIME="00h:00m:09s.33ms" OPTIONAL="FALSE">
+      <TEST INDEX="56" NAME="ExclusiveTo attribute" DESCRIPTION="A class must not implement an interface that is marked ExclusiveTo another class." EXECUTIONTIME="00h:00m:09s.01ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
-      <TEST INDEX="57" NAME="Type location" DESCRIPTION="Types must be defined in the metadata file with the longest matching namespace." EXECUTIONTIME="00h:00m:00s.87ms" OPTIONAL="FALSE">
+      <TEST INDEX="57" NAME="Type location" DESCRIPTION="Types must be defined in the metadata file with the longest matching namespace." EXECUTIONTIME="00h:00m:00s.73ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
-      <TEST INDEX="55" NAME="Type name case-sensitivity" DESCRIPTION="Namespace and type names must not vary only by casing." EXECUTIONTIME="00h:00m:00s.79ms" OPTIONAL="FALSE">
+      <TEST INDEX="55" NAME="Type name case-sensitivity" DESCRIPTION="Namespace and type names must not vary only by casing." EXECUTIONTIME="00h:00m:00s.70ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
-      <TEST INDEX="54" NAME="Type name correctness" DESCRIPTION="Only system types can be in the Windows namespace and no types can be in the global namespace." EXECUTIONTIME="00h:00m:00s.79ms" OPTIONAL="FALSE">
+      <TEST INDEX="54" NAME="Type name correctness" DESCRIPTION="Only system types can be in the Windows namespace and no types can be in the global namespace." EXECUTIONTIME="00h:00m:00s.70ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
-      <TEST INDEX="58" NAME="General metadata correctness" DESCRIPTION="Metadata files must meet various requirements in order to be valid and correct." EXECUTIONTIME="00h:00m:09s.31ms" OPTIONAL="FALSE">
+      <TEST INDEX="58" NAME="General metadata correctness" DESCRIPTION="Metadata files must meet various requirements in order to be valid and correct." EXECUTIONTIME="00h:00m:08s.98ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
-      <TEST INDEX="53" NAME="Properties" DESCRIPTION="Write-only and indexer properties may not be used. Corresponding getter and setter methods must match in type." EXECUTIONTIME="00h:00m:00s.74ms" OPTIONAL="FALSE">
+      <TEST INDEX="53" NAME="Properties" DESCRIPTION="Write-only and indexer properties may not be used. Corresponding getter and setter methods must match in type." EXECUTIONTIME="00h:00m:00s.73ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="25" TITLE="Package sanity test" RATIONALE="Validation of the app package contents to ensure correctness.">
-      <TEST INDEX="63" NAME="Platform appropriate files" DESCRIPTION="App should not install files that do not match the target processor architecture." EXECUTIONTIME="00h:00m:01s.44ms" OPTIONAL="FALSE">
+      <TEST INDEX="63" NAME="Platform appropriate files" DESCRIPTION="App should not install files that do not match the target processor architecture." EXECUTIONTIME="00h:00m:01s.49ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
-      <TEST INDEX="66" NAME="Supported directory structure check" DESCRIPTION="Validate each file in the package for that the file name length should be less than MAX_PATH." EXECUTIONTIME="00h:00m:00s.98ms" OPTIONAL="FALSE">
+      <TEST INDEX="66" NAME="Supported directory structure check" DESCRIPTION="Validate each file in the package for that the file name length should be less than MAX_PATH." EXECUTIONTIME="00h:00m:00s.97ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="27" TITLE="Resource Usage Test" RATIONALE="WinJS background tasks need to call close() to free resource.">
-      <TEST INDEX="68" NAME="WinJS background task" DESCRIPTION="WinJS background tasks need to call close() to free resource." EXECUTIONTIME="00h:00m:01s.71ms" OPTIONAL="FALSE">
+      <TEST INDEX="68" NAME="WinJS background task" DESCRIPTION="WinJS background tasks need to call close() to free resource." EXECUTIONTIME="00h:00m:01s.32ms" OPTIONAL="FALSE">
         <MESSAGES />
         <RESULT><![CDATA[PASS]]></RESULT>
       </TEST>
@@ -135,12 +135,12 @@
   </REQUIREMENTS>
   <APPLICATIONS>
     <Installed_Programs>
-      <Program Name="53264HoneycombDesignStudi.EndlessSpaceShooter" Type="Application" Source="AppxPackage" Publisher="CN=8CBE3CE9-0284-4C5E-AA82-9567CCC3800F" Version="1.0.9.0" Language="1033" InstallDate="" OSVersionAtInstallTime="10.0.0.19044" RootDirPath="C:\Program Files\WindowsApps\53264HoneycombDesignStudi.EndlessSpaceShooter_1.0.9.0_x64__wffm4tw3zd1tt" Id="00006d5bb983f2f0e41ea6e9b007cab9c39400000904" HiddenArp="false">
+      <Program Name="53264HoneycombDesignStudi.EndlessSpaceShooter" Type="Application" Source="AppxPackage" Publisher="CN=8CBE3CE9-0284-4C5E-AA82-9567CCC3800F" Version="1.0.11.0" Language="1033" InstallDate="" OSVersionAtInstallTime="10.0.0.19044" RootDirPath="C:\Program Files\WindowsApps\53264HoneycombDesignStudi.EndlessSpaceShooter_1.0.11.0_x64__wffm4tw3zd1tt" Id="00007e56f50797466470e9c6596c40d71db000000904" HiddenArp="false">
         <Indicators>
           <WindowsStoreAppManifestIndicators>
-            <PackageManifest PackageFullName="53264HoneycombDesignStudi.EndlessSpaceShooter_1.0.9.0_x64__wffm4tw3zd1tt">
+            <PackageManifest PackageFullName="53264HoneycombDesignStudi.EndlessSpaceShooter_1.0.11.0_x64__wffm4tw3zd1tt">
               <Package>
-                <Identity Name="53264HoneycombDesignStudi.EndlessSpaceShooter" Publisher="CN=8CBE3CE9-0284-4C5E-AA82-9567CCC3800F" Version="1.0.9.0" ProcessorArchitecture="x64"></Identity>
+                <Identity Name="53264HoneycombDesignStudi.EndlessSpaceShooter" Publisher="CN=8CBE3CE9-0284-4C5E-AA82-9567CCC3800F" Version="1.0.11.0" ProcessorArchitecture="x64"></Identity>
                 <PhoneIdentity PhoneProductId="f335cc0b-4270-4023-ac72-0a1a0a02022f" PhonePublisherId="00000000-0000-0000-0000-000000000000"></PhoneIdentity>
                 <Properties>
                   <DisplayName>Endless Space Shooter</DisplayName>
@@ -185,9 +185,9 @@
             </PackageManifest>
             <BundleManifest PackageFamilyName="53264HoneycombDesignStudi.EndlessSpaceShooter_wffm4tw3zd1tt">
               <Bundle SchemaVersion="5.0">
-                <Identity Name="53264HoneycombDesignStudi.EndlessSpaceShooter" Publisher="CN=8CBE3CE9-0284-4C5E-AA82-9567CCC3800F" Version="1.0.9.0"></Identity>
+                <Identity Name="53264HoneycombDesignStudi.EndlessSpaceShooter" Publisher="CN=8CBE3CE9-0284-4C5E-AA82-9567CCC3800F" Version="1.0.11.0"></Identity>
                 <Packages>
-                  <Package Type="application" Version="1.0.9.0" Architecture="x64" FileName="Endless Space Game_1.0.9.0_x64_Master.msix" Offset="350539" Size="23880188">
+                  <Package Type="application" Version="1.0.11.0" Architecture="x64" FileName="Endless Space Game_1.0.11.0_x64_Master.msix" Offset="350537" Size="23949308">
                     <Resources>
                       <Resource Language="EN-US"></Resource>
                       <Resource Scale="200"></Resource>
@@ -196,7 +196,7 @@
                       <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.19041.0" MaxVersionTested="10.0.19041.0"></TargetDeviceFamily>
                     </Dependencies>
                   </Package>
-                  <Package Type="resource" Version="1.0.9.0" ResourceId="split.scale-100" FileName="Endless Space Game_1.0.9.0_scale-100.msix" Offset="75" Size="79636" Architecture="neutral">
+                  <Package Type="resource" Version="1.0.11.0" ResourceId="split.scale-100" FileName="Endless Space Game_1.0.11.0_scale-100.msix" Offset="76" Size="79634" Architecture="neutral">
                     <Resources>
                       <Resource Scale="100"></Resource>
                     </Resources>
@@ -204,7 +204,7 @@
                       <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.19041.0" MaxVersionTested="10.0.19041.0"></TargetDeviceFamily>
                     </Dependencies>
                   </Package>
-                  <Package Type="resource" Version="1.0.9.0" ResourceId="split.scale-125" FileName="Endless Space Game_1.0.9.0_scale-125.msix" Offset="79810" Size="44286" Architecture="neutral">
+                  <Package Type="resource" Version="1.0.11.0" ResourceId="split.scale-125" FileName="Endless Space Game_1.0.11.0_scale-125.msix" Offset="79810" Size="44282" Architecture="neutral">
                     <Resources>
                       <Resource Scale="125"></Resource>
                     </Resources>
@@ -212,7 +212,7 @@
                       <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.19041.0" MaxVersionTested="10.0.19041.0"></TargetDeviceFamily>
                     </Dependencies>
                   </Package>
-                  <Package Type="resource" Version="1.0.9.0" ResourceId="split.scale-150" FileName="Endless Space Game_1.0.9.0_scale-150.msix" Offset="124195" Size="53350" Architecture="neutral">
+                  <Package Type="resource" Version="1.0.11.0" ResourceId="split.scale-150" FileName="Endless Space Game_1.0.11.0_scale-150.msix" Offset="124192" Size="53348" Architecture="neutral">
                     <Resources>
                       <Resource Scale="150"></Resource>
                     </Resources>
@@ -220,7 +220,7 @@
                       <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.19041.0" MaxVersionTested="10.0.19041.0"></TargetDeviceFamily>
                     </Dependencies>
                   </Package>
-                  <Package Type="resource" Version="1.0.9.0" ResourceId="split.scale-400" FileName="Endless Space Game_1.0.9.0_scale-400.msix" Offset="177644" Size="172795" Architecture="neutral">
+                  <Package Type="resource" Version="1.0.11.0" ResourceId="split.scale-400" FileName="Endless Space Game_1.0.11.0_scale-400.msix" Offset="177640" Size="172796" Architecture="neutral">
                     <Resources>
                       <Resource Scale="400"></Resource>
                     </Resources>
@@ -235,22 +235,22 @@
         </Indicators>
         <StaticProperties>
           <Files Id="0000da39a3ee5e6b4b0d3255bfef95601890afd80709">
-            <File Id="00000326e060728bd8282bbfe8b454339f1ca4b8b8b8" Name="baselib.dll" ProductName="" CompanyName="" ProductVersion="" VerLanguage="0" SwitchBackContext="0" FileVersion="" Size="94208" SizeOfImage="94208" PeHeaderHash="0101c083c2257a52c875a74536eb2cb5d84122a68594" PeChecksum="132907" CrcChecksum="196492310" BinProductVersion="" BinFileVersion="" FileDescription="" LegalCopyright="" LinkDate="11/10/2021 18:22:41" BinaryType="pe64_amd64" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.9.0_x64__wffm4tw3zd1tt\baselib.dll" />
-            <File Id="0000b559abbb8f07292aaa7321c9946532268e55186a" Name="Endless Space Game.exe" ProductName="" CompanyName="" ProductVersion="" VerLanguage="0" SwitchBackContext="0" FileVersion="" Size="49152" SizeOfImage="49152" PeHeaderHash="010197ee7f6c19149a26183359b832e165f8d97f2e09" PeChecksum="0" CrcChecksum="-676562269" BinProductVersion="" BinFileVersion="" FileDescription="" LegalCopyright="" LinkDate="12/08/2021 16:18:10" BinaryType="pe64_amd64" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.9.0_x64__wffm4tw3zd1tt\endless space game.exe" />
-            <File Id="000039122653ef82b04bfcb010c32da4c1d76c4cf41b" Name="Endless_Space_Game.winmd" ProductName="" CompanyName="" ProductVersion="" VerLanguage="0" SwitchBackContext="0" FileVersion="" Size="8192" SizeOfImage="8192" PeHeaderHash="01015c3fb8844e3c7e8701df63ead20d2a2afddce7be" PeChecksum="0" CrcChecksum="1169113537" BinProductVersion="" BinFileVersion="" FileDescription="" LegalCopyright="" LinkDate="12/07/2021 03:49:32" BinaryType="pe32_clr_il" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.9.0_x64__wffm4tw3zd1tt\endless_space_game.winmd" />
-            <File Id="0000d9e1f5cb3c6fc94780825e1f4ed957b2bc1de4d4" Name="GameAssembly.dll" ProductName="" CompanyName="" ProductVersion="" VerLanguage="0" SwitchBackContext="0" FileVersion="" Size="15675392" SizeOfImage="15675392" PeHeaderHash="0101755b0c940c98d2f3cd5b9aad8ca5b574c0fd3b05" PeChecksum="0" CrcChecksum="-1061190221" BinProductVersion="" BinFileVersion="" FileDescription="" LegalCopyright="" LinkDate="12/08/2021 16:18:07" BinaryType="pe64_amd64" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.9.0_x64__wffm4tw3zd1tt\gameassembly.dll" />
-            <File Id="00003a5d2ab83a386405e17c695a46907657790d470b" Name="resources.053c90bf.pri" ProductName="" CompanyName="" ProductVersion="" VerLanguage="0" SwitchBackContext="0" FileVersion="" Size="0" SizeOfImage="0" PeHeaderHash="" PeChecksum="0" CrcChecksum="1502507895" BinProductVersion="" BinFileVersion="" FileDescription="" LegalCopyright="" LinkDate="" BinaryType="data_only" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.9.0_x64__wffm4tw3zd1tt\microsoft.system.package.metadata\resources.053c90bf.pri" />
-            <File Id="00008f62f5eb6820a5f6d3497e73fbd5cd5c86fbe755" Name="resources.pri" ProductName="" CompanyName="" ProductVersion="" VerLanguage="0" SwitchBackContext="0" FileVersion="" Size="0" SizeOfImage="0" PeHeaderHash="" PeChecksum="0" CrcChecksum="431504717" BinProductVersion="" BinFileVersion="" FileDescription="" LegalCopyright="" LinkDate="" BinaryType="data_only" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.9.0_x64__wffm4tw3zd1tt\resources.pri" />
-            <File Id="00003a5d2ab83a386405e17c695a46907657790d470b" Name="S-1-5-21-2553076770-1559935242-1642163877-1003-MergedResources-0.pri" ProductName="" CompanyName="" ProductVersion="" VerLanguage="0" SwitchBackContext="0" FileVersion="" Size="0" SizeOfImage="0" PeHeaderHash="" PeChecksum="0" CrcChecksum="1502507895" BinProductVersion="" BinFileVersion="" FileDescription="" LegalCopyright="" LinkDate="" BinaryType="data_only" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.9.0_x64__wffm4tw3zd1tt\microsoft.system.package.metadata\s-1-5-21-2553076770-1559935242-1642163877-1003-mergedresources-0.pri" />
-            <File Id="000057052ddb7fbf6e4ec8ac34df962e94643d3f47b7" Name="UnityPlayer.dll" ProductName="unity" CompanyName="unity technologies aps" ProductVersion="2020.3.23f1 (c5d91304a876)" VerLanguage="1033" SwitchBackContext="0" FileVersion="2020.3.23.12966163" Size="29442048" SizeOfImage="29442048" PeHeaderHash="0101cab3289ce3e3f6e711ea1b256ca2fb4c9e242f9b" PeChecksum="28594661" CrcChecksum="1578718933" BinProductVersion="2020.3.23f1 (c5d91304a876)" BinFileVersion="2020.3.23.0" FileDescription="unity playback engine." LegalCopyright="(c) 2021 unity technologies aps. all rights reserved." LinkDate="11/10/2021 18:39:08" BinaryType="pe64_amd64" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.9.0_x64__wffm4tw3zd1tt\unityplayer.dll" />
-            <File Id="00002293b851cd242217a23ac81337f36129582d9b10" Name="UnityPlayer.winmd" ProductName="" CompanyName="" ProductVersion="" VerLanguage="0" SwitchBackContext="0" FileVersion="" Size="12288" SizeOfImage="12288" PeHeaderHash="010126bac498c341d98256aab4aae2d83b664e04b4ff" PeChecksum="67016" CrcChecksum="-697469098" BinProductVersion="" BinFileVersion="" FileDescription="" LegalCopyright="" LinkDate="11/10/2021 18:39:05" BinaryType="pe32_clr_il" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.9.0_x64__wffm4tw3zd1tt\unityplayer.winmd" />
+            <File Id="00000326e060728bd8282bbfe8b454339f1ca4b8b8b8" Name="baselib.dll" ProductName="" CompanyName="" ProductVersion="" VerLanguage="0" SwitchBackContext="0" FileVersion="" Size="94208" SizeOfImage="94208" PeHeaderHash="0101c083c2257a52c875a74536eb2cb5d84122a68594" PeChecksum="132907" CrcChecksum="196492310" BinProductVersion="" BinFileVersion="" FileDescription="" LegalCopyright="" LinkDate="11/10/2021 18:22:41" BinaryType="pe64_amd64" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.11.0_x64__wffm4tw3zd1tt\baselib.dll" />
+            <File Id="000003abc84121e060033ce9a9806577183c11658fb0" Name="Endless Space Game.exe" ProductName="" CompanyName="" ProductVersion="" VerLanguage="0" SwitchBackContext="0" FileVersion="" Size="49152" SizeOfImage="49152" PeHeaderHash="0101cbf4ade899aa200584dc597bf4a0d044022720b4" PeChecksum="0" CrcChecksum="59347996" BinProductVersion="" BinFileVersion="" FileDescription="" LegalCopyright="" LinkDate="12/10/2021 18:25:26" BinaryType="pe64_amd64" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.11.0_x64__wffm4tw3zd1tt\endless space game.exe" />
+            <File Id="000039122653ef82b04bfcb010c32da4c1d76c4cf41b" Name="Endless_Space_Game.winmd" ProductName="" CompanyName="" ProductVersion="" VerLanguage="0" SwitchBackContext="0" FileVersion="" Size="8192" SizeOfImage="8192" PeHeaderHash="01015c3fb8844e3c7e8701df63ead20d2a2afddce7be" PeChecksum="0" CrcChecksum="1169113537" BinProductVersion="" BinFileVersion="" FileDescription="" LegalCopyright="" LinkDate="12/07/2021 03:49:32" BinaryType="pe32_clr_il" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.11.0_x64__wffm4tw3zd1tt\endless_space_game.winmd" />
+            <File Id="0000540f52de14c0c026da8e2e81355fb79bbd6207fd" Name="GameAssembly.dll" ProductName="" CompanyName="" ProductVersion="" VerLanguage="0" SwitchBackContext="0" FileVersion="" Size="15675392" SizeOfImage="15675392" PeHeaderHash="01016fb04dfa086db60bf603d9fbc93a1da0b7493967" PeChecksum="0" CrcChecksum="1454285242" BinProductVersion="" BinFileVersion="" FileDescription="" LegalCopyright="" LinkDate="12/10/2021 18:18:34" BinaryType="pe64_amd64" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.11.0_x64__wffm4tw3zd1tt\gameassembly.dll" />
+            <File Id="00005f6b0c4f1f714253914d1b02e9dec2f9e1e213b2" Name="resources.8d517dfd.pri" ProductName="" CompanyName="" ProductVersion="" VerLanguage="0" SwitchBackContext="0" FileVersion="" Size="0" SizeOfImage="0" PeHeaderHash="" PeChecksum="0" CrcChecksum="267559263" BinProductVersion="" BinFileVersion="" FileDescription="" LegalCopyright="" LinkDate="" BinaryType="data_only" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.11.0_x64__wffm4tw3zd1tt\microsoft.system.package.metadata\resources.8d517dfd.pri" />
+            <File Id="00008f62f5eb6820a5f6d3497e73fbd5cd5c86fbe755" Name="resources.pri" ProductName="" CompanyName="" ProductVersion="" VerLanguage="0" SwitchBackContext="0" FileVersion="" Size="0" SizeOfImage="0" PeHeaderHash="" PeChecksum="0" CrcChecksum="431504717" BinProductVersion="" BinFileVersion="" FileDescription="" LegalCopyright="" LinkDate="" BinaryType="data_only" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.11.0_x64__wffm4tw3zd1tt\resources.pri" />
+            <File Id="00005f6b0c4f1f714253914d1b02e9dec2f9e1e213b2" Name="S-1-5-21-2553076770-1559935242-1642163877-1003-MergedResources-0.pri" ProductName="" CompanyName="" ProductVersion="" VerLanguage="0" SwitchBackContext="0" FileVersion="" Size="0" SizeOfImage="0" PeHeaderHash="" PeChecksum="0" CrcChecksum="267559263" BinProductVersion="" BinFileVersion="" FileDescription="" LegalCopyright="" LinkDate="" BinaryType="data_only" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.11.0_x64__wffm4tw3zd1tt\microsoft.system.package.metadata\s-1-5-21-2553076770-1559935242-1642163877-1003-mergedresources-0.pri" />
+            <File Id="000057052ddb7fbf6e4ec8ac34df962e94643d3f47b7" Name="UnityPlayer.dll" ProductName="unity" CompanyName="unity technologies aps" ProductVersion="2020.3.23f1 (c5d91304a876)" VerLanguage="1033" SwitchBackContext="0" FileVersion="2020.3.23.12966163" Size="29442048" SizeOfImage="29442048" PeHeaderHash="0101cab3289ce3e3f6e711ea1b256ca2fb4c9e242f9b" PeChecksum="28594661" CrcChecksum="1578718933" BinProductVersion="2020.3.23f1 (c5d91304a876)" BinFileVersion="2020.3.23.0" FileDescription="unity playback engine." LegalCopyright="(c) 2021 unity technologies aps. all rights reserved." LinkDate="11/10/2021 18:39:08" BinaryType="pe64_amd64" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.11.0_x64__wffm4tw3zd1tt\unityplayer.dll" />
+            <File Id="00002293b851cd242217a23ac81337f36129582d9b10" Name="UnityPlayer.winmd" ProductName="" CompanyName="" ProductVersion="" VerLanguage="0" SwitchBackContext="0" FileVersion="" Size="12288" SizeOfImage="12288" PeHeaderHash="010126bac498c341d98256aab4aae2d83b664e04b4ff" PeChecksum="67016" CrcChecksum="-697469098" BinProductVersion="" BinFileVersion="" FileDescription="" LegalCopyright="" LinkDate="11/10/2021 18:39:05" BinaryType="pe32_clr_il" LowerCaseLongPath="c:\program files\windowsapps\53264honeycombdesignstudi.endlessspaceshooter_1.0.11.0_x64__wffm4tw3zd1tt\unityplayer.winmd" />
           </Files>
         </StaticProperties>
       </Program>
     </Installed_Programs>
   </APPLICATIONS>
   <DEPENDENCY_INFORMATION>
-    <AitStaticAnalysis ProgramId="00006d5bb983f2f0e41ea6e9b007cab9c39400000904" AnalysisVersion="1.70" DictionaryVersion="3.6" Type="Package" Id="53264HoneycombDesignStudi.EndlessSpaceShooter_1.0.9.0_x64__wffm4tw3zd1tt">
+    <AitStaticAnalysis ProgramId="00007e56f50797466470e9c6596c40d71db000000904" AnalysisVersion="1.70" DictionaryVersion="3.6" Type="Package" Id="53264HoneycombDesignStudi.EndlessSpaceShooter_1.0.11.0_x64__wffm4tw3zd1tt">
       <AitFile ErrorCode="0" Name="baselib.dll" Id="00000326e060728bd8282bbfe8b454339f1ca4b8b8b8">
         <AitCategory Id="Com">
           <AitFeature Name="{00000000-0000-0000-0000-000000000001}" />
@@ -406,6 +406,98 @@
           <AitFeature Name="msvcp140_app.dll!_Xtime_get_ticks" />
         </AitCategory>
       </AitFile>
+      <AitFile ErrorCode="0" Name="Endless Space Game.exe" Id="000003abc84121e060033ce9a9806577183c11658fb0">
+        <AitCategory Id="Com">
+          <AitFeature Name="{00000000-0000-0000-0000-000000000001}" />
+          <AitFeature Name="{00000000-0000-0000-c000-000000000046}" />
+          <AitFeature Name="{00000003-0000-0000-c000-000000000046}" />
+          <AitFeature Name="{00000038-0000-0000-c000-000000000046}" />
+          <AitFeature Name="{94ea2b94-e9cc-49e0-c0ff-ee64ca8f5b90}" />
+          <AitFeature Name="{af86e2e0-b12d-4c6a-9c5a-d7aa65101e90}" />
+          <AitFeature Name="{cd770614-65c4-426c-9494-34fc43554862}" />
+          <AitFeature Name="{cf193a96-eb13-5e3b-8bdf-87b6efae8339}" />
+          <AitFeature Name="{e876b196-a545-40dc-b594-450cba68cc00}" />
+          <AitFeature Name="{faab5cd0-8924-45ac-ad0f-a08fae5d0324}" />
+        </AitCategory>
+        <AitCategory Id="WinRtCom">
+          <AitFeature Name="{9de1c534-6ae1-11e0-84e1-18a905bcc53f}" />
+          <AitFeature Name="{cd770614-65c4-426c-9494-34fc43554862}" />
+          <AitFeature Name="{e876b196-a545-40dc-b594-450cba68cc00}" />
+          <AitFeature Name="{faab5cd0-8924-45ac-ad0f-a08fae5d0324}" />
+        </AitCategory>
+        <AitCategory Id="ApiStatic">
+          <AitFeature Name="api-ms-win-core-interlocked-l1-1-0.dll!InitializeSListHead" />
+          <AitFeature Name="api-ms-win-crt-locale-l1-1-0.dll!_configthreadlocale" />
+          <AitFeature Name="api-ms-win-core-profile-l1-1-0.dll!QueryPerformanceCounter" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_c_exit" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_cexit" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_configure_wide_argv" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_crt_atexit" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_exit" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_get_wide_winmain_command_line" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_initialize_onexit_table" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_initialize_wide_environment" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_initterm" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_initterm_e" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_register_onexit_function" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_register_thread_local_exe_atexit_callback" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_seh_filter_exe" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_set_app_type" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!exit" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!AcquireSRWLockExclusive" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!ReleaseSRWLockExclusive" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!__setusermatherr" />
+          <AitFeature Name="api-ms-win-core-util-l1-1-0.dll!DecodePointer" />
+          <AitFeature Name="api-ms-win-core-com-l1-1-0.dll!CoCreateFreeThreadedMarshaler" />
+          <AitFeature Name="api-ms-win-core-sysinfo-l1-1-0.dll!GetSystemTimeAsFileTime" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!__p__commode" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!_set_fmode" />
+          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!_set_new_mode" />
+          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!free" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!GetCurrentProcessId" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!GetCurrentThreadId" />
+          <AitFeature Name="api-ms-win-core-synch-l1-2-0.dll!InitOnceExecuteOnce" />
+          <AitFeature Name="vccorlib140_app.dll!??0Delegate@Platform@@QE$AAA@XZ" />
+          <AitFeature Name="vccorlib140_app.dll!??0DisconnectedException@Platform@@QE$AAA@XZ" />
+          <AitFeature Name="vccorlib140_app.dll!??0Object@Platform@@QE$AAA@XZ" />
+          <AitFeature Name="vccorlib140_app.dll!?AlignedFree@Heap@Details@Platform@@SAXPEAX@Z" />
+          <AitFeature Name="vccorlib140_app.dll!?Allocate@Heap@Details@Platform@@SAPEAX_K0@Z" />
+          <AitFeature Name="vccorlib140_app.dll!?AllocateException@Heap@Details@Platform@@SAPEAX_K0@Z" />
+          <AitFeature Name="vccorlib140_app.dll!?Free@Heap@Details@Platform@@SAXPEAX@Z" />
+          <AitFeature Name="vccorlib140_app.dll!?GetActivationFactoryByPCWSTR@@YAJPEAXAEAVGuid@Platform@@PEAPEAX@Z" />
+          <AitFeature Name="vccorlib140_app.dll!?GetIidsFn@@YAJHPEAKPEBU__s_GUID@@PEAPEAVGuid@Platform@@@Z" />
+          <AitFeature Name="vccorlib140_app.dll!?InitializeData@Details@Platform@@YAJH@Z" />
+          <AitFeature Name="vccorlib140_app.dll!?ReleaseTarget@ControlBlock@Details@Platform@@AEAAXXZ" />
+          <AitFeature Name="vccorlib140_app.dll!?UninitializeData@Details@Platform@@YAXH@Z" />
+          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseAccessDeniedException@@YAXXZ" />
+          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseCOMException@@YAXJ@Z" />
+          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseChangedStateException@@YAXXZ" />
+          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseClassNotRegisteredException@@YAXXZ" />
+          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseDisconnectedException@@YAXXZ" />
+          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseFailureException@@YAXXZ" />
+          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseInvalidArgumentException@@YAXXZ" />
+          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseInvalidCastException@@YAXXZ" />
+          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseNotImplementedException@@YAXXZ" />
+          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseNullReferenceException@@YAXXZ" />
+          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseObjectDisposedException@@YAXXZ" />
+          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseOperationCanceledException@@YAXXZ" />
+          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseOutOfBoundsException@@YAXXZ" />
+          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseOutOfMemoryException@@YAXXZ" />
+          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseWrongThreadException@@YAXXZ" />
+          <AitFeature Name="vccorlib140_app.dll!?__abi_translateCurrentException@@YAJ_N@Z" />
+          <AitFeature Name="vcruntime140_app.dll!_CxxThrowException" />
+          <AitFeature Name="vcruntime140_app.dll!__C_specific_handler" />
+          <AitFeature Name="vcruntime140_app.dll!__std_terminate" />
+        </AitCategory>
+        <AitCategory Id="WRTClassFromSearch">
+          <AitFeature Name="Windows.Foundation.TypedEventHandler`2" />
+          <AitFeature Name="Windows.ApplicationModel.Core.CoreApplication" />
+          <AitFeature Name="Windows.Graphics.Display.DisplayInformation" />
+          <AitFeature Name="Windows.ApplicationModel.Activation.IActivatedEventArgs" />
+          <AitFeature Name="Windows.UI.ViewManagement.ApplicationView" />
+          <AitFeature Name="Windows.ApplicationModel.Core.CoreApplicationView" />
+        </AitCategory>
+      </AitFile>
       <AitFile ErrorCode="0" Name="UnityPlayer.winmd" Id="00002293b851cd242217a23ac81337f36129582d9b10">
         <AitCategory Id="DotNet">
           <AitFeature Name="System.IDisposable" />
@@ -448,6 +540,373 @@
         </AitCategory>
       </AitFile>
       <AitFile ErrorCode="0" Name="Endless_Space_Game.winmd" Id="000039122653ef82b04bfcb010c32da4c1d76c4cf41b" />
+      <AitFile ErrorCode="0" Name="GameAssembly.dll" Id="0000540f52de14c0c026da8e2e81355fb79bbd6207fd">
+        <AitCategory Id="Com">
+          <AitFeature Name="{00000000-0000-0000-0000-000000000001}" />
+          <AitFeature Name="{00000000-0000-0000-0000-000000000002}" />
+          <AitFeature Name="{00000000-0000-0000-0000-000000000003}" />
+          <AitFeature Name="{00000000-0000-0000-0000-000000000006}" />
+          <AitFeature Name="{00000000-0000-0000-0000-000000000007}" />
+          <AitFeature Name="{00000000-0000-0000-0000-000000000008}" />
+          <AitFeature Name="{00000000-0000-0000-0000-000000000009}" />
+          <AitFeature Name="{00000000-0000-0000-0000-000000000012}" />
+          <AitFeature Name="{00000000-0000-0000-0000-000000000015}" />
+          <AitFeature Name="{00000000-0000-0000-0000-000000000018}" />
+          <AitFeature Name="{00000000-0000-0000-0000-000000000024}" />
+          <AitFeature Name="{00000000-0000-0000-0000-000000000026}" />
+          <AitFeature Name="{00000000-0000-0000-0000-000000000028}" />
+          <AitFeature Name="{00000000-0000-0000-c000-000000000046}" />
+          <AitFeature Name="{00000003-0000-0000-c000-000000000046}" />
+          <AitFeature Name="{00000035-0000-0000-c000-000000000046}" />
+          <AitFeature Name="{00000037-0000-0000-c000-000000000046}" />
+          <AitFeature Name="{00000038-0000-0000-c000-000000000046}" />
+          <AitFeature Name="{01b29def-e062-48a1-8b0c-f2c7a9ca56c0}" />
+          <AitFeature Name="{04a2dbf3-df83-116c-0946-0812abf6e07d}" />
+          <AitFeature Name="{08f327ff-85d5-48b9-aee9-28511e339f9f}" />
+          <AitFeature Name="{1e5e46ee-0f45-4838-a8e9-d0479d446c30}" />
+          <AitFeature Name="{4207a996-ca2f-42f7-bde8-8b10457a7f30}" />
+          <AitFeature Name="{4d239005-3c2a-41b1-9022-536bb9cf93b1}" />
+          <AitFeature Name="{51436e75-ace1-5a68-b260-f843b846f0db}" />
+          <AitFeature Name="{5541d8a7-497c-5aa4-86fc-7713adbf2a2c}" />
+          <AitFeature Name="{5612147b-e843-45e3-94d8-06169e3c8e17}" />
+          <AitFeature Name="{5984c710-daf2-43c8-8bb4-a4d3eacfd03f}" />
+          <AitFeature Name="{603e88e4-a338-4ffe-a457-a5cfb9ceb899}" />
+          <AitFeature Name="{60db2fa8-b705-4fde-a7d6-ebbb1891d39e}" />
+          <AitFeature Name="{7344f356-8399-5756-a2f8-abd50c4146ff}" />
+          <AitFeature Name="{8c304ebb-6615-50a4-8829-879ecd443236}" />
+          <AitFeature Name="{94ea2b94-e9cc-49e0-c0ff-ee64ca8f5b90}" />
+          <AitFeature Name="{a4ed5c81-76c9-40bd-8be6-b1d90fb20ae7}" />
+          <AitFeature Name="{a96d83d7-9371-4517-9245-d0824ac12c74}" />
+          <AitFeature Name="{af86e2e0-b12d-4c6a-9c5a-d7aa65101e90}" />
+          <AitFeature Name="{bb8b8418-65d1-544b-b083-6d172f568c73}" />
+          <AitFeature Name="{c211026e-9e63-5452-ba54-3a07d6a96874}" />
+          <AitFeature Name="{c54361b2-54cd-432b-bdbc-4b19c4b470d7}" />
+          <AitFeature Name="{c8659aae-4926-52ad-8f60-d89fe5a8df5f}" />
+          <AitFeature Name="{cb43ccc9-446b-4a4f-be97-757771be5203}" />
+          <AitFeature Name="{d1f276c4-98d8-4636-bf49-eb79507548e9}" />
+          <AitFeature Name="{df19938f-5462-48a0-be65-d2a3271a08d6}" />
+          <AitFeature Name="{dfa2dc9c-1a2d-4917-98f2-939af1d6e0c8}" />
+          <AitFeature Name="{e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e}" />
+          <AitFeature Name="{e521c894-2c26-5946-9e61-2b5e188d01ed}" />
+        </AitCategory>
+        <AitCategory Id="WinRtCom">
+          <AitFeature Name="{01b29def-e062-48a1-8b0c-f2c7a9ca56c0}" />
+          <AitFeature Name="{08f327ff-85d5-48b9-aee9-28511e339f9f}" />
+          <AitFeature Name="{1e5e46ee-0f45-4838-a8e9-d0479d446c30}" />
+          <AitFeature Name="{4207a996-ca2f-42f7-bde8-8b10457a7f30}" />
+          <AitFeature Name="{4d239005-3c2a-41b1-9022-536bb9cf93b1}" />
+          <AitFeature Name="{5612147b-e843-45e3-94d8-06169e3c8e17}" />
+          <AitFeature Name="{5984c710-daf2-43c8-8bb4-a4d3eacfd03f}" />
+          <AitFeature Name="{603e88e4-a338-4ffe-a457-a5cfb9ceb899}" />
+          <AitFeature Name="{60db2fa8-b705-4fde-a7d6-ebbb1891d39e}" />
+          <AitFeature Name="{a4ed5c81-76c9-40bd-8be6-b1d90fb20ae7}" />
+          <AitFeature Name="{a96d83d7-9371-4517-9245-d0824ac12c74}" />
+          <AitFeature Name="{c54361b2-54cd-432b-bdbc-4b19c4b470d7}" />
+          <AitFeature Name="{cb43ccc9-446b-4a4f-be97-757771be5203}" />
+          <AitFeature Name="{d1f276c4-98d8-4636-bf49-eb79507548e9}" />
+          <AitFeature Name="{dfa2dc9c-1a2d-4917-98f2-939af1d6e0c8}" />
+        </AitCategory>
+        <AitCategory Id="ApiStatic">
+          <AitFeature Name="api-ms-win-core-interlocked-l1-1-0.dll!InitializeSListHead" />
+          <AitFeature Name="api-ms-win-crt-locale-l1-1-0.dll!_create_locale" />
+          <AitFeature Name="api-ms-win-crt-locale-l1-1-0.dll!_free_locale" />
+          <AitFeature Name="api-ms-win-crt-locale-l1-1-0.dll!setlocale" />
+          <AitFeature Name="api-ms-win-core-handle-l1-1-0.dll!CloseHandle" />
+          <AitFeature Name="api-ms-win-core-handle-l1-1-0.dll!DuplicateHandle" />
+          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!CreateDirectoryW" />
+          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!DeleteFileW" />
+          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!FindClose" />
+          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!FindFirstFileExW" />
+          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!FindNextFileW" />
+          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!FlushFileBuffers" />
+          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!GetFileAttributesExW" />
+          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!GetFileSizeEx" />
+          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!GetFileType" />
+          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!GetFullPathNameW" />
+          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!ReadFile" />
+          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!RemoveDirectoryW" />
+          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!SetFilePointerEx" />
+          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!WriteFile" />
+          <AitFeature Name="api-ms-win-core-profile-l1-1-0.dll!QueryPerformanceCounter" />
+          <AitFeature Name="api-ms-win-core-profile-l1-1-0.dll!QueryPerformanceFrequency" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_cexit" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_configure_narrow_argv" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_crt_atexit" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_errno" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_execute_onexit_table" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_initialize_narrow_environment" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_initialize_onexit_table" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_initterm" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_initterm_e" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_invalid_parameter_noinfo_noreturn" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_register_onexit_function" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_seh_filter_dll" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!abort" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!exit" />
+          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!terminate" />
+          <AitFeature Name="api-ms-win-core-timezone-l1-1-0.dll!EnumDynamicTimeZoneInformation" />
+          <AitFeature Name="api-ms-win-core-timezone-l1-1-0.dll!GetDynamicTimeZoneInformation" />
+          <AitFeature Name="api-ms-win-core-timezone-l1-1-0.dll!GetDynamicTimeZoneInformationEffectiveYears" />
+          <AitFeature Name="api-ms-win-core-timezone-l1-1-0.dll!GetTimeZoneInformation" />
+          <AitFeature Name="api-ms-win-core-timezone-l1-1-0.dll!GetTimeZoneInformationForYear" />
+          <AitFeature Name="api-ms-win-core-errorhandling-l1-1-0.dll!GetLastError" />
+          <AitFeature Name="api-ms-win-core-errorhandling-l1-1-0.dll!RaiseException" />
+          <AitFeature Name="api-ms-win-core-string-l1-1-0.dll!WideCharToMultiByte" />
+          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!isalpha" />
+          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!isdigit" />
+          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!strcmp" />
+          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!strcpy_s" />
+          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!strncmp" />
+          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!strncpy" />
+          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!tolower" />
+          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!towlower" />
+          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!wcscat_s" />
+          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!wcsncat_s" />
+          <AitFeature Name="api-ms-win-core-debug-l1-1-0.dll!IsDebuggerPresent" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!AcquireSRWLockExclusive" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!AcquireSRWLockShared" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!CreateEventExW" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!CreateEventW" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!CreateMutexW" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!DeleteCriticalSection" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!EnterCriticalSection" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!InitializeCriticalSection" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!InitializeCriticalSectionAndSpinCount" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!InitializeSRWLock" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!LeaveCriticalSection" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!ReleaseMutex" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!ReleaseSRWLockExclusive" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!ReleaseSRWLockShared" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!ReleaseSemaphore" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!ResetEvent" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!SetEvent" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!SleepEx" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!WaitForMultipleObjectsEx" />
+          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!WaitForSingleObjectEx" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!acos" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!acosf" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!atan" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!atanf" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!ceil" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!ceilf" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!copysign" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!cos" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!cosf" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!floor" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!floorf" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!fmod" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!fmodf" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!hypot" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!log" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!modf" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!pow" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!powf" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!sin" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!sinf" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!sqrt" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!sqrtf" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!tan" />
+          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!tanf" />
+          <AitFeature Name="api-ms-win-crt-filesystem-l1-1-0.dll!_lock_file" />
+          <AitFeature Name="api-ms-win-crt-filesystem-l1-1-0.dll!_unlock_file" />
+          <AitFeature Name="api-ms-win-core-com-l1-1-0.dll!CoCreateFreeThreadedMarshaler" />
+          <AitFeature Name="api-ms-win-core-com-l1-1-0.dll!CoGetApartmentType" />
+          <AitFeature Name="api-ms-win-core-com-l1-1-0.dll!CoInitializeEx" />
+          <AitFeature Name="api-ms-win-core-com-l1-1-0.dll!CoTaskMemAlloc" />
+          <AitFeature Name="api-ms-win-core-com-l1-1-0.dll!CoTaskMemFree" />
+          <AitFeature Name="api-ms-win-core-com-l1-1-0.dll!CoUninitialize" />
+          <AitFeature Name="api-ms-win-core-sysinfo-l1-1-0.dll!GetSystemInfo" />
+          <AitFeature Name="api-ms-win-core-sysinfo-l1-1-0.dll!GetSystemTimeAsFileTime" />
+          <AitFeature Name="api-ms-win-core-sysinfo-l1-1-0.dll!GetVersionExW" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!__acrt_iob_func" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!__stdio_common_vsnprintf_s" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!__stdio_common_vsprintf" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!__stdio_common_vsprintf_p" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!_fileno" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!_fseeki64" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!_get_osfhandle" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!_get_stream_buffer_pointers" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!fclose" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!fflush" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!fgetc" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!fgetpos" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!fputc" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!fread" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!fsetpos" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!fwrite" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!setvbuf" />
+          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!ungetc" />
+          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!_aligned_free" />
+          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!_aligned_malloc" />
+          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!_aligned_realloc" />
+          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!_callnewh" />
+          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!calloc" />
+          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!free" />
+          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!malloc" />
+          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!realloc" />
+          <AitFeature Name="api-ms-win-eventing-provider-l1-1-0.dll!EventActivityIdControl" />
+          <AitFeature Name="api-ms-win-eventing-provider-l1-1-0.dll!EventRegister" />
+          <AitFeature Name="api-ms-win-eventing-provider-l1-1-0.dll!EventSetInformation" />
+          <AitFeature Name="api-ms-win-eventing-provider-l1-1-0.dll!EventUnregister" />
+          <AitFeature Name="api-ms-win-eventing-provider-l1-1-0.dll!EventWrite" />
+          <AitFeature Name="api-ms-win-eventing-provider-l1-1-0.dll!EventWriteEx" />
+          <AitFeature Name="api-ms-win-eventing-provider-l1-1-0.dll!EventWriteString" />
+          <AitFeature Name="api-ms-win-eventing-provider-l1-1-0.dll!EventWriteTransfer" />
+          <AitFeature Name="api-ms-win-eventing-controller-l1-1-0.dll!EnumerateTraceGuidsEx" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!CreateThread" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!GetCurrentProcess" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!GetCurrentProcessId" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!GetCurrentThread" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!GetCurrentThreadId" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!GetExitCodeThread" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!GetThreadPriority" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!QueueUserAPC" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!ResumeThread" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!SetThreadPriority" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!SuspendThread" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!SwitchToThread" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!TlsAlloc" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!TlsFree" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!TlsGetValue" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!TlsSetValue" />
+          <AitFeature Name="api-ms-win-core-processenvironment-l1-1-0.dll!FreeEnvironmentStringsW" />
+          <AitFeature Name="api-ms-win-core-processenvironment-l1-1-0.dll!GetCurrentDirectoryW" />
+          <AitFeature Name="api-ms-win-core-processenvironment-l1-1-0.dll!GetEnvironmentStringsW" />
+          <AitFeature Name="api-ms-win-core-processenvironment-l1-1-0.dll!GetEnvironmentVariableW" />
+          <AitFeature Name="api-ms-win-core-processenvironment-l1-1-0.dll!SetEnvironmentVariableW" />
+          <AitFeature Name="api-ms-win-crt-convert-l1-1-0.dll!atoi" />
+          <AitFeature Name="api-ms-win-crt-convert-l1-1-0.dll!strtol" />
+          <AitFeature Name="api-ms-win-core-rtlsupport-l1-1-0.dll!RtlCaptureStackBackTrace" />
+          <AitFeature Name="api-ms-win-core-memory-l1-1-0.dll!UnmapViewOfFile" />
+          <AitFeature Name="api-ms-win-core-memory-l1-1-0.dll!VirtualFree" />
+          <AitFeature Name="api-ms-win-core-memory-l1-1-0.dll!VirtualQuery" />
+          <AitFeature Name="api-ms-win-crt-utility-l1-1-0.dll!bsearch" />
+          <AitFeature Name="api-ms-win-core-file-l2-1-0.dll!GetFileInformationByHandleEx" />
+          <AitFeature Name="api-ms-win-core-file-l1-2-0.dll!CreateFile2" />
+          <AitFeature Name="api-ms-win-core-synch-l1-2-0.dll!InitializeConditionVariable" />
+          <AitFeature Name="api-ms-win-core-synch-l1-2-0.dll!Sleep" />
+          <AitFeature Name="api-ms-win-core-synch-l1-2-0.dll!SleepConditionVariableCS" />
+          <AitFeature Name="api-ms-win-core-synch-l1-2-0.dll!SleepConditionVariableSRW" />
+          <AitFeature Name="api-ms-win-core-synch-l1-2-0.dll!WakeAllConditionVariable" />
+          <AitFeature Name="api-ms-win-core-synch-l1-2-0.dll!WakeConditionVariable" />
+          <AitFeature Name="api-ms-win-core-localization-l1-2-0.dll!FormatMessageW" />
+          <AitFeature Name="api-ms-win-core-localization-l1-2-0.dll!GetACP" />
+          <AitFeature Name="api-ms-win-core-localization-l1-2-0.dll!GetUserDefaultLocaleName" />
+          <AitFeature Name="api-ms-win-core-sysinfo-l1-2-0.dll!GetNativeSystemInfo" />
+          <AitFeature Name="api-ms-win-core-io-l1-1-1.dll!GetOverlappedResultEx" />
+          <AitFeature Name="api-ms-win-core-processthreads-l1-1-1.dll!GetThreadContext" />
+          <AitFeature Name="api-ms-win-core-memory-l1-1-1.dll!CreateFileMappingFromApp" />
+          <AitFeature Name="api-ms-win-core-memory-l1-1-1.dll!MapViewOfFileFromApp" />
+          <AitFeature Name="ws2_32.dll!111" />
+          <AitFeature Name="ws2_32.dll!115" />
+          <AitFeature Name="ws2_32.dll!116" />
+          <AitFeature Name="ws2_32.dll!19" />
+          <AitFeature Name="ws2_32.dll!WSACleanup" />
+          <AitFeature Name="ws2_32.dll!WSAGetLastError" />
+          <AitFeature Name="ws2_32.dll!WSAStartup" />
+          <AitFeature Name="ws2_32.dll!send" />
+          <AitFeature Name="oleaut32.dll!15" />
+          <AitFeature Name="oleaut32.dll!16" />
+          <AitFeature Name="oleaut32.dll!17" />
+          <AitFeature Name="oleaut32.dll!19" />
+          <AitFeature Name="oleaut32.dll!20" />
+          <AitFeature Name="oleaut32.dll!23" />
+          <AitFeature Name="oleaut32.dll!24" />
+          <AitFeature Name="oleaut32.dll!6" />
+          <AitFeature Name="oleaut32.dll!7" />
+          <AitFeature Name="oleaut32.dll!77" />
+          <AitFeature Name="oleaut32.dll!SafeArrayAccessData" />
+          <AitFeature Name="oleaut32.dll!SafeArrayCreate" />
+          <AitFeature Name="oleaut32.dll!SafeArrayDestroy" />
+          <AitFeature Name="oleaut32.dll!SafeArrayGetDim" />
+          <AitFeature Name="oleaut32.dll!SafeArrayGetLBound" />
+          <AitFeature Name="oleaut32.dll!SafeArrayGetUBound" />
+          <AitFeature Name="oleaut32.dll!SafeArrayGetVartype" />
+          <AitFeature Name="oleaut32.dll!SafeArrayUnaccessData" />
+          <AitFeature Name="oleaut32.dll!SysFreeString" />
+          <AitFeature Name="oleaut32.dll!SysStringLen" />
+          <AitFeature Name="iphlpapi.dll!GetAdaptersAddresses" />
+          <AitFeature Name="iphlpapi.dll!GetNetworkParams" />
+          <AitFeature Name="vcruntime140_app.dll!_CxxThrowException" />
+          <AitFeature Name="vcruntime140_app.dll!__C_specific_handler" />
+          <AitFeature Name="vcruntime140_app.dll!__current_exception" />
+          <AitFeature Name="vcruntime140_app.dll!__current_exception_context" />
+          <AitFeature Name="vcruntime140_app.dll!__intrinsic_setjmp" />
+          <AitFeature Name="vcruntime140_app.dll!__std_exception_copy" />
+          <AitFeature Name="vcruntime140_app.dll!__std_exception_destroy" />
+          <AitFeature Name="vcruntime140_app.dll!__std_terminate" />
+          <AitFeature Name="vcruntime140_app.dll!__std_type_info_destroy_list" />
+          <AitFeature Name="vcruntime140_app.dll!_purecall" />
+          <AitFeature Name="vcruntime140_app.dll!memchr" />
+          <AitFeature Name="vcruntime140_app.dll!memcmp" />
+          <AitFeature Name="vcruntime140_app.dll!memcpy" />
+          <AitFeature Name="vcruntime140_app.dll!memmove" />
+          <AitFeature Name="vcruntime140_app.dll!memset" />
+          <AitFeature Name="vcruntime140_app.dll!strchr" />
+          <AitFeature Name="vcruntime140_app.dll!strrchr" />
+          <AitFeature Name="vcruntime140_app.dll!wcschr" />
+          <AitFeature Name="msvcp140_app.dll!??0?$basic_ios@DU?$char_traits@D@std@@@std@@IEAA@XZ" />
+          <AitFeature Name="msvcp140_app.dll!??0?$basic_iostream@DU?$char_traits@D@std@@@std@@QEAA@PEAV?$basic_streambuf@DU?$char_traits@D@std@@@1@@Z" />
+          <AitFeature Name="msvcp140_app.dll!??0?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAA@XZ" />
+          <AitFeature Name="msvcp140_app.dll!??0_Lockit@std@@QEAA@H@Z" />
+          <AitFeature Name="msvcp140_app.dll!??1?$basic_ios@DU?$char_traits@D@std@@@std@@UEAA@XZ" />
+          <AitFeature Name="msvcp140_app.dll!??1?$basic_iostream@DU?$char_traits@D@std@@@std@@UEAA@XZ" />
+          <AitFeature Name="msvcp140_app.dll!??1?$basic_streambuf@DU?$char_traits@D@std@@@std@@UEAA@XZ" />
+          <AitFeature Name="msvcp140_app.dll!??1_Lockit@std@@QEAA@XZ" />
+          <AitFeature Name="msvcp140_app.dll!??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@_K@Z" />
+          <AitFeature Name="msvcp140_app.dll!??Bid@locale@std@@QEAA_KXZ" />
+          <AitFeature Name="msvcp140_app.dll!?_Fiopen@std@@YAPEAU_iobuf@@PEBDHH@Z" />
+          <AitFeature Name="msvcp140_app.dll!?_Getcat@?$codecvt@DDU_Mbstatet@@@std@@SA_KPEAPEBVfacet@locale@2@PEBV42@@Z" />
+          <AitFeature Name="msvcp140_app.dll!?_Getgloballocale@locale@std@@CAPEAV_Locimp@12@XZ" />
+          <AitFeature Name="msvcp140_app.dll!?_Init@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXPEAPEAD0PEAH001@Z" />
+          <AitFeature Name="msvcp140_app.dll!?_Init@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXXZ" />
+          <AitFeature Name="msvcp140_app.dll!?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAXXZ" />
+          <AitFeature Name="msvcp140_app.dll!?_Pninc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAPEADXZ" />
+          <AitFeature Name="msvcp140_app.dll!?_Xlength_error@std@@YAXPEBD@Z" />
+          <AitFeature Name="msvcp140_app.dll!?_Xout_of_range@std@@YAXPEBD@Z" />
+          <AitFeature Name="msvcp140_app.dll!?always_noconv@codecvt_base@std@@QEBA_NXZ" />
+          <AitFeature Name="msvcp140_app.dll!?clear@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z" />
+          <AitFeature Name="msvcp140_app.dll!?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ" />
+          <AitFeature Name="msvcp140_app.dll!?getloc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEBA?AVlocale@2@XZ" />
+          <AitFeature Name="msvcp140_app.dll!?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A" />
+          <AitFeature Name="msvcp140_app.dll!?in@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEBD1AEAPEBDPEAD3AEAPEAD@Z" />
+          <AitFeature Name="msvcp140_app.dll!?out@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEBD1AEAPEBDPEAD3AEAPEAD@Z" />
+          <AitFeature Name="msvcp140_app.dll!?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z" />
+          <AitFeature Name="msvcp140_app.dll!?showmanyc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JXZ" />
+          <AitFeature Name="msvcp140_app.dll!?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHD@Z" />
+          <AitFeature Name="msvcp140_app.dll!?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAA_JPEBD_J@Z" />
+          <AitFeature Name="msvcp140_app.dll!?uncaught_exception@std@@YA_NXZ" />
+          <AitFeature Name="msvcp140_app.dll!?unshift@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEAD1AEAPEAD@Z" />
+          <AitFeature Name="msvcp140_app.dll!?xsgetn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JPEAD_J@Z" />
+          <AitFeature Name="msvcp140_app.dll!?xsputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JPEBD_J@Z" />
+          <AitFeature Name="bcrypt.dll!BCryptGenRandom" />
+        </AitCategory>
+        <AitCategory Id="ApiDynamic">
+          <AitFeature Name="ws2_32.dll!select" />
+          <AitFeature Name="advapi32.dll!RegCloseKey" />
+          <AitFeature Name="advapi32.dll!RegEnumKeyExW" />
+          <AitFeature Name="advapi32.dll!RegFlushKey" />
+          <AitFeature Name="advapi32.dll!RegQueryInfoKeyW" />
+          <AitFeature Name="kernel32.dll!GetConsoleCP" />
+          <AitFeature Name="kernel32.dll!GetConsoleOutputCP" />
+          <AitFeature Name="kernel32.dll!GetConsoleScreenBufferInfo" />
+          <AitFeature Name="kernel32.dll!GetStdHandle" />
+          <AitFeature Name="kernel32.dll!RegCloseKey" />
+          <AitFeature Name="kernel32.dll!RegEnumKeyExW" />
+          <AitFeature Name="kernel32.dll!RegFlushKey" />
+          <AitFeature Name="kernel32.dll!RegQueryInfoKeyW" />
+          <AitFeature Name="iphlpapi.dll!GetIfEntry" />
+        </AitCategory>
+        <AitCategory Id="WRTClassFromSearch">
+          <AitFeature Name="Windows.Storage.ApplicationData" />
+          <AitFeature Name="Windows.Storage.StorageFile" />
+          <AitFeature Name="Windows.System.DispatcherQueue" />
+          <AitFeature Name="Windows.Storage.StorageFolder" />
+          <AitFeature Name="Windows.Storage.UserDataPaths" />
+          <AitFeature Name="Windows.Storage.Search.QueryOptions" />
+          <AitFeature Name="Windows.UI.Core.CoreWindow" />
+        </AitCategory>
+      </AitFile>
       <AitFile ErrorCode="0" Name="UnityPlayer.dll" Id="000057052ddb7fbf6e4ec8ac34df962e94643d3f47b7">
         <AitCategory Id="Com">
           <AitFeature Name="{00000000-0000-0000-0000-000000000001}" />
@@ -1642,463 +2101,6 @@
           <AitFeature Name="Windows.UI.ViewManagement.ApplicationView" />
           <AitFeature Name="Windows.ApplicationModel.Core.CoreApplicationView" />
           <AitFeature Name="Windows.UI.Xaml.Window" />
-          <AitFeature Name="Windows.UI.Core.CoreWindow" />
-        </AitCategory>
-      </AitFile>
-      <AitFile ErrorCode="0" Name="Endless Space Game.exe" Id="0000b559abbb8f07292aaa7321c9946532268e55186a">
-        <AitCategory Id="Com">
-          <AitFeature Name="{00000000-0000-0000-0000-000000000001}" />
-          <AitFeature Name="{00000000-0000-0000-c000-000000000046}" />
-          <AitFeature Name="{00000003-0000-0000-c000-000000000046}" />
-          <AitFeature Name="{00000038-0000-0000-c000-000000000046}" />
-          <AitFeature Name="{94ea2b94-e9cc-49e0-c0ff-ee64ca8f5b90}" />
-          <AitFeature Name="{af86e2e0-b12d-4c6a-9c5a-d7aa65101e90}" />
-          <AitFeature Name="{cd770614-65c4-426c-9494-34fc43554862}" />
-          <AitFeature Name="{cf193a96-eb13-5e3b-8bdf-87b6efae8339}" />
-          <AitFeature Name="{e876b196-a545-40dc-b594-450cba68cc00}" />
-          <AitFeature Name="{faab5cd0-8924-45ac-ad0f-a08fae5d0324}" />
-        </AitCategory>
-        <AitCategory Id="WinRtCom">
-          <AitFeature Name="{9de1c534-6ae1-11e0-84e1-18a905bcc53f}" />
-          <AitFeature Name="{cd770614-65c4-426c-9494-34fc43554862}" />
-          <AitFeature Name="{e876b196-a545-40dc-b594-450cba68cc00}" />
-          <AitFeature Name="{faab5cd0-8924-45ac-ad0f-a08fae5d0324}" />
-        </AitCategory>
-        <AitCategory Id="ApiStatic">
-          <AitFeature Name="api-ms-win-core-interlocked-l1-1-0.dll!InitializeSListHead" />
-          <AitFeature Name="api-ms-win-crt-locale-l1-1-0.dll!_configthreadlocale" />
-          <AitFeature Name="api-ms-win-core-profile-l1-1-0.dll!QueryPerformanceCounter" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_c_exit" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_cexit" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_configure_wide_argv" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_crt_atexit" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_exit" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_get_wide_winmain_command_line" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_initialize_onexit_table" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_initialize_wide_environment" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_initterm" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_initterm_e" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_register_onexit_function" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_register_thread_local_exe_atexit_callback" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_seh_filter_exe" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_set_app_type" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!exit" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!AcquireSRWLockExclusive" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!ReleaseSRWLockExclusive" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!__setusermatherr" />
-          <AitFeature Name="api-ms-win-core-util-l1-1-0.dll!DecodePointer" />
-          <AitFeature Name="api-ms-win-core-com-l1-1-0.dll!CoCreateFreeThreadedMarshaler" />
-          <AitFeature Name="api-ms-win-core-sysinfo-l1-1-0.dll!GetSystemTimeAsFileTime" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!__p__commode" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!_set_fmode" />
-          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!_set_new_mode" />
-          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!free" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!GetCurrentProcessId" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!GetCurrentThreadId" />
-          <AitFeature Name="api-ms-win-core-synch-l1-2-0.dll!InitOnceExecuteOnce" />
-          <AitFeature Name="vccorlib140_app.dll!??0Delegate@Platform@@QE$AAA@XZ" />
-          <AitFeature Name="vccorlib140_app.dll!??0DisconnectedException@Platform@@QE$AAA@XZ" />
-          <AitFeature Name="vccorlib140_app.dll!??0Object@Platform@@QE$AAA@XZ" />
-          <AitFeature Name="vccorlib140_app.dll!?AlignedFree@Heap@Details@Platform@@SAXPEAX@Z" />
-          <AitFeature Name="vccorlib140_app.dll!?Allocate@Heap@Details@Platform@@SAPEAX_K0@Z" />
-          <AitFeature Name="vccorlib140_app.dll!?AllocateException@Heap@Details@Platform@@SAPEAX_K0@Z" />
-          <AitFeature Name="vccorlib140_app.dll!?Free@Heap@Details@Platform@@SAXPEAX@Z" />
-          <AitFeature Name="vccorlib140_app.dll!?GetActivationFactoryByPCWSTR@@YAJPEAXAEAVGuid@Platform@@PEAPEAX@Z" />
-          <AitFeature Name="vccorlib140_app.dll!?GetIidsFn@@YAJHPEAKPEBU__s_GUID@@PEAPEAVGuid@Platform@@@Z" />
-          <AitFeature Name="vccorlib140_app.dll!?InitializeData@Details@Platform@@YAJH@Z" />
-          <AitFeature Name="vccorlib140_app.dll!?ReleaseTarget@ControlBlock@Details@Platform@@AEAAXXZ" />
-          <AitFeature Name="vccorlib140_app.dll!?UninitializeData@Details@Platform@@YAXH@Z" />
-          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseAccessDeniedException@@YAXXZ" />
-          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseCOMException@@YAXJ@Z" />
-          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseChangedStateException@@YAXXZ" />
-          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseClassNotRegisteredException@@YAXXZ" />
-          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseDisconnectedException@@YAXXZ" />
-          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseFailureException@@YAXXZ" />
-          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseInvalidArgumentException@@YAXXZ" />
-          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseInvalidCastException@@YAXXZ" />
-          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseNotImplementedException@@YAXXZ" />
-          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseNullReferenceException@@YAXXZ" />
-          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseObjectDisposedException@@YAXXZ" />
-          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseOperationCanceledException@@YAXXZ" />
-          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseOutOfBoundsException@@YAXXZ" />
-          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseOutOfMemoryException@@YAXXZ" />
-          <AitFeature Name="vccorlib140_app.dll!?__abi_WinRTraiseWrongThreadException@@YAXXZ" />
-          <AitFeature Name="vccorlib140_app.dll!?__abi_translateCurrentException@@YAJ_N@Z" />
-          <AitFeature Name="vcruntime140_app.dll!_CxxThrowException" />
-          <AitFeature Name="vcruntime140_app.dll!__C_specific_handler" />
-          <AitFeature Name="vcruntime140_app.dll!__std_terminate" />
-        </AitCategory>
-        <AitCategory Id="WRTClassFromSearch">
-          <AitFeature Name="Windows.Foundation.TypedEventHandler`2" />
-          <AitFeature Name="Windows.ApplicationModel.Core.CoreApplication" />
-          <AitFeature Name="Windows.Graphics.Display.DisplayInformation" />
-          <AitFeature Name="Windows.ApplicationModel.Activation.IActivatedEventArgs" />
-          <AitFeature Name="Windows.UI.ViewManagement.ApplicationView" />
-          <AitFeature Name="Windows.ApplicationModel.Core.CoreApplicationView" />
-        </AitCategory>
-      </AitFile>
-      <AitFile ErrorCode="0" Name="GameAssembly.dll" Id="0000d9e1f5cb3c6fc94780825e1f4ed957b2bc1de4d4">
-        <AitCategory Id="Com">
-          <AitFeature Name="{00000000-0000-0000-0000-000000000001}" />
-          <AitFeature Name="{00000000-0000-0000-0000-000000000002}" />
-          <AitFeature Name="{00000000-0000-0000-0000-000000000003}" />
-          <AitFeature Name="{00000000-0000-0000-0000-000000000005}" />
-          <AitFeature Name="{00000000-0000-0000-0000-000000000006}" />
-          <AitFeature Name="{00000000-0000-0000-0000-000000000007}" />
-          <AitFeature Name="{00000000-0000-0000-0000-000000000009}" />
-          <AitFeature Name="{00000000-0000-0000-0000-000000000012}" />
-          <AitFeature Name="{00000000-0000-0000-0000-000000000024}" />
-          <AitFeature Name="{00000000-0000-0000-0000-000000000026}" />
-          <AitFeature Name="{00000000-0000-0000-0000-000000000028}" />
-          <AitFeature Name="{00000000-0000-0000-c000-000000000046}" />
-          <AitFeature Name="{00000003-0000-0000-c000-000000000046}" />
-          <AitFeature Name="{00000035-0000-0000-c000-000000000046}" />
-          <AitFeature Name="{00000037-0000-0000-c000-000000000046}" />
-          <AitFeature Name="{00000038-0000-0000-c000-000000000046}" />
-          <AitFeature Name="{01b29def-e062-48a1-8b0c-f2c7a9ca56c0}" />
-          <AitFeature Name="{04a2dbf3-df83-116c-0946-0812abf6e07d}" />
-          <AitFeature Name="{08f327ff-85d5-48b9-aee9-28511e339f9f}" />
-          <AitFeature Name="{1e5e46ee-0f45-4838-a8e9-d0479d446c30}" />
-          <AitFeature Name="{4207a996-ca2f-42f7-bde8-8b10457a7f30}" />
-          <AitFeature Name="{4d239005-3c2a-41b1-9022-536bb9cf93b1}" />
-          <AitFeature Name="{51436e75-ace1-5a68-b260-f843b846f0db}" />
-          <AitFeature Name="{5541d8a7-497c-5aa4-86fc-7713adbf2a2c}" />
-          <AitFeature Name="{5612147b-e843-45e3-94d8-06169e3c8e17}" />
-          <AitFeature Name="{5984c710-daf2-43c8-8bb4-a4d3eacfd03f}" />
-          <AitFeature Name="{603e88e4-a338-4ffe-a457-a5cfb9ceb899}" />
-          <AitFeature Name="{60db2fa8-b705-4fde-a7d6-ebbb1891d39e}" />
-          <AitFeature Name="{7344f356-8399-5756-a2f8-abd50c4146ff}" />
-          <AitFeature Name="{8c304ebb-6615-50a4-8829-879ecd443236}" />
-          <AitFeature Name="{94ea2b94-e9cc-49e0-c0ff-ee64ca8f5b90}" />
-          <AitFeature Name="{a4ed5c81-76c9-40bd-8be6-b1d90fb20ae7}" />
-          <AitFeature Name="{a96d83d7-9371-4517-9245-d0824ac12c74}" />
-          <AitFeature Name="{af86e2e0-b12d-4c6a-9c5a-d7aa65101e90}" />
-          <AitFeature Name="{bb8b8418-65d1-544b-b083-6d172f568c73}" />
-          <AitFeature Name="{c211026e-9e63-5452-ba54-3a07d6a96874}" />
-          <AitFeature Name="{c54361b2-54cd-432b-bdbc-4b19c4b470d7}" />
-          <AitFeature Name="{c8659aae-4926-52ad-8f60-d89fe5a8df5f}" />
-          <AitFeature Name="{cb43ccc9-446b-4a4f-be97-757771be5203}" />
-          <AitFeature Name="{d1f276c4-98d8-4636-bf49-eb79507548e9}" />
-          <AitFeature Name="{df19938f-5462-48a0-be65-d2a3271a08d6}" />
-          <AitFeature Name="{dfa2dc9c-1a2d-4917-98f2-939af1d6e0c8}" />
-          <AitFeature Name="{e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e}" />
-          <AitFeature Name="{e521c894-2c26-5946-9e61-2b5e188d01ed}" />
-        </AitCategory>
-        <AitCategory Id="WinRtCom">
-          <AitFeature Name="{01b29def-e062-48a1-8b0c-f2c7a9ca56c0}" />
-          <AitFeature Name="{08f327ff-85d5-48b9-aee9-28511e339f9f}" />
-          <AitFeature Name="{1e5e46ee-0f45-4838-a8e9-d0479d446c30}" />
-          <AitFeature Name="{4207a996-ca2f-42f7-bde8-8b10457a7f30}" />
-          <AitFeature Name="{4d239005-3c2a-41b1-9022-536bb9cf93b1}" />
-          <AitFeature Name="{5612147b-e843-45e3-94d8-06169e3c8e17}" />
-          <AitFeature Name="{5984c710-daf2-43c8-8bb4-a4d3eacfd03f}" />
-          <AitFeature Name="{603e88e4-a338-4ffe-a457-a5cfb9ceb899}" />
-          <AitFeature Name="{60db2fa8-b705-4fde-a7d6-ebbb1891d39e}" />
-          <AitFeature Name="{a4ed5c81-76c9-40bd-8be6-b1d90fb20ae7}" />
-          <AitFeature Name="{a96d83d7-9371-4517-9245-d0824ac12c74}" />
-          <AitFeature Name="{c54361b2-54cd-432b-bdbc-4b19c4b470d7}" />
-          <AitFeature Name="{cb43ccc9-446b-4a4f-be97-757771be5203}" />
-          <AitFeature Name="{d1f276c4-98d8-4636-bf49-eb79507548e9}" />
-          <AitFeature Name="{dfa2dc9c-1a2d-4917-98f2-939af1d6e0c8}" />
-        </AitCategory>
-        <AitCategory Id="ApiStatic">
-          <AitFeature Name="api-ms-win-core-interlocked-l1-1-0.dll!InitializeSListHead" />
-          <AitFeature Name="api-ms-win-crt-locale-l1-1-0.dll!_create_locale" />
-          <AitFeature Name="api-ms-win-crt-locale-l1-1-0.dll!_free_locale" />
-          <AitFeature Name="api-ms-win-crt-locale-l1-1-0.dll!setlocale" />
-          <AitFeature Name="api-ms-win-core-handle-l1-1-0.dll!CloseHandle" />
-          <AitFeature Name="api-ms-win-core-handle-l1-1-0.dll!DuplicateHandle" />
-          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!CreateDirectoryW" />
-          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!DeleteFileW" />
-          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!FindClose" />
-          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!FindFirstFileExW" />
-          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!FindNextFileW" />
-          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!FlushFileBuffers" />
-          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!GetFileAttributesExW" />
-          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!GetFileSizeEx" />
-          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!GetFileType" />
-          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!GetFullPathNameW" />
-          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!ReadFile" />
-          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!RemoveDirectoryW" />
-          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!SetFilePointerEx" />
-          <AitFeature Name="api-ms-win-core-file-l1-1-0.dll!WriteFile" />
-          <AitFeature Name="api-ms-win-core-profile-l1-1-0.dll!QueryPerformanceCounter" />
-          <AitFeature Name="api-ms-win-core-profile-l1-1-0.dll!QueryPerformanceFrequency" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_cexit" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_configure_narrow_argv" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_crt_atexit" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_errno" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_execute_onexit_table" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_initialize_narrow_environment" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_initialize_onexit_table" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_initterm" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_initterm_e" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_invalid_parameter_noinfo_noreturn" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_register_onexit_function" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!_seh_filter_dll" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!abort" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!exit" />
-          <AitFeature Name="api-ms-win-crt-runtime-l1-1-0.dll!terminate" />
-          <AitFeature Name="api-ms-win-core-timezone-l1-1-0.dll!EnumDynamicTimeZoneInformation" />
-          <AitFeature Name="api-ms-win-core-timezone-l1-1-0.dll!GetDynamicTimeZoneInformation" />
-          <AitFeature Name="api-ms-win-core-timezone-l1-1-0.dll!GetDynamicTimeZoneInformationEffectiveYears" />
-          <AitFeature Name="api-ms-win-core-timezone-l1-1-0.dll!GetTimeZoneInformation" />
-          <AitFeature Name="api-ms-win-core-timezone-l1-1-0.dll!GetTimeZoneInformationForYear" />
-          <AitFeature Name="api-ms-win-core-errorhandling-l1-1-0.dll!GetLastError" />
-          <AitFeature Name="api-ms-win-core-errorhandling-l1-1-0.dll!RaiseException" />
-          <AitFeature Name="api-ms-win-core-string-l1-1-0.dll!WideCharToMultiByte" />
-          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!isalpha" />
-          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!isdigit" />
-          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!strcmp" />
-          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!strcpy_s" />
-          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!strncmp" />
-          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!strncpy" />
-          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!tolower" />
-          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!towlower" />
-          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!wcscat_s" />
-          <AitFeature Name="api-ms-win-crt-string-l1-1-0.dll!wcsncat_s" />
-          <AitFeature Name="api-ms-win-core-debug-l1-1-0.dll!IsDebuggerPresent" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!AcquireSRWLockExclusive" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!AcquireSRWLockShared" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!CreateEventExW" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!CreateEventW" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!CreateMutexW" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!DeleteCriticalSection" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!EnterCriticalSection" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!InitializeCriticalSection" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!InitializeCriticalSectionAndSpinCount" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!InitializeSRWLock" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!LeaveCriticalSection" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!ReleaseMutex" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!ReleaseSRWLockExclusive" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!ReleaseSRWLockShared" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!ReleaseSemaphore" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!ResetEvent" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!SetEvent" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!SleepEx" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!WaitForMultipleObjectsEx" />
-          <AitFeature Name="api-ms-win-core-synch-l1-1-0.dll!WaitForSingleObjectEx" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!acos" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!acosf" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!atan" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!atanf" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!ceil" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!ceilf" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!copysign" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!cos" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!cosf" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!floor" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!floorf" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!fmod" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!fmodf" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!hypot" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!log" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!modf" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!pow" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!powf" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!sin" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!sinf" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!sqrt" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!sqrtf" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!tan" />
-          <AitFeature Name="api-ms-win-crt-math-l1-1-0.dll!tanf" />
-          <AitFeature Name="api-ms-win-crt-filesystem-l1-1-0.dll!_lock_file" />
-          <AitFeature Name="api-ms-win-crt-filesystem-l1-1-0.dll!_unlock_file" />
-          <AitFeature Name="api-ms-win-core-com-l1-1-0.dll!CoCreateFreeThreadedMarshaler" />
-          <AitFeature Name="api-ms-win-core-com-l1-1-0.dll!CoGetApartmentType" />
-          <AitFeature Name="api-ms-win-core-com-l1-1-0.dll!CoInitializeEx" />
-          <AitFeature Name="api-ms-win-core-com-l1-1-0.dll!CoTaskMemAlloc" />
-          <AitFeature Name="api-ms-win-core-com-l1-1-0.dll!CoTaskMemFree" />
-          <AitFeature Name="api-ms-win-core-com-l1-1-0.dll!CoUninitialize" />
-          <AitFeature Name="api-ms-win-core-sysinfo-l1-1-0.dll!GetSystemInfo" />
-          <AitFeature Name="api-ms-win-core-sysinfo-l1-1-0.dll!GetSystemTimeAsFileTime" />
-          <AitFeature Name="api-ms-win-core-sysinfo-l1-1-0.dll!GetVersionExW" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!__acrt_iob_func" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!__stdio_common_vsnprintf_s" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!__stdio_common_vsprintf" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!__stdio_common_vsprintf_p" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!_fileno" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!_fseeki64" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!_get_osfhandle" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!_get_stream_buffer_pointers" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!fclose" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!fflush" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!fgetc" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!fgetpos" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!fputc" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!fread" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!fsetpos" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!fwrite" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!setvbuf" />
-          <AitFeature Name="api-ms-win-crt-stdio-l1-1-0.dll!ungetc" />
-          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!_aligned_free" />
-          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!_aligned_malloc" />
-          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!_aligned_realloc" />
-          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!_callnewh" />
-          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!calloc" />
-          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!free" />
-          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!malloc" />
-          <AitFeature Name="api-ms-win-crt-heap-l1-1-0.dll!realloc" />
-          <AitFeature Name="api-ms-win-eventing-provider-l1-1-0.dll!EventActivityIdControl" />
-          <AitFeature Name="api-ms-win-eventing-provider-l1-1-0.dll!EventRegister" />
-          <AitFeature Name="api-ms-win-eventing-provider-l1-1-0.dll!EventSetInformation" />
-          <AitFeature Name="api-ms-win-eventing-provider-l1-1-0.dll!EventUnregister" />
-          <AitFeature Name="api-ms-win-eventing-provider-l1-1-0.dll!EventWrite" />
-          <AitFeature Name="api-ms-win-eventing-provider-l1-1-0.dll!EventWriteEx" />
-          <AitFeature Name="api-ms-win-eventing-provider-l1-1-0.dll!EventWriteString" />
-          <AitFeature Name="api-ms-win-eventing-provider-l1-1-0.dll!EventWriteTransfer" />
-          <AitFeature Name="api-ms-win-eventing-controller-l1-1-0.dll!EnumerateTraceGuidsEx" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!CreateThread" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!GetCurrentProcess" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!GetCurrentProcessId" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!GetCurrentThread" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!GetCurrentThreadId" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!GetExitCodeThread" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!GetThreadPriority" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!QueueUserAPC" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!ResumeThread" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!SetThreadPriority" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!SuspendThread" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!SwitchToThread" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!TlsAlloc" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!TlsFree" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!TlsGetValue" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-0.dll!TlsSetValue" />
-          <AitFeature Name="api-ms-win-core-processenvironment-l1-1-0.dll!FreeEnvironmentStringsW" />
-          <AitFeature Name="api-ms-win-core-processenvironment-l1-1-0.dll!GetCurrentDirectoryW" />
-          <AitFeature Name="api-ms-win-core-processenvironment-l1-1-0.dll!GetEnvironmentStringsW" />
-          <AitFeature Name="api-ms-win-core-processenvironment-l1-1-0.dll!GetEnvironmentVariableW" />
-          <AitFeature Name="api-ms-win-core-processenvironment-l1-1-0.dll!SetEnvironmentVariableW" />
-          <AitFeature Name="api-ms-win-crt-convert-l1-1-0.dll!atoi" />
-          <AitFeature Name="api-ms-win-crt-convert-l1-1-0.dll!strtol" />
-          <AitFeature Name="api-ms-win-core-rtlsupport-l1-1-0.dll!RtlCaptureStackBackTrace" />
-          <AitFeature Name="api-ms-win-core-memory-l1-1-0.dll!UnmapViewOfFile" />
-          <AitFeature Name="api-ms-win-core-memory-l1-1-0.dll!VirtualFree" />
-          <AitFeature Name="api-ms-win-core-memory-l1-1-0.dll!VirtualQuery" />
-          <AitFeature Name="api-ms-win-crt-utility-l1-1-0.dll!bsearch" />
-          <AitFeature Name="api-ms-win-core-file-l2-1-0.dll!GetFileInformationByHandleEx" />
-          <AitFeature Name="api-ms-win-core-file-l1-2-0.dll!CreateFile2" />
-          <AitFeature Name="api-ms-win-core-synch-l1-2-0.dll!InitializeConditionVariable" />
-          <AitFeature Name="api-ms-win-core-synch-l1-2-0.dll!Sleep" />
-          <AitFeature Name="api-ms-win-core-synch-l1-2-0.dll!SleepConditionVariableCS" />
-          <AitFeature Name="api-ms-win-core-synch-l1-2-0.dll!SleepConditionVariableSRW" />
-          <AitFeature Name="api-ms-win-core-synch-l1-2-0.dll!WakeAllConditionVariable" />
-          <AitFeature Name="api-ms-win-core-synch-l1-2-0.dll!WakeConditionVariable" />
-          <AitFeature Name="api-ms-win-core-localization-l1-2-0.dll!FormatMessageW" />
-          <AitFeature Name="api-ms-win-core-localization-l1-2-0.dll!GetACP" />
-          <AitFeature Name="api-ms-win-core-localization-l1-2-0.dll!GetUserDefaultLocaleName" />
-          <AitFeature Name="api-ms-win-core-sysinfo-l1-2-0.dll!GetNativeSystemInfo" />
-          <AitFeature Name="api-ms-win-core-io-l1-1-1.dll!GetOverlappedResultEx" />
-          <AitFeature Name="api-ms-win-core-processthreads-l1-1-1.dll!GetThreadContext" />
-          <AitFeature Name="api-ms-win-core-memory-l1-1-1.dll!CreateFileMappingFromApp" />
-          <AitFeature Name="api-ms-win-core-memory-l1-1-1.dll!MapViewOfFileFromApp" />
-          <AitFeature Name="ws2_32.dll!111" />
-          <AitFeature Name="ws2_32.dll!115" />
-          <AitFeature Name="ws2_32.dll!116" />
-          <AitFeature Name="ws2_32.dll!19" />
-          <AitFeature Name="ws2_32.dll!WSACleanup" />
-          <AitFeature Name="ws2_32.dll!WSAGetLastError" />
-          <AitFeature Name="ws2_32.dll!WSAStartup" />
-          <AitFeature Name="ws2_32.dll!send" />
-          <AitFeature Name="oleaut32.dll!15" />
-          <AitFeature Name="oleaut32.dll!16" />
-          <AitFeature Name="oleaut32.dll!17" />
-          <AitFeature Name="oleaut32.dll!19" />
-          <AitFeature Name="oleaut32.dll!20" />
-          <AitFeature Name="oleaut32.dll!23" />
-          <AitFeature Name="oleaut32.dll!24" />
-          <AitFeature Name="oleaut32.dll!6" />
-          <AitFeature Name="oleaut32.dll!7" />
-          <AitFeature Name="oleaut32.dll!77" />
-          <AitFeature Name="oleaut32.dll!SafeArrayAccessData" />
-          <AitFeature Name="oleaut32.dll!SafeArrayCreate" />
-          <AitFeature Name="oleaut32.dll!SafeArrayDestroy" />
-          <AitFeature Name="oleaut32.dll!SafeArrayGetDim" />
-          <AitFeature Name="oleaut32.dll!SafeArrayGetLBound" />
-          <AitFeature Name="oleaut32.dll!SafeArrayGetUBound" />
-          <AitFeature Name="oleaut32.dll!SafeArrayGetVartype" />
-          <AitFeature Name="oleaut32.dll!SafeArrayUnaccessData" />
-          <AitFeature Name="oleaut32.dll!SysFreeString" />
-          <AitFeature Name="oleaut32.dll!SysStringLen" />
-          <AitFeature Name="iphlpapi.dll!GetAdaptersAddresses" />
-          <AitFeature Name="iphlpapi.dll!GetNetworkParams" />
-          <AitFeature Name="vcruntime140_app.dll!_CxxThrowException" />
-          <AitFeature Name="vcruntime140_app.dll!__C_specific_handler" />
-          <AitFeature Name="vcruntime140_app.dll!__current_exception" />
-          <AitFeature Name="vcruntime140_app.dll!__current_exception_context" />
-          <AitFeature Name="vcruntime140_app.dll!__intrinsic_setjmp" />
-          <AitFeature Name="vcruntime140_app.dll!__std_exception_copy" />
-          <AitFeature Name="vcruntime140_app.dll!__std_exception_destroy" />
-          <AitFeature Name="vcruntime140_app.dll!__std_terminate" />
-          <AitFeature Name="vcruntime140_app.dll!__std_type_info_destroy_list" />
-          <AitFeature Name="vcruntime140_app.dll!_purecall" />
-          <AitFeature Name="vcruntime140_app.dll!memchr" />
-          <AitFeature Name="vcruntime140_app.dll!memcmp" />
-          <AitFeature Name="vcruntime140_app.dll!memcpy" />
-          <AitFeature Name="vcruntime140_app.dll!memmove" />
-          <AitFeature Name="vcruntime140_app.dll!memset" />
-          <AitFeature Name="vcruntime140_app.dll!strchr" />
-          <AitFeature Name="vcruntime140_app.dll!strrchr" />
-          <AitFeature Name="vcruntime140_app.dll!wcschr" />
-          <AitFeature Name="msvcp140_app.dll!??0?$basic_ios@DU?$char_traits@D@std@@@std@@IEAA@XZ" />
-          <AitFeature Name="msvcp140_app.dll!??0?$basic_iostream@DU?$char_traits@D@std@@@std@@QEAA@PEAV?$basic_streambuf@DU?$char_traits@D@std@@@1@@Z" />
-          <AitFeature Name="msvcp140_app.dll!??0?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAA@XZ" />
-          <AitFeature Name="msvcp140_app.dll!??0_Lockit@std@@QEAA@H@Z" />
-          <AitFeature Name="msvcp140_app.dll!??1?$basic_ios@DU?$char_traits@D@std@@@std@@UEAA@XZ" />
-          <AitFeature Name="msvcp140_app.dll!??1?$basic_iostream@DU?$char_traits@D@std@@@std@@UEAA@XZ" />
-          <AitFeature Name="msvcp140_app.dll!??1?$basic_streambuf@DU?$char_traits@D@std@@@std@@UEAA@XZ" />
-          <AitFeature Name="msvcp140_app.dll!??1_Lockit@std@@QEAA@XZ" />
-          <AitFeature Name="msvcp140_app.dll!??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@_K@Z" />
-          <AitFeature Name="msvcp140_app.dll!??Bid@locale@std@@QEAA_KXZ" />
-          <AitFeature Name="msvcp140_app.dll!?_Fiopen@std@@YAPEAU_iobuf@@PEBDHH@Z" />
-          <AitFeature Name="msvcp140_app.dll!?_Getcat@?$codecvt@DDU_Mbstatet@@@std@@SA_KPEAPEBVfacet@locale@2@PEBV42@@Z" />
-          <AitFeature Name="msvcp140_app.dll!?_Getgloballocale@locale@std@@CAPEAV_Locimp@12@XZ" />
-          <AitFeature Name="msvcp140_app.dll!?_Init@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXPEAPEAD0PEAH001@Z" />
-          <AitFeature Name="msvcp140_app.dll!?_Init@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXXZ" />
-          <AitFeature Name="msvcp140_app.dll!?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAXXZ" />
-          <AitFeature Name="msvcp140_app.dll!?_Pninc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAPEADXZ" />
-          <AitFeature Name="msvcp140_app.dll!?_Xlength_error@std@@YAXPEBD@Z" />
-          <AitFeature Name="msvcp140_app.dll!?_Xout_of_range@std@@YAXPEBD@Z" />
-          <AitFeature Name="msvcp140_app.dll!?always_noconv@codecvt_base@std@@QEBA_NXZ" />
-          <AitFeature Name="msvcp140_app.dll!?clear@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z" />
-          <AitFeature Name="msvcp140_app.dll!?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ" />
-          <AitFeature Name="msvcp140_app.dll!?getloc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEBA?AVlocale@2@XZ" />
-          <AitFeature Name="msvcp140_app.dll!?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A" />
-          <AitFeature Name="msvcp140_app.dll!?in@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEBD1AEAPEBDPEAD3AEAPEAD@Z" />
-          <AitFeature Name="msvcp140_app.dll!?out@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEBD1AEAPEBDPEAD3AEAPEAD@Z" />
-          <AitFeature Name="msvcp140_app.dll!?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z" />
-          <AitFeature Name="msvcp140_app.dll!?showmanyc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JXZ" />
-          <AitFeature Name="msvcp140_app.dll!?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHD@Z" />
-          <AitFeature Name="msvcp140_app.dll!?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAA_JPEBD_J@Z" />
-          <AitFeature Name="msvcp140_app.dll!?uncaught_exception@std@@YA_NXZ" />
-          <AitFeature Name="msvcp140_app.dll!?unshift@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEAD1AEAPEAD@Z" />
-          <AitFeature Name="msvcp140_app.dll!?xsgetn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JPEAD_J@Z" />
-          <AitFeature Name="msvcp140_app.dll!?xsputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JPEBD_J@Z" />
-          <AitFeature Name="bcrypt.dll!BCryptGenRandom" />
-        </AitCategory>
-        <AitCategory Id="ApiDynamic">
-          <AitFeature Name="ws2_32.dll!select" />
-          <AitFeature Name="advapi32.dll!RegCloseKey" />
-          <AitFeature Name="advapi32.dll!RegEnumKeyExW" />
-          <AitFeature Name="advapi32.dll!RegFlushKey" />
-          <AitFeature Name="advapi32.dll!RegQueryInfoKeyW" />
-          <AitFeature Name="kernel32.dll!GetConsoleCP" />
-          <AitFeature Name="kernel32.dll!GetConsoleOutputCP" />
-          <AitFeature Name="kernel32.dll!GetConsoleScreenBufferInfo" />
-          <AitFeature Name="kernel32.dll!GetStdHandle" />
-          <AitFeature Name="kernel32.dll!RegCloseKey" />
-          <AitFeature Name="kernel32.dll!RegEnumKeyExW" />
-          <AitFeature Name="kernel32.dll!RegFlushKey" />
-          <AitFeature Name="kernel32.dll!RegQueryInfoKeyW" />
-          <AitFeature Name="iphlpapi.dll!GetIfEntry" />
-        </AitCategory>
-        <AitCategory Id="WRTClassFromSearch">
-          <AitFeature Name="Windows.Storage.ApplicationData" />
-          <AitFeature Name="Windows.Storage.StorageFile" />
-          <AitFeature Name="Windows.System.DispatcherQueue" />
-          <AitFeature Name="Windows.Storage.StorageFolder" />
-          <AitFeature Name="Windows.Storage.UserDataPaths" />
-          <AitFeature Name="Windows.Storage.Search.QueryOptions" />
           <AitFeature Name="Windows.UI.Core.CoreWindow" />
         </AitCategory>
       </AitFile>

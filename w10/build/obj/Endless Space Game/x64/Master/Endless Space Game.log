@@ -11,17 +11,17 @@ GENERATEPROJECTPRIFILE : warning : PRI249: 0xdef00520 - Invalid qualifier: DLL-R
 GENERATEPROJECTPRIFILE : warning : PRI249: 0xdef00520 - Invalid qualifier: DLL-RESOURCES
 GENERATEPROJECTPRIFILE : warning : PRI249: 0xdef00520 - Invalid qualifier: DLL-RESOURCES
 GENERATEPROJECTPRIFILE : warning : PRI249: 0xdef00520 - Invalid qualifier: DLL-RESOURCES
-  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Endless Space Game_1.0.9.0_x64_Master.msix
-  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\Symbols\Endless Space Game_1.0.9.0_x64_Master.appxsym
-  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Upload\Endless Space Game_1.0.9.0_Master\Endless Space Game_1.0.9.0_x64_Master.appxsym
-  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Endless Space Game_1.0.9.0_scale-100.msix
-  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Endless Space Game_1.0.9.0_scale-125.msix
-  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Endless Space Game_1.0.9.0_scale-150.msix
-  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Endless Space Game_1.0.9.0_scale-400.msix
-  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Upload\Endless Space Game_1.0.9.0_scale-100.msix
-  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Upload\Endless Space Game_1.0.9.0_scale-125.msix
-  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Upload\Endless Space Game_1.0.9.0_scale-150.msix
-  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Upload\Endless Space Game_1.0.9.0_scale-400.msix
-  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\AppPackages\Endless Space Game\Endless Space Game_1.0.9.0_Master_Test\Endless Space Game_1.0.9.0_x64_Master.msixbundle
-  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\AppPackages\Endless Space Game\Endless Space Game_1.0.9.0_x64_bundle_Master.msixupload
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Endless Space Game_1.0.11.0_x64_Master.msix
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\Symbols\Endless Space Game_1.0.11.0_x64_Master.appxsym
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Upload\Endless Space Game_1.0.11.0_Master\Endless Space Game_1.0.11.0_x64_Master.appxsym
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Endless Space Game_1.0.11.0_scale-100.msix
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Endless Space Game_1.0.11.0_scale-125.msix
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Endless Space Game_1.0.11.0_scale-150.msix
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Endless Space Game_1.0.11.0_scale-400.msix
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Upload\Endless Space Game_1.0.11.0_scale-100.msix
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Upload\Endless Space Game_1.0.11.0_scale-125.msix
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Upload\Endless Space Game_1.0.11.0_scale-150.msix
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master\Upload\Endless Space Game_1.0.11.0_scale-400.msix
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\AppPackages\Endless Space Game\Endless Space Game_1.0.11.0_Master_Test\Endless Space Game_1.0.11.0_x64_Master.msixbundle
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\AppPackages\Endless Space Game\Endless Space Game_1.0.11.0_x64_bundle_Master.msixupload
   Your package has been successfully created.

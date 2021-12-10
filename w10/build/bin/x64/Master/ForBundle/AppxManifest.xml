@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="53264HoneycombDesignStudi.EndlessSpaceShooter" Publisher="CN=8CBE3CE9-0284-4C5E-AA82-9567CCC3800F" Version="1.0.9.0" ProcessorArchitecture="x64" />
+  <Identity Name="53264HoneycombDesignStudi.EndlessSpaceShooter" Publisher="CN=8CBE3CE9-0284-4C5E-AA82-9567CCC3800F" Version="1.0.11.0" ProcessorArchitecture="x64" />
   <mp:PhoneIdentity PhoneProductId="f335cc0b-4270-4023-ac72-0a1a0a02022f" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Endless Space Shooter</DisplayName>

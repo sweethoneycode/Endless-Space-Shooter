@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4" xmlns:iot="http://schemas.microsoft.com/appx/manifest/iot/windows10" xmlns:mobile="http://schemas.microsoft.com/appx/manifest/mobile/windows10" IgnorableNamespaces="uap uap2 uap3 uap4 mp mobile iot" xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
-  <Identity Name="53264HoneycombDesignStudi.EndlessSpaceShooter" Publisher="CN=8CBE3CE9-0284-4C5E-AA82-9567CCC3800F" Version="1.0.9.0" />
+  <Identity Name="53264HoneycombDesignStudi.EndlessSpaceShooter" Publisher="CN=8CBE3CE9-0284-4C5E-AA82-9567CCC3800F" Version="1.0.11.0" />
   <mp:PhoneIdentity PhoneProductId="f335cc0b-4270-4023-ac72-0a1a0a02022f" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Endless Space Shooter</DisplayName>

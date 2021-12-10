@@ -17,6 +17,12 @@ public class PlayerController : MonoBehaviour
     private readonly float firingCooldown = 0.4f;
     private float cooldownTimer;
 
+    private Vector2 minBounds;
+    private Vector2 maxBounds;
+
+    [SerializeField] private float paddingLeft = 0.5f;
+    [SerializeField] private float paddingRight = 0.5f;
+
     private bool pausedGame = true;
 
     // private bool isFiring = false;
@@ -28,9 +34,17 @@ public class PlayerController : MonoBehaviour
     //Set by GameSceneController
     [HideInInspector] public float speed;
 
+    private void InitBounds()
+    {
+        Camera mainCamera = Camera.main;
+        minBounds = mainCamera.ViewportToWorldPoint(new Vector2(0, 0));
+        maxBounds = mainCamera.ViewportToWorldPoint(new Vector2(1, 1));
+    }
+
     private void Awake()
     {
         playerInput = new PlayerInput();
+        InitBounds();
     }
     // Start is called before the first frame update
     void Start()
@@ -110,13 +124,19 @@ public class PlayerController : MonoBehaviour
     public void playerMove()
     {
         //using new input system
-        dPadInputMovement.x = playerInput.Player.Move.ReadValue<float>();
+       // dPadInputMovement.x = playerInput.Player.Move.ReadValue<float>();
 
         inputMovement = playerInput.Player.Move.ReadValue<float>();
 
-        Vector3 currPosition = transform.position;
+        Vector2 currPosition = transform.position;
+
         currPosition.x += inputMovement * Time.deltaTime * speed;
-        transform.position = currPosition;
+
+        Vector2 newPos = currPosition;
+        newPos.x = Mathf.Clamp(currPosition.x, minBounds.x + paddingLeft, maxBounds.x - paddingRight);
+
+        
+        transform.position = newPos;
 
     }
 

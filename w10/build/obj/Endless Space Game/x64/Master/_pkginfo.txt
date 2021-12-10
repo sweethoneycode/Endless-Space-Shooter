@@ -1,1 +1,1 @@
-C:\Users\jonah\Documents\GitHub\Space-Game\w10\AppPackages\Endless Space Game\Endless Space Game_1.0.9.0_Master_Test\Endless Space Game_1.0.9.0_x64_Master.msixbundle
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\AppPackages\Endless Space Game\Endless Space Game_1.0.11.0_Master_Test\Endless Space Game_1.0.11.0_x64_Master.msixbundle

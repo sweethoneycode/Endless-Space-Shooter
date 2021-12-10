@@ -104,7 +104,7 @@ public class GameContoller : MonoBehaviour
         if (delayed)
             yield return shipSpawnDelay;
 
-        PlayerController ship = Instantiate(playerToSpawn, new Vector2(0, -3.67f), Quaternion.identity);
+        PlayerController ship = Instantiate(playerToSpawn, new Vector2(0, -2f), Quaternion.identity);
        ship.speed = playerSpeed;
        // ship.shieldDuration = shieldDuration;
 
