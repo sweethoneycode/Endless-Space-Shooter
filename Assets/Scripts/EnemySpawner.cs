@@ -50,7 +50,7 @@ public class EnemySpawner : MonoBehaviour
 
             float randomScale = Random.Range(0.2f, 0.8f);
 
-            meteorScale = new Vector3(randomScale, randomScale, 1);
+            meteorScale = new Vector3(randomScale, randomScale, 1f);
 
             enemyPOS.x += Random.Range(-7, 7);
 

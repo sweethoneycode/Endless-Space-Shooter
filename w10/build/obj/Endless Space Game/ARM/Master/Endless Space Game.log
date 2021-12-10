@@ -1,0 +1,15 @@
+﻿  pch.cpp
+  App.cpp
+  Main.cpp
+  UnityGenerated.cpp
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\Endless Space Game\App.cpp(26,1): warning C4973: 'Windows::UI::ViewManagement::IApplicationView2::SuppressSystemOverlays::set': marked as deprecated
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\Endless Space Game\App.cpp(26,1): message : Message: 'Use the TryEnterFullScreen method and IsFullScreenMode property instead of SuppressSystemOverlays. For more info, see MSDN.'
+  Generating code
+  Finished generating code
+  Endless Space Game.vcxproj -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\ARM\Master\Endless Space Game.exe
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\AppPackages\Endless Space Game\Endless Space Game_1.0.6.0_ARM_Master_Test\Endless Space Game_1.0.6.0_ARM_Master.msix
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\ARM\Master\Upload\Endless Space Game_1.0.6.0_ARM_Master\Endless Space Game_1.0.6.0_ARM_Master.msix
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\ARM\Master\Symbols\Endless Space Game_1.0.6.0_ARM_Master.appxsym
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\ARM\Master\Upload\Endless Space Game_1.0.6.0_ARM_Master\Endless Space Game_1.0.6.0_ARM_Master.appxsym
+  Endless Space Game -> C:\Users\jonah\Documents\GitHub\Space-Game\w10\AppPackages\Endless Space Game\Endless Space Game_1.0.6.0_ARM_Master.msixupload
+  Your package has been successfully created.

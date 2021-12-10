@@ -1,0 +1,18 @@
+﻿[ResourceMetadata]
+"ResourceDimensions"		"scale-200"
+"ResourceDimensions"		"language-en-us"
+
+[Files]
+"C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\split.pri"			"resources.pri"
+"C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\PackageLayout\GameAssembly.pdb"			"GameAssembly.pdb"
+"C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\PackageLayout\GameAssembly.dll"			"GameAssembly.dll"
+"C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\PackageLayout\baselib_UAP_x64_Master_il2cpp.pdb"			"baselib_UAP_x64_Master_il2cpp.pdb"
+"C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\PackageLayout\baselib.dll"			"baselib.dll"
+"C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\PackageLayout\Assets\Wide310x150Logo.scale-200.png"			"Assets\Wide310x150Logo.scale-200.png"
+"C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\PackageLayout\Assets\StoreLogo.scale-200.png"			"Assets\StoreLogo.scale-200.png"
+"C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\PackageLayout\Assets\Square71x71Logo.scale-200.png"			"Assets\Square71x71Logo.scale-200.png"
+"C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\PackageLayout\Assets\Square44x44Logo.scale-200.png"			"Assets\Square44x44Logo.scale-200.png"
+"C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\PackageLayout\Assets\Square44x44Logo.targetsize-24.png"			"Assets\Square44x44Logo.targetsize-24.png"
+"C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\PackageLayout\Assets\Square44x44Logo.targetsize-24_altform-unplated.png"			"Assets\Square44x44Logo.targetsize-24_altform-unplated.png"
+"C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\PackageLayout\Assets\Square150x150Logo.scale-200.png"			"Assets\Square150x150Logo.scale-200.png"
+"C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\PackageLayout\Assets\SplashScreen.scale-200.png"			"Assets\SplashScreen.scale-200.png"

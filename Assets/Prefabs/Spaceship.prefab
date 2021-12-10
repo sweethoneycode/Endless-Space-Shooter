@@ -93,9 +93,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afca80c975ca9e343be627f879de4104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missleBullet: {fileID: 5988945298681123920, guid: 832fd0c337fda9c47b748086eb86687a, type: 3}
+  missleBullet: {fileID: 7144509516714269125, guid: 832fd0c337fda9c47b748086eb86687a, type: 3}
   fireAction: 0
   explosionPrefab: {fileID: 1613842365161332, guid: 5ed6748782991c14dafb9292f1af700f, type: 3}
+  speed: 0
 --- !u!1 &1256818363372187828
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,6 +144,7 @@ MonoBehaviour:
   missleBullet: {fileID: 0}
   fireAction: 0
   explosionPrefab: {fileID: 0}
+  speed: 0
 --- !u!212 &1256818363372187835
 SpriteRenderer:
   m_ObjectHideFlags: 0

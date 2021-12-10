@@ -1,0 +1,10 @@
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\filemap.pri
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\filemap.map.txt
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\filemap.scale-100.pri
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\filemap.scale-100.map.txt
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\filemap.scale-125.pri
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\filemap.scale-125.map.txt
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\filemap.scale-150.pri
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\filemap.scale-150.map.txt
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\filemap.scale-400.pri
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\filemap.scale-400.map.txt

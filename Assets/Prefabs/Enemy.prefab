@@ -155,7 +155,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -180,6 +180,7 @@ MonoBehaviour:
   explosionSound: {fileID: 8300000, guid: 66a334b277986c34695ce4c51531b712, type: 3}
   enemySpeed: 1
   gameContoller: {fileID: 0}
+  explosionPrefab: {fileID: 1613842365161332, guid: 5ed6748782991c14dafb9292f1af700f, type: 3}
 --- !u!82 &3537854290650902155
 AudioSource:
   m_ObjectHideFlags: 0

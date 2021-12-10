@@ -1,0 +1,27 @@
+﻿  Building GameAssembly.dll with MsvcWinRtToolChain
+  	Msvc Install Version: 16.0
+  	Msvc Install SDK Directory: C:\Program Files (x86)\Windows Kits\10
+  	Msvc Linker Path: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\link.exe
+  	Msvc Compiler Path: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\cl.exe
+  
+  	Output directory: C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\bin\x64\Master
+  	Cache directory: C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\il2cppOutputProject\x64\Master
+  UnityEngine.CoreModule_CodeGen.c
+  Assembly-CSharp_CodeGen.c
+  Il2CppGenericMethodDefinitions.c
+  UnityEngine.CoreModule_Attr.cpp
+  Il2CppMetadataUsage.c
+  UnityEngine.CoreModule.cpp
+  Assembly-CSharp.cpp
+  ObjectFiles: 309 of which compiled: 7
+  	Time Compile: 1555 milliseconds Assembly-CSharp.cpp
+  	Time Compile: 1503 milliseconds UnityEngine.CoreModule.cpp
+  	Time Compile: 1063 milliseconds Il2CppMetadataUsage.c
+  	Time Compile: 863 milliseconds UnityEngine.CoreModule_Attr.cpp
+  	Time Compile: 558 milliseconds Il2CppGenericMethodDefinitions.c
+  	Time Compile: 535 milliseconds Assembly-CSharp_CodeGen.c
+  	Time Compile: 534 milliseconds UnityEngine.CoreModule_CodeGen.c
+  Total compilation time: 2178 milliseconds.
+  Creating library C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\il2cppOutputProject\x64\Master\linkresult_BA4587DDD6B73161053F873C8E18AE13\GameAssembly.lib and object C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\il2cppOutputProject\x64\Master\linkresult_BA4587DDD6B73161053F873C8E18AE13\GameAssembly.exp
+  Total link time: 4670 milliseconds.
+  Cleaned up 9 object files.

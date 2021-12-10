@@ -8,14 +8,16 @@ public class PlayerController : MonoBehaviour
     public PlayerInput playerInput;
     private Vector3 playerPos;
 
-    [SerializeField] private ProjectileController missleBullet;
+    [SerializeField] private GameObject missleBullet;
     private Rigidbody2D missleRB;
 
     private Vector2 dPadInputMovement;
     private float inputMovement;
     public float fireAction;
-    private readonly float firingCooldown = 1f;
+    private readonly float firingCooldown = 0.4f;
     private float cooldownTimer;
+
+    private bool pausedGame = true;
 
     // private bool isFiring = false;
 
@@ -41,26 +43,16 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         playerInput.Enable();
-        EventBroker.PauseGame += PauseTheGame;
     }
 
     private void OnDisable()
     {
         playerInput.Disable();
         EventBroker.ProjectileOutOfBounds -= EnableProjectile;
-        EventBroker.PauseGame -= PauseTheGame;
+
     }
 
-    public void PauseTheGame()
-    {
- 
-            float checkPause = playerInput.Player.Pause.ReadValue<float>();
-            Debug.Log("Pause " + checkPause);
-
-
-        //  Time.timeScale = 0;
-        //EventBroker.CallPauseGame();
-    }
+  
 
     public void EnableProjectile()
     {
@@ -71,7 +63,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PauseTheGame();
+
+        playerInput.Player.Pause.performed += Pause_performed;
 
         //player move event
         playerMove();
@@ -81,6 +74,14 @@ public class PlayerController : MonoBehaviour
         {
             OnFire();
         }
+
+    }
+
+    private void Pause_performed(InputAction.CallbackContext obj)
+    {
+        //throw new System.NotImplementedException();
+
+        EventBroker.CallPauseGame();
 
     }
 
@@ -132,11 +133,12 @@ public class PlayerController : MonoBehaviour
         {
             cooldownTimer = firingCooldown;
 
-            ProjectileController laserObject = Instantiate(missleBullet, transform.position, missleBullet.transform.rotation, transform.parent);
+            GameObject laserObject = Instantiate(missleBullet, transform.position, missleBullet.transform.rotation, transform.parent);
+
             missleRB = laserObject.GetComponent<Rigidbody2D>();
 
-            missleRB.velocity = new Vector2(0, 3f);
-            Destroy(laserObject, 5f);
+            missleRB.velocity = new Vector2(0, 6f);
+
 
         }
 

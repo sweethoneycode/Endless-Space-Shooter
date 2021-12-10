@@ -50,9 +50,9 @@ public class EnemyController : MonoBehaviour
 
         GetComponent<AudioSource>().PlayOneShot(explosionSound);
 
-        Destroy(explosionInstance, 1f);
+        Destroy(explosionInstance, 1.2f);
 
-        Destroy(transform.gameObject,0.2f);
+        Destroy(transform.gameObject,0.1f);
     }
 
     private void OnDisable()
@@ -71,11 +71,11 @@ public class EnemyController : MonoBehaviour
 
        enemySpeed = transform.localScale.y;
 
-       enemyRB.AddForce(Vector3.down * enemySpeed, ForceMode2D.Force);
+        enemyRB.gameObject.transform.Translate(Vector3.down * Time.deltaTime * enemySpeed);
+       //enemyRB.AddForce(Vector3.down * enemySpeed, ForceMode2D.Force);
     
         if(transform.position.y <= -6)
         {
-            
             Destroy(gameObject);
         }
 

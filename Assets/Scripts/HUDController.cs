@@ -37,10 +37,12 @@ public class HUDController : MonoBehaviour
 
     private bool isGameOver = false;
     private bool isGameStart = false;
+    private bool isGamePaused = false;
 
     private bool EnemyHasDied = false;
 
-
+    private float cooldownTimer;
+    private readonly float firingCooldown = 1f;
 
     #endregion
 
@@ -55,7 +57,7 @@ public class HUDController : MonoBehaviour
         EventBroker.UpdatePlayerScore += UpdateScore;
         EventBroker.PlayerLives += HideShip;
         EventBroker.EndGame += GameOver;
-
+        EventBroker.PauseGame += PauseGame;
     }
 
     private void GameOver()
@@ -100,6 +102,7 @@ public class HUDController : MonoBehaviour
     public void StartNewGame()
     {
         EventBroker.CallStartGame();
+
         isGameStart = true;
         timer = 0;
         showShips();
@@ -117,6 +120,33 @@ public class HUDController : MonoBehaviour
         EnemyHasDied = true;
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+    public void PauseGame()
+    {
+
+        if (!isGamePaused)
+        {
+            isGamePaused = true;
+            Time.timeScale = 0.0f;
+        } else
+        {
+            ResumeGame();
+        }
+
+      //  Debug.Log("Is Game Paused " + isGamePaused);
+
+    }
+
+    public void ResumeGame()
+    {
+        isGamePaused = false;
+        Time.timeScale = 1.0f;
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -126,6 +156,11 @@ public class HUDController : MonoBehaviour
         {
             startScreen.SetActive(false);
         }
+
+
+       pauseScreen.SetActive(isGamePaused);
+
+
 
         if (isGameOver)
         {
@@ -143,18 +178,15 @@ public class HUDController : MonoBehaviour
 
         if (!isGameOver && isGameStart)
         {
-            timer += Time.deltaTime * Time.deltaTime;
+            
 
-            if (timer > waitTime)
+            cooldownTimer -= Time.deltaTime;
+            if (cooldownTimer <= 0 )
             {
-                visualTime = Mathf.FloorToInt(timer); ;
-
-                // Remove the recorded 2 seconds.
-                timer = timer - waitTime;
-                timerText.text = "Timer: " + Mathf.FloorToInt(timer);
+                cooldownTimer = firingCooldown;
+                timer++;
+                timerText.text = "Distance: " + timer;
             }
-
- 
  
         }
     }

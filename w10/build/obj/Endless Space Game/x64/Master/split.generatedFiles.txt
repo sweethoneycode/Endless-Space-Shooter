@@ -1,0 +1,10 @@
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\split.pri
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\split.map.txt
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\split.scale-100.pri
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\split.scale-100.map.txt
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\split.scale-125.pri
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\split.scale-125.map.txt
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\split.scale-150.pri
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\split.scale-150.map.txt
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\split.scale-400.pri
+C:\Users\jonah\Documents\GitHub\Space-Game\w10\build\obj\Endless Space Game\x64\Master\split.scale-400.map.txt

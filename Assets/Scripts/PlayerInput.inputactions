@@ -27,7 +27,7 @@
                     "id": "91159c43-e766-4c6b-b4e5-07604c400cf2",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -121,8 +121,19 @@
                 },
                 {
                     "name": "",
+                    "id": "913ff40c-149b-4fac-877b-b922601c40c4",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "01cc560e-c16f-4c9f-ae31-0ecb1848c1f1",
-                    "path": "<Keyboard>/z",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
