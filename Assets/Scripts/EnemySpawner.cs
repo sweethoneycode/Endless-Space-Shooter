@@ -41,7 +41,7 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator SpawnEnemies()
     {
 
-        WaitForSeconds wait = new WaitForSeconds(3f);
+        WaitForSeconds wait = new WaitForSeconds(2f);
         yield return wait;
 
         for (int i = 0; i < 1000; i++)

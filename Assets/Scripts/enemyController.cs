@@ -69,7 +69,7 @@ public class EnemyController : MonoBehaviour
     public void EnemyMove()
     {
 
-       enemySpeed = transform.localScale.y;
+       enemySpeed = transform.localScale.y * 5;
 
         enemyRB.gameObject.transform.Translate(Vector3.down * Time.deltaTime * enemySpeed);
        //enemyRB.AddForce(Vector3.down * enemySpeed, ForceMode2D.Force);
