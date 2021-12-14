@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1256818362081812749}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: -0.8, z: 1}
+  m_LocalScale: {x: 0.6, y: -0.6, z: 1}
   m_Children:
   - {fileID: 1256818363372187829}
   m_Father: {fileID: 0}
@@ -93,10 +93,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afca80c975ca9e343be627f879de4104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missleBullet: {fileID: 7144509516714269125, guid: 832fd0c337fda9c47b748086eb86687a, type: 3}
+  missleBullet: {fileID: 7144509516714269125, guid: 55a54d637529c9549b8b76a870ff4a38, type: 3}
   fireAction: 0
   paddingLeft: 1
   paddingRight: 1
+  playerHealth: 10
   explosionPrefab: {fileID: 1613842365161332, guid: 5ed6748782991c14dafb9292f1af700f, type: 3}
   speed: 0
 --- !u!1 &1256818363372187828
@@ -124,13 +125,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256818363372187828}
-  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 1256818362081812754}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!114 &1256818363372187834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +148,7 @@ MonoBehaviour:
   fireAction: 0
   paddingLeft: 0
   paddingRight: 0
+  playerHealth: 1
   explosionPrefab: {fileID: 0}
   speed: 0
 --- !u!212 &1256818363372187835
@@ -189,7 +191,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cde52de634d58a4458201f4bc37f3548, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0209372f8d5e0f14cac5aabae9f63e55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

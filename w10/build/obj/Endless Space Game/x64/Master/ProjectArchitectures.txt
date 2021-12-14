@@ -1,1 +1,0 @@
-C:\Users\jonah\Documents\GitHub\Space-Game\w10\Endless Space Game\Endless Space Game.vcxproj;x64

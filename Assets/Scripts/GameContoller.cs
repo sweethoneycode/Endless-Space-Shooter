@@ -40,7 +40,7 @@ public class GameContoller : MonoBehaviour
     private void Start()
     {
         EventBroker.PlayerDeath += PlayerHasDied;
-        EventBroker.RestartGame += NewGame;
+        EventBroker.RestartGame += RestartGame;
         EventBroker.StartGame += NewGame;
 
         playerInput = new PlayerInput();
@@ -51,15 +51,13 @@ public class GameContoller : MonoBehaviour
     private void NewGame()
     {
         playerLives = 3;
-        //SpawnPlayer();
-
         StartCoroutine(SpawnShip(false));
     }
 
     private void OnDisable()
     {
         EventBroker.PlayerDeath -= PlayerHasDied;
-        EventBroker.RestartGame -= NewGame;
+        EventBroker.RestartGame -= RestartGame;
         
     }
 
@@ -69,6 +67,10 @@ public class GameContoller : MonoBehaviour
         DecreasePlayerLife = true;
     }
 
+    private void RestartGame()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+    }
 
     private void UpdateLives()
     {
@@ -104,9 +106,10 @@ public class GameContoller : MonoBehaviour
         if (delayed)
             yield return shipSpawnDelay;
 
-        PlayerController ship = Instantiate(playerToSpawn, new Vector2(0, -2f), Quaternion.identity);
+        PlayerController ship = Instantiate(playerToSpawn, new Vector2(0, -3f), Quaternion.identity);
        ship.speed = playerSpeed;
-       // ship.shieldDuration = shieldDuration;
+        // ship.shieldDuration = shieldDuration;
+        EventBroker.CallRestoreShields();
 
         yield return null;
     }

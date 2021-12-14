@@ -3,6 +3,8 @@ using System;
 public class EventBroker
 {
     public static event Action ProjectileOutOfBounds;
+    public static event Action RestoreShields;
+    public static event Action PlayerHit;
     public static event Action PlayerDeath;
     public static event Action PlayerLives;
     public static event Action UpdatePlayerScore;
@@ -11,6 +13,17 @@ public class EventBroker
     public static event Action StartGame;
     public static event Action PauseGame;
 
+    public static void CallRestoreShields()
+    {
+        if (RestoreShields != null)
+            RestoreShields();
+    }
+
+    public static void CallPlayerHit()
+    {
+        if (PlayerHit != null)
+            PlayerHit();
+    }
     public static void CallPauseGame()
     {
         if (PauseGame != null)
@@ -28,6 +41,8 @@ public class EventBroker
         if (ProjectileOutOfBounds != null)
             ProjectileOutOfBounds();
     }
+
+
 
     public static void CallPlayerDeath()
     {

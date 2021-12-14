@@ -44,11 +44,23 @@ public class HUDController : MonoBehaviour
     private float cooldownTimer;
     private readonly float firingCooldown = 1f;
 
+    [SerializeField] private Slider sheildBar;
+    [SerializeField] private float CurrentShields { get; set; }
+    [SerializeField] private float MaxShields { get; set; }
+
+    [SerializeField] private float shieldChange;
+    [SerializeField] private float shieldStart;
+
     #endregion
 
     private void Start()
     {
- 
+
+        MaxShields = 1f;
+        CurrentShields = MaxShields;
+
+        shieldStart = 8f;
+        shieldChange = 4f;
 
         numberOfShips = shipImages.Length;
         
@@ -58,6 +70,29 @@ public class HUDController : MonoBehaviour
         EventBroker.PlayerLives += HideShip;
         EventBroker.EndGame += GameOver;
         EventBroker.PauseGame += PauseGame;
+        EventBroker.PlayerHit += PlayerHit;
+        EventBroker.RestoreShields += RestoreShields;
+    }
+
+    private void RestoreShields()
+    {
+        CurrentShields = 1f;
+        sheildBar.value = CurrentShields;
+    }
+
+    private void PlayerHit()
+    {
+        Debug.Log("Player Hit");
+
+        if (CurrentShields > 0)
+        {
+
+            CurrentShields = CurrentShields - 0.1f;
+            sheildBar.value = CurrentShields;
+     
+        }
+
+   //     Debug.Log("Shield " + CurrentShields);
     }
 
     private void GameOver()
@@ -112,7 +147,8 @@ public class HUDController : MonoBehaviour
     {
         playerScore++;
         EnemyHasDied = false;
-        scoreText.text = playerScore.ToString("D1");
+        scoreText.text = "Score: " + "\n" + playerScore.ToString("D1");
+
     }
 
     private void EnemyDied()
@@ -185,9 +221,11 @@ public class HUDController : MonoBehaviour
             {
                 cooldownTimer = firingCooldown;
                 timer++;
-                timerText.text = "Distance: " + timer;
+                timerText.text = "Distance: " + "\n" + timer;
             }
  
         }
     }
+
+
 }

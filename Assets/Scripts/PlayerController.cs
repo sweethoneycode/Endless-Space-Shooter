@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,11 +18,13 @@ public class PlayerController : MonoBehaviour
     private readonly float firingCooldown = 0.4f;
     private float cooldownTimer;
 
+
     private Vector2 minBounds;
     private Vector2 maxBounds;
 
     [SerializeField] private float paddingLeft = 0.5f;
     [SerializeField] private float paddingRight = 0.5f;
+    [SerializeField] private float playerHealth = 10f;
 
     private bool pausedGame = true;
 
@@ -51,7 +54,6 @@ public class PlayerController : MonoBehaviour
     {
         playerPos = new Vector3(transform.position.x, transform.position.y, 0);
         EventBroker.ProjectileOutOfBounds += EnableProjectile;
-
     }
 
     private void OnEnable()
@@ -111,9 +113,19 @@ public class PlayerController : MonoBehaviour
             explosionInstance.transform.position = transform.position;
             Destroy(explosionInstance, 1f);
 
-            EventBroker.CallPlayerDeath();
+            if(playerHealth >= 0)
+            {
+                EventBroker.CallPlayerHit();
+                playerHealth-- ;
+            }
 
-            Destroy(gameObject);
+            if(playerHealth == 0)
+            {
+                EventBroker.CallPlayerDeath();
+                Destroy(gameObject);
+            }
+
+          ///  Debug.Log("Player Health " + playerHealth);
         }
     }
 
@@ -157,7 +169,7 @@ public class PlayerController : MonoBehaviour
 
             missleRB = laserObject.GetComponent<Rigidbody2D>();
 
-            missleRB.velocity = new Vector2(0, 6f);
+            missleRB.velocity = new Vector2(0, 10f);
 
 
         }

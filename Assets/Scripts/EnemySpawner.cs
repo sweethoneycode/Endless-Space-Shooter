@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject meteorPrefab;
+    [SerializeField] private GameObject meteorPrefab;
+    [SerializeField] private GameObject enemyPrefab;
+
     private float cooldownTimer;
     private Vector3 meteorScale;
     private float enemySpeed;
 
+    private bool StartAstroidWave = true;
+    private bool StartShipWave = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +23,10 @@ public class EnemySpawner : MonoBehaviour
 
     private void StartSpawnEnemy()
     {
-        StartCoroutine(SpawnEnemies());
+
+        StartAstroidWave = false;
+        StartShipWave = false;
+
     }
 
     private void OnDisable()
@@ -35,16 +42,25 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!StartAstroidWave)
+        {
+            StartCoroutine(SpawnEnemies());
+        }
 
+        if (!StartShipWave)
+        {
+            StartCoroutine(SpawnEnemieShips());
+        }
     }
 
     private IEnumerator SpawnEnemies()
     {
+        StartAstroidWave = true;
 
         WaitForSeconds wait = new WaitForSeconds(2f);
         yield return wait;
 
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < 50; i++)
         {
             Vector3 enemyPOS = meteorPrefab.transform.position;
 
@@ -57,9 +73,38 @@ public class EnemySpawner : MonoBehaviour
             GameObject enemyToSpawn = Instantiate(meteorPrefab, enemyPOS, meteorPrefab.transform.rotation, transform);
             enemyToSpawn.transform.localScale = meteorScale;
             yield return wait;
-        }
 
+
+        }
+        StartAstroidWave = false;
+        yield return wait;
+    }
+
+    private IEnumerator SpawnEnemieShips()
+    {
+        StartShipWave = true;
+        float secondToWait = Random.Range(5f, 10f);
         
+        WaitForSeconds wait = new WaitForSeconds(secondToWait);
+        yield return wait;
+
+        for (int i = 0; i < 5; i++)
+        {
+            Vector3 enemyPOS = enemyPrefab.transform.position;
+
+            enemyPOS.x += Random.Range(-7, 7);
+
+            GameObject enemyToSpawn = Instantiate(enemyPrefab, enemyPOS, enemyPrefab.transform.rotation, transform);
+
+            float shipSpeed = Random.Range(-0.3f, -1f);
+
+            enemyToSpawn.GetComponent<Rigidbody2D>().velocity = new Vector2(0, shipSpeed);
+            //           enemyToSpawn.transform.localScale = meteorScale;
+
+            yield return wait;
+        }
+        StartShipWave = false;
+        yield return wait;
     }
 
     // TODO: Impliment IEnumerator for Enemy Spawner and features
