@@ -8,7 +8,6 @@ public class EnemyShip : MonoBehaviour
     [SerializeField] private GameObject ExplosionPrefab;
     [SerializeField] private GameObject laserPrefab;
     [SerializeField] private float EnemyHealth;
-    [SerializeField] AudioClip explosionSound;
     [SerializeField] AudioClip impactSound;
 
     private Rigidbody2D laserRB;
@@ -69,9 +68,10 @@ public class EnemyShip : MonoBehaviour
         GameObject explosionInstance = Instantiate(ExplosionPrefab);
         explosionInstance.transform.position = transform.position;
 
-        GetComponent<AudioSource>().PlayOneShot(explosionSound);
-
         Destroy(explosionInstance, 1.2f);
+
+        EventBroker.CallCallUpdateScore();
+        EventBroker.CallRestoreShields();
 
         Destroy(transform.gameObject, 0.2f);
     }

@@ -7,7 +7,6 @@ public class EnemyController : MonoBehaviour
 {
     public Vector3 enemyPOS = new Vector3(0,10,0);
     private Rigidbody2D enemyRB;
-    [SerializeField] AudioClip explosionSound;
 
     public float enemySpeed = 1f;
 
@@ -47,8 +46,6 @@ public class EnemyController : MonoBehaviour
     {
        GameObject explosionInstance = Instantiate(explosionPrefab);
         explosionInstance.transform.position = transform.position;
-
-        GetComponent<AudioSource>().PlayOneShot(explosionSound);
 
         Destroy(explosionInstance, 1.2f);
 

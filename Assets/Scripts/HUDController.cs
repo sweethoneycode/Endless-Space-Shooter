@@ -51,6 +51,8 @@ public class HUDController : MonoBehaviour
     [SerializeField] private float shieldChange;
     [SerializeField] private float shieldStart;
 
+    [SerializeField] private AudioClip shieldAudio;
+
     #endregion
 
     private void Start()
@@ -78,11 +80,11 @@ public class HUDController : MonoBehaviour
     {
         CurrentShields = 1f;
         sheildBar.value = CurrentShields;
+        GetComponent<AudioSource>().PlayOneShot(shieldAudio);
     }
 
     private void PlayerHit()
     {
-        Debug.Log("Player Hit");
 
         if (CurrentShields > 0)
         {
@@ -222,6 +224,7 @@ public class HUDController : MonoBehaviour
                 cooldownTimer = firingCooldown;
                 timer++;
                 timerText.text = "Distance: " + "\n" + timer;
+                EventBroker.CallCallUpdateScore();
             }
  
         }
