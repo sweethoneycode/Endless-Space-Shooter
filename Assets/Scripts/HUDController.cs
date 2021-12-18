@@ -53,6 +53,8 @@ public class HUDController : MonoBehaviour
 
     [SerializeField] private AudioClip shieldAudio;
 
+    public Button pauseButton;
+
     #endregion
 
     private void Start()
@@ -164,11 +166,14 @@ public class HUDController : MonoBehaviour
     }
     public void PauseGame()
     {
+        
 
         if (!isGamePaused)
         {
+            pauseButton.Select();
             isGamePaused = true;
             Time.timeScale = 0.0f;
+            
         } else
         {
             ResumeGame();
