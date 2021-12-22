@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+
 public class HUDController : MonoBehaviour
 {
     #region Field Declarations
@@ -13,12 +16,7 @@ public class HUDController : MonoBehaviour
     [Space]
     public TMP_Text scoreText;
     public TMP_Text timerText;
-    public GameObject endScreen;
     public GameObject startScreen;
-    public GameObject pauseScreen;
-
-    //   public StatusText statusText;
-    //  public Button restartButton;
 
     [Header("Ship Counter")]
     [SerializeField]
@@ -26,7 +24,7 @@ public class HUDController : MonoBehaviour
     private Image[] shipImages;
     private int numberOfShips;
 
-    private GameContoller gameSceneController;
+   // private GameContoller gameSceneController;
 
 
     private float timer = 0.0f;
@@ -53,11 +51,18 @@ public class HUDController : MonoBehaviour
 
     [SerializeField] private AudioClip shieldAudio;
 
-    public Button pauseButton;
+    //Load Menus
+
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject gameOverMenu;
+    [SerializeField] private GameObject gameUI;
+
+    [SerializeField] private GameObject ResumeButton;
+    [SerializeField] private GameObject EndGameButton;
 
     #endregion
 
-    private void Start()
+    private void Awake()
     {
 
         MaxShields = 1f;
@@ -96,17 +101,24 @@ public class HUDController : MonoBehaviour
      
         }
 
-   //     Debug.Log("Shield " + CurrentShields);
+
     }
 
     private void GameOver()
     {
         isGameOver = true;
+        Time.timeScale = 0.0f;
     }
 
     private void OnDisable()
     {
+        EventBroker.UpdatePlayerScore -= UpdateScore;
+        EventBroker.PlayerLives -= HideShip;
         EventBroker.EndGame -= GameOver;
+        EventBroker.PauseGame -= PauseGame;
+        EventBroker.PlayerHit -= PlayerHit;
+        EventBroker.RestoreShields -= RestoreShields;
+
     }
 
     private void showShips()
@@ -128,6 +140,7 @@ public class HUDController : MonoBehaviour
     {
         EventBroker.CallRestartGame();
 
+        Time.timeScale = 1.0f;
         isGameOver = false;
         timer = 0;
         showShips();
@@ -136,11 +149,11 @@ public class HUDController : MonoBehaviour
 
     }
 
-
-
     public void StartNewGame()
     {
         EventBroker.CallStartGame();
+
+        gameUI.SetActive(true);
 
         isGameStart = true;
         timer = 0;
@@ -162,32 +175,38 @@ public class HUDController : MonoBehaviour
 
     public void ExitGame()
     {
-        Application.Quit();
+        SaveHighScore();
+
+        if (isGamePaused) { Time.timeScale = 1.0f; }
+        StopAllCoroutines();
+
+        LoadingData.sceneToLoad = "Start";
+        SceneManager.LoadScene("Loading");
+        SceneManager.UnloadSceneAsync("Classic");
     }
     public void PauseGame()
     {
-        
+
+ 
 
         if (!isGamePaused)
         {
-            pauseButton.Select();
             isGamePaused = true;
             Time.timeScale = 0.0f;
+
             
         } else
         {
+
             ResumeGame();
         }
-
-      //  Debug.Log("Is Game Paused " + isGamePaused);
-
+        
     }
 
     public void ResumeGame()
     {
         isGamePaused = false;
         Time.timeScale = 1.0f;
-
     }
 
     // Update is called once per frame
@@ -201,18 +220,9 @@ public class HUDController : MonoBehaviour
         }
 
 
-       pauseScreen.SetActive(isGamePaused);
+        pauseMenu.SetActive(isGamePaused);
 
-
-
-        if (isGameOver)
-        {
-            endScreen.SetActive(true);
-        }
-        else
-        {
-            endScreen.SetActive(false);
-        }
+        gameOverMenu.SetActive(isGameOver);
 
         if (EnemyHasDied)
         {
@@ -222,7 +232,6 @@ public class HUDController : MonoBehaviour
         if (!isGameOver && isGameStart)
         {
             
-
             cooldownTimer -= Time.deltaTime;
             if (cooldownTimer <= 0 )
             {
@@ -235,5 +244,13 @@ public class HUDController : MonoBehaviour
         }
     }
 
+    private void SaveHighScore()
+    {
+        float currentScore = SaveManager.instance.activeSave.highScore;
 
+        if (playerScore > currentScore) {
+            SaveManager.instance.activeSave.highScore = playerScore;
+            SaveManager.instance.Save();
+        }
+    }
 }

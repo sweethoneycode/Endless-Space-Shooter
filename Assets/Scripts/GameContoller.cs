@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class GameContoller : MonoBehaviour
 {
@@ -24,18 +25,10 @@ public class GameContoller : MonoBehaviour
     [Range(3, 8)]
     public float playerSpeed = 7;
 
-    // private bool EnemyHasDied = false;
-    //  private bool isNewGame = false;
-
     private bool pressedPause;
 
     public PlayerInput playerInput;
 
-
-    private void Awake()
-    {
-
-    }
 
     private void Start()
     {
@@ -45,8 +38,6 @@ public class GameContoller : MonoBehaviour
 
         playerInput = new PlayerInput();
     }
-
-   
 
     private void NewGame()
     {
@@ -58,7 +49,8 @@ public class GameContoller : MonoBehaviour
     {
         EventBroker.PlayerDeath -= PlayerHasDied;
         EventBroker.RestartGame -= RestartGame;
-        
+        EventBroker.StartGame -= NewGame;
+
     }
 
     private void PlayerHasDied()
@@ -69,7 +61,8 @@ public class GameContoller : MonoBehaviour
 
     private void RestartGame()
     {
-        Application.LoadLevel(Application.loadedLevel);
+        StopAllCoroutines();
+        SceneManager.LoadScene("Classic");
     }
 
     private void UpdateLives()
