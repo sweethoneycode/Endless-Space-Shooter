@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
 
     public float enemySpeed = 1f;
 
-    public GameContoller gameContoller;
+   // public GameContoller gameContoller;
 
     public GameObject explosionPrefab;
 
@@ -32,7 +32,7 @@ public class EnemyController : MonoBehaviour
 
     private void Awake()
     {
-        gameContoller = FindObjectOfType<GameContoller>();
+      //  gameContoller = FindObjectOfType<GameContoller>();
     }
 
     // Start is called before the first frame update

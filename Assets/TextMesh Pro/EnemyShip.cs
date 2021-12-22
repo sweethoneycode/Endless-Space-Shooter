@@ -11,7 +11,7 @@ public class EnemyShip : MonoBehaviour
     [SerializeField] AudioClip impactSound;
 
     private Rigidbody2D laserRB;
-    private readonly float firingCooldown = 0.5f;
+    [SerializeField] private readonly float firingCooldown = 1.5f;
     private float cooldownTimer;
 
     //Set by GameSceneController

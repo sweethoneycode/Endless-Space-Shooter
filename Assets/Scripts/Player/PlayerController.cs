@@ -155,13 +155,13 @@ public class PlayerController : MonoBehaviour
     public void OnFire()
     {
 
-        fireAction = playerInput.Player.Fire.ReadValue<float>();
+       // fireAction = playerInput.Player.Fire.ReadValue<float>();
 
         //use the float value from firing to launch missles and reduce spamming by using a bool
 
         cooldownTimer -= Time.deltaTime;
 
-        if (cooldownTimer <= 0 && fireAction == 1)
+        if (cooldownTimer <= 0)
         {
             cooldownTimer = firingCooldown;
 
