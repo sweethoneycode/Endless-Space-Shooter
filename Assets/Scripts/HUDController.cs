@@ -48,6 +48,7 @@ public class HUDController : MonoBehaviour
 
     [SerializeField] private float shieldChange;
     [SerializeField] private float shieldStart;
+    [SerializeField] private ParticleSystem shieldbarParticles;
 
     [SerializeField] private AudioClip shieldAudio;
 
@@ -59,6 +60,7 @@ public class HUDController : MonoBehaviour
 
     [SerializeField] private GameObject ResumeButton;
     [SerializeField] private GameObject EndGameButton;
+    private bool restoreShields = true;
 
     #endregion
 
@@ -85,9 +87,11 @@ public class HUDController : MonoBehaviour
 
     private void RestoreShields()
     {
-        CurrentShields = 1f;
-        sheildBar.value = CurrentShields;
+        Debug.Log("Restore Shields " + restoreShields);
         GetComponent<AudioSource>().PlayOneShot(shieldAudio);
+        restoreShields = true;
+        CurrentShields = 1;
+
     }
 
     private void PlayerHit()
@@ -98,7 +102,9 @@ public class HUDController : MonoBehaviour
 
             CurrentShields = CurrentShields - 0.1f;
             sheildBar.value = CurrentShields;
-     
+
+        }
+        else { 
         }
 
 
@@ -164,7 +170,7 @@ public class HUDController : MonoBehaviour
     {
         playerScore++;
         EnemyHasDied = false;
-        scoreText.text = "Score: " + "\n" + playerScore.ToString("D1");
+        scoreText.text = "Score: " + playerScore.ToString("D1");
 
     }
 
@@ -186,8 +192,6 @@ public class HUDController : MonoBehaviour
     }
     public void PauseGame()
     {
-
- 
 
         if (!isGamePaused)
         {
@@ -213,6 +217,26 @@ public class HUDController : MonoBehaviour
     void Update()
     {
 
+        if (restoreShields)
+        {
+
+
+            if (sheildBar.value < 1)
+            {
+                sheildBar.value += 0.5f * Time.deltaTime;
+                if (!shieldbarParticles.isPlaying)
+                    shieldbarParticles.Play();
+
+            }
+            else
+            {
+                shieldbarParticles.Stop();
+                restoreShields = false;
+            }
+  
+  
+        }
+
 
         if (isGameStart)
         {
@@ -237,7 +261,6 @@ public class HUDController : MonoBehaviour
             {
                 cooldownTimer = firingCooldown;
                 timer++;
-                timerText.text = "Distance: " + "\n" + timer;
                 EventBroker.CallCallUpdateScore();
             }
  

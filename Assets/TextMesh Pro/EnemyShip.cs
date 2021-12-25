@@ -71,7 +71,7 @@ public class EnemyShip : MonoBehaviour
         Destroy(explosionInstance, 1.2f);
 
         EventBroker.CallCallUpdateScore();
-        EventBroker.CallRestoreShields();
+//        EventBroker.CallRestoreShields();
 
         Destroy(transform.gameObject, 0.2f);
     }

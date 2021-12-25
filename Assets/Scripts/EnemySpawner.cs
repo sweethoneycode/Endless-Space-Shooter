@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject meteorPrefab;
     [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private GameObject PowerUpPrefab;
 
     private float cooldownTimer;
     private Vector3 meteorScale;
@@ -13,6 +14,8 @@ public class EnemySpawner : MonoBehaviour
 
     private bool StartAstroidWave = true;
     private bool StartShipWave = true;
+    private bool StartPowerUpWave = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
 
         StartAstroidWave = false;
         StartShipWave = false;
-
+        StartPowerUpWave = false;
     }
 
     private void OnDisable()
@@ -51,6 +54,38 @@ public class EnemySpawner : MonoBehaviour
         {
             StartCoroutine(SpawnEnemieShips());
         }
+
+        if (!StartPowerUpWave)
+        {
+            StartCoroutine(SpawnPowerUps());
+        }
+    }
+
+    private IEnumerator SpawnPowerUps()
+    {
+        StartPowerUpWave = true;
+
+        float secondToWait = Random.Range(10f, 30f);
+        WaitForSeconds wait = new WaitForSeconds(secondToWait);
+
+        for (int i = 0; i < 1; i++)
+        {
+            Vector3 enemyPOS = PowerUpPrefab.transform.position;
+
+            float randomScale = Random.Range(0.5f, 1f);
+
+            meteorScale = new Vector2(randomScale, randomScale);
+
+            enemyPOS.x += Random.Range(-7, 7);
+
+            GameObject enemyToSpawn = Instantiate(PowerUpPrefab, enemyPOS, PowerUpPrefab.transform.rotation, transform);
+            enemyToSpawn.transform.localScale = meteorScale;
+            yield return wait;
+
+
+        }
+        StartPowerUpWave = false;
+        yield return wait;
     }
 
     private IEnumerator SpawnEnemies()
@@ -66,7 +101,7 @@ public class EnemySpawner : MonoBehaviour
 
             float randomScale = Random.Range(0.2f, 0.8f);
 
-            meteorScale = new Vector3(randomScale, randomScale, 1f);
+            meteorScale = new Vector2(randomScale, randomScale);
 
             enemyPOS.x += Random.Range(-7, 7);
 

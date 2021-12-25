@@ -5,14 +5,21 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public Vector3 enemyPOS = new Vector3(0,10,0);
+    private Vector3 enemyPOS = new Vector3(0, 10, 0);
     private Rigidbody2D enemyRB;
 
-    public float enemySpeed = 1f;
+    [SerializeField] private float EnemyHealth = 1f;
+    [SerializeField] private float EnemySpeed = 1f;
+    [SerializeField] private GameObject ExplosionPrefab;
 
-   // public GameContoller gameContoller;
+    // public GameContoller gameContoller;
 
-    public GameObject explosionPrefab;
+    private GameObject explosionPrefab;
+
+    private Vector3 EnemyPOS { get => enemyPOS; set => enemyPOS = value; }
+    private Rigidbody2D EnemyRB { get => enemyRB; set => enemyRB = value; }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -30,21 +37,16 @@ public class EnemyController : MonoBehaviour
         
     }
 
-    private void Awake()
-    {
-      //  gameContoller = FindObjectOfType<GameContoller>();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
-        enemyRB = GetComponent<Rigidbody2D>();
+        EnemyRB = GetComponent<Rigidbody2D>();
         EventBroker.EndGame += DestroyEnemy;
     }
 
     private void DestroyEnemy()
     {
-       GameObject explosionInstance = Instantiate(explosionPrefab);
+       GameObject explosionInstance = Instantiate(ExplosionPrefab);
         explosionInstance.transform.position = transform.position;
 
         Destroy(explosionInstance, 1.2f);
@@ -66,10 +68,9 @@ public class EnemyController : MonoBehaviour
     public void EnemyMove()
     {
 
-       enemySpeed = transform.localScale.y * 5;
+       EnemySpeed = transform.localScale.y * 5;
 
-        enemyRB.gameObject.transform.Translate(Vector3.down * Time.deltaTime * enemySpeed);
-       //enemyRB.AddForce(Vector3.down * enemySpeed, ForceMode2D.Force);
+        EnemyRB.gameObject.transform.Translate(Vector3.down * Time.deltaTime * EnemySpeed);
     
         if(transform.position.y <= -6)
         {

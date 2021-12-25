@@ -54,6 +54,12 @@ public class PlayerController : MonoBehaviour
     {
         playerPos = new Vector3(transform.position.x, transform.position.y, 0);
         EventBroker.ProjectileOutOfBounds += EnableProjectile;
+        EventBroker.RestoreShields += RestoreShields;
+    }
+
+    private void RestoreShields()
+    {
+        playerHealth = 10f;
     }
 
     private void OnEnable()
