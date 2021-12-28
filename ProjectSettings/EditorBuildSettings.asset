@@ -21,9 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Settings.unity
     guid: 438ecb6b8e9db1e408088122e7e4f500
   - enabled: 1
-    path: Assets/Scenes/Menus/PauseMenu.unity
-    guid: 3f3de6ea674929e49b02f2c2381beece
-  - enabled: 1
     path: Assets/Scenes/MultiVerse.unity
     guid: 482024a7b43812b4aa3c486052b07f57
   - enabled: 1

@@ -29,7 +29,6 @@ public class GameContoller : MonoBehaviour
 
     public PlayerInput playerInput;
 
-
     private void Start()
     {
         EventBroker.PlayerDeath += PlayerHasDied;

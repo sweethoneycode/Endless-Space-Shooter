@@ -15,7 +15,6 @@ public class HUDController : MonoBehaviour
     [Header("UI Components")]
     [Space]
     public TMP_Text scoreText;
-    public TMP_Text timerText;
     public GameObject startScreen;
 
     [Header("Ship Counter")]
@@ -57,6 +56,7 @@ public class HUDController : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject gameOverMenu;
     [SerializeField] private GameObject gameUI;
+    [SerializeField] private TMP_Text playerHighScoreUI;
 
     [SerializeField] private GameObject ResumeButton;
     [SerializeField] private GameObject EndGameButton;
@@ -66,7 +66,7 @@ public class HUDController : MonoBehaviour
 
     private void Awake()
     {
-
+        SaveManager.instance.Load();
         MaxShields = 1f;
         CurrentShields = MaxShields;
 
@@ -85,9 +85,16 @@ public class HUDController : MonoBehaviour
         EventBroker.RestoreShields += RestoreShields;
     }
 
+    public void Start()
+    {
+        float playerHighScore;
+        playerHighScore = SaveManager.instance.activeSave.highScore;
+        playerHighScoreUI.text = "Player High Score: " + playerHighScore;
+    }
+
     private void RestoreShields()
     {
-        Debug.Log("Restore Shields " + restoreShields);
+        
         GetComponent<AudioSource>().PlayOneShot(shieldAudio);
         restoreShields = true;
         CurrentShields = 1;
@@ -188,7 +195,7 @@ public class HUDController : MonoBehaviour
 
         LoadingData.sceneToLoad = "Start";
         SceneManager.LoadScene("Loading");
-        SceneManager.UnloadSceneAsync("Classic");
+ 
     }
     public void PauseGame()
     {

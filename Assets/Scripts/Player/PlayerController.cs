@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D missleRB;
 
     private Vector2 dPadInputMovement;
-    private float inputMovement;
+    private Vector2 inputMovement;
     public float fireAction;
     private readonly float firingCooldown = 0.4f;
     private float cooldownTimer;
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     private bool projectileEnabled = true;
 
     //Set by GameSceneController
-    [HideInInspector] public float speed;
+    [SerializeField] public float speed;
 
     private void InitBounds()
     {
@@ -48,6 +48,10 @@ public class PlayerController : MonoBehaviour
     {
         playerInput = new PlayerInput();
         InitBounds();
+        if(speed == 0)
+        {
+            speed = 0.5f;
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -73,8 +77,6 @@ public class PlayerController : MonoBehaviour
         EventBroker.ProjectileOutOfBounds -= EnableProjectile;
 
     }
-
-  
 
     public void EnableProjectile()
     {
@@ -144,16 +146,15 @@ public class PlayerController : MonoBehaviour
         //using new input system
        // dPadInputMovement.x = playerInput.Player.Move.ReadValue<float>();
 
-        inputMovement = playerInput.Player.Move.ReadValue<float>();
+        inputMovement = playerInput.Player.Move.ReadValue<Vector2>();
 
         Vector2 currPosition = transform.position;
 
-        currPosition.x += inputMovement * Time.deltaTime * speed;
+        currPosition.x += inputMovement.x * Time.deltaTime * speed;
 
         Vector2 newPos = currPosition;
         newPos.x = Mathf.Clamp(currPosition.x, minBounds.x + paddingLeft, maxBounds.x - paddingRight);
 
-        
         transform.position = newPos;
 
     }
