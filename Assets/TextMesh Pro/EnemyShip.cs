@@ -17,6 +17,8 @@ public class EnemyShip : MonoBehaviour
     //Set by GameSceneController
     [SerializeField] private float speed;
 
+    bool takeDamage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,11 @@ public class EnemyShip : MonoBehaviour
         if (transform.position.y < 5) { 
             OnFire();
         }
+
+        if (transform.position.y < 5)
+        {
+            takeDamage = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,27 +44,29 @@ public class EnemyShip : MonoBehaviour
 
         if (collision.CompareTag("Missle"))
         {
-
-            if(EnemyHealth >= 0)
+            if (takeDamage)
             {
-                EnemyHealth--;
-                GetComponent<AudioSource>().PlayOneShot(impactSound);
-                Destroy(collision.gameObject);
-                GameObject explosionInstance = Instantiate(ExplosionPrefab);
-                explosionInstance.transform.localScale = (new Vector2(0.5f, 0.5f));
-                explosionInstance.transform.position = transform.position;
-                Destroy(explosionInstance, 0.5f);
-            }
+                if (EnemyHealth >= 0)
+                {
+                    EnemyHealth--;
+                    GetComponent<AudioSource>().PlayOneShot(impactSound);
+                    Destroy(collision.gameObject);
+                    GameObject explosionInstance = Instantiate(ExplosionPrefab);
+                    explosionInstance.transform.localScale = (new Vector2(0.5f, 0.5f));
+                    explosionInstance.transform.position = transform.position;
+                    Destroy(explosionInstance, 0.5f);
+                }
 
-            if (EnemyHealth == 0)
-            {
+                if (EnemyHealth == 0)
+                {
 
-                EventBroker.CallCallUpdateScore();
+                    EventBroker.CallCallUpdateScore();
 
-                DestroyEnemy();
+                    DestroyEnemy();
 
 
-                Destroy(collision.gameObject);
+                    Destroy(collision.gameObject);
+                }
             }
 
         }

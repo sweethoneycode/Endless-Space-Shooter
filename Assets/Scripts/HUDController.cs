@@ -16,6 +16,7 @@ public class HUDController : MonoBehaviour
     [Space]
     public TMP_Text scoreText;
     public GameObject startScreen;
+    [SerializeField] GameObject scoreTXT;
 
     [Header("Ship Counter")]
     [SerializeField]
@@ -171,6 +172,9 @@ public class HUDController : MonoBehaviour
         isGameStart = true;
         timer = 0;
         showShips();
+
+        startScreen.SetActive(false);
+        scoreTXT.SetActive(false);
     }
 
     public void UpdateScore()
@@ -211,7 +215,9 @@ public class HUDController : MonoBehaviour
 
             ResumeGame();
         }
-        
+
+        pauseMenu.SetActive(isGamePaused);
+
     }
 
     public void ResumeGame()
@@ -244,14 +250,6 @@ public class HUDController : MonoBehaviour
   
         }
 
-
-        if (isGameStart)
-        {
-            startScreen.SetActive(false);
-        }
-
-
-        pauseMenu.SetActive(isGamePaused);
 
         gameOverMenu.SetActive(isGameOver);
 

@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 minBounds;
     private Vector2 maxBounds;
 
-    [SerializeField] private float paddingLeft = 0.5f;
-    [SerializeField] private float paddingRight = 0.5f;
+    [SerializeField] private float paddingLeft = 0.1f;
+    [SerializeField] private float paddingRight = 0.1f;
     [SerializeField] private float playerHealth = 10f;
 
     private bool pausedGame = true;
@@ -150,10 +150,16 @@ public class PlayerController : MonoBehaviour
 
         Vector2 currPosition = transform.position;
 
-        currPosition.x += inputMovement.x * Time.deltaTime * speed;
+       if (inputMovement.x < -1 || inputMovement.x >1)
+        {
+
+            speed = 5;
+        }
+
+        currPosition.x += Mathf.Clamp(inputMovement.x, -1, 1) * Time.deltaTime * speed;
 
         Vector2 newPos = currPosition;
-        newPos.x = Mathf.Clamp(currPosition.x, minBounds.x + paddingLeft, maxBounds.x - paddingRight);
+        newPos.x = Mathf.Clamp(currPosition.x, minBounds.x, maxBounds.x);
 
         transform.position = newPos;
 

@@ -97,7 +97,6 @@ MonoBehaviour:
   ExplosionPrefab: {fileID: 1613842365161332, guid: 5ed6748782991c14dafb9292f1af700f, type: 3}
   laserPrefab: {fileID: 7144509516714269125, guid: 832fd0c337fda9c47b748086eb86687a, type: 3}
   EnemyHealth: 3
-  explosionSound: {fileID: 0}
   impactSound: {fileID: 8300000, guid: 3a6952287e3370946a9c5b44fd07ef17, type: 3}
   speed: 0
 --- !u!82 &342478486816756528
