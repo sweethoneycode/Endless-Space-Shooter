@@ -10,7 +10,7 @@ public class RepeatBackground : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPos = transform.position;
+        startPos = new Vector3(transform.position.x, transform.position.y, 99);
         repeatWidth = GetComponent<BoxCollider2D>().size.y / 2;
     }
 
