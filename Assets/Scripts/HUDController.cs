@@ -216,7 +216,7 @@ public class HUDController : MonoBehaviour
             ResumeGame();
         }
 
-        pauseMenu.SetActive(isGamePaused);
+ 
 
     }
 
@@ -229,6 +229,8 @@ public class HUDController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        pauseMenu.SetActive(isGamePaused);
 
         if (restoreShields)
         {
