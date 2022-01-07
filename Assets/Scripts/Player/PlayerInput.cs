@@ -116,8 +116,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e75418e1-5ea3-43ca-b7cf-853b1bfac1e1"",
-                    ""path"": ""<Pointer>/delta"",
-                    ""interactions"": """",
+                    ""path"": ""<Touchscreen>/primaryTouch/delta"",
+                    ""interactions"": ""Hold"",
                     ""processors"": """",
                     ""groups"": ""Touch"",
                     ""action"": ""Move"",

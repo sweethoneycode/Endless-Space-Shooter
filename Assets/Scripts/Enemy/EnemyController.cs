@@ -78,7 +78,7 @@ public class EnemyController : MonoBehaviour
         EnemyRB.gameObject.transform.Translate(Vector3.down * Time.deltaTime * EnemySpeed);
     
 
-        if(transform.position.y <= -6)
+        if(transform.position.y <= -5)
         {
             Destroy(gameObject);
         }
