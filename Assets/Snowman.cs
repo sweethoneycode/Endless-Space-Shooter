@@ -9,9 +9,10 @@ public class Snowman : MonoBehaviour
     [SerializeField] private GameObject laserPrefab;
     [SerializeField] private float EnemyHealth;
     [SerializeField] AudioClip impactSound;
+    [SerializeField] private bool fireSnowball;
 
     private Rigidbody2D laserRB;
-    [SerializeField] private readonly float firingCooldown = 1.5f;
+    [SerializeField] private readonly float firingCooldown = 1f;
     private float cooldownTimer;
 
     //Set by GameSceneController
@@ -22,20 +23,20 @@ public class Snowman : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        fireSnowball = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < 5)
-        {
-            OnFire();
-            
-        }
+  
 
         if (transform.position.y < 5)
         {
+            if (fireSnowball)
+            {
+                OnFire();
+            }
             takeDamage = true;
         }
     }
@@ -92,20 +93,20 @@ public class Snowman : MonoBehaviour
 
         //use the float value from firing to launch missles and reduce spamming by using a bool
 
-        cooldownTimer -= Time.deltaTime;
+            cooldownTimer -= Time.deltaTime;
 
-        if (cooldownTimer <= 0)
-            
-        {
-            cooldownTimer = firingCooldown;
+            if (cooldownTimer <= 0)
 
-            GameObject laserObject = Instantiate(laserPrefab, transform.position, laserPrefab.transform.rotation, transform);
+            {
+                cooldownTimer = firingCooldown;
 
-            laserObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -10f);
+                GameObject laserObject = Instantiate(laserPrefab, transform.position, laserPrefab.transform.rotation, transform.parent);
+
+                laserObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -10f);
 
 
 
-        }
+            }
 
 
     }

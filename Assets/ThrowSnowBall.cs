@@ -29,16 +29,9 @@ public class ThrowSnowBall : MonoBehaviour
     private void SnowBall()
     {
 
-        cooldownTimer -= Time.deltaTime;
-
-        if (cooldownTimer <= 0)
-
-        {
             cooldownTimer = firingCooldown;
             anim.SetBool("fire", true);
 
-        }
-
-        anim.SetBool("fire", false);
+       // anim.SetBool("fire", false);
     }
 }

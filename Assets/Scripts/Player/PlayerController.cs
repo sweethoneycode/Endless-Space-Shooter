@@ -48,10 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         playerInput = new PlayerInput();
         InitBounds();
-        if(speed == 0)
-        {
-            speed = 0.5f;
-        }
+
     }
     // Start is called before the first frame update
     void Start()
@@ -103,7 +100,6 @@ public class PlayerController : MonoBehaviour
 
     private void Pause_performed(InputAction.CallbackContext obj)
     {
-        //throw new System.NotImplementedException();
 
         EventBroker.CallPauseGame();
 
@@ -152,8 +148,15 @@ public class PlayerController : MonoBehaviour
 
        if (inputMovement.x < -1 || inputMovement.x >1)
         {
-
-            speed = 5;
+            if (Application.platform == RuntimePlatform.WSAPlayerX64)
+            {
+                speed = 10;
+            }
+            else
+            {
+                speed = 5;
+            }
+                
         }
 
         currPosition.x += Mathf.Clamp(inputMovement.x, -1, 1) * Time.deltaTime * speed;

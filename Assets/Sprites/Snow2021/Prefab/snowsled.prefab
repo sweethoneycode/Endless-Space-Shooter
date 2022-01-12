@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1256818362081812755}
   - component: {fileID: 1256818362081812753}
   - component: {fileID: 1942018464682853943}
+  - component: {fileID: -1491707556717839554}
   m_Layer: 0
   m_Name: snowsled
   m_TagString: Untagged
@@ -197,6 +198,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &-1491707556717839554
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256818362081812749}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 88a5b89a4968e7744b2dbae3cd46ce30, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1256818363372187828
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +243,7 @@ Transform:
   m_GameObject: {fileID: 1256818363372187828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 8627882068951418105}
   m_Father: {fileID: 1256818362081812754}
@@ -269,7 +289,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4334783836991956000, guid: a9ba3965aa8cc8d4982fa8d25d78e11c, type: 3}
+  m_Sprite: {fileID: 4334783836991956000, guid: 34ac95c6a81100342bb27d0a9eec4a83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

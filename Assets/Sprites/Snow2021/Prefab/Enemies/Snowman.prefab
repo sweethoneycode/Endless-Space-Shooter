@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 342478486816756531}
   - component: {fileID: 342478486816756528}
   - component: {fileID: 1438173935465191391}
+  - component: {fileID: 8832774162959505205}
+  - component: {fileID: 1525189887042906013}
   m_Layer: 0
-  m_Name: Enemy1 1
+  m_Name: Snowman
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 342478486816756541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7, z: 0}
+  m_LocalPosition: {x: 0.095, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7404386540279183998}
@@ -194,7 +196,40 @@ MonoBehaviour:
   laserPrefab: {fileID: 7144509516714269125, guid: dbd42ccd487b0a14f8166d3339aa6428, type: 3}
   EnemyHealth: 5
   impactSound: {fileID: 8300000, guid: 73183b5d9d91dc342bbdbb89037fc627, type: 3}
+  fireSnowball: 0
   speed: 0
+--- !u!95 &8832774162959505205
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342478486816756541}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 68df177342d1cb043bf94b2cdbcd71e4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1525189887042906013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342478486816756541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fabafef3b81c9c448c8f598ddd9842f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!1 &8489020759144713266
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,8 +240,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7404386540279183998}
   - component: {fileID: 342194470023018999}
-  - component: {fileID: 1805596738104870356}
-  - component: {fileID: 4177616569099674535}
   m_Layer: 0
   m_Name: snowman1
   m_TagString: Untagged
@@ -223,7 +256,7 @@ Transform:
   m_GameObject: {fileID: 8489020759144713266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.87, y: 0.03, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 6, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 342478486816756529}
   m_RootOrder: 0
@@ -268,7 +301,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 746154215823291638, guid: c76645a094f768a438f1198d83273de9, type: 3}
+  m_Sprite: {fileID: -6543393951714099525, guid: 86b6a82707abbb841948dc78f6afc045, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -279,35 +312,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1805596738104870356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8489020759144713266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fabafef3b81c9c448c8f598ddd9842f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
---- !u!95 &4177616569099674535
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8489020759144713266}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 68df177342d1cb043bf94b2cdbcd71e4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

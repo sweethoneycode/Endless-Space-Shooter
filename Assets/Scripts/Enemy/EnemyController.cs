@@ -24,15 +24,32 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.CompareTag("Missle") && takeDamage)
+        if (collision.CompareTag("Missle"))
         {
 
-            EventBroker.CallCallUpdateScore();
+            if (takeDamage)
+            {
+                if (EnemyHealth >= 0)
+                {
+                    EnemyHealth--;
+                    Destroy(collision.gameObject);
+                    GameObject explosionInstance = Instantiate(ExplosionPrefab);
+                    explosionInstance.transform.localScale = (new Vector2(0.5f, 0.5f));
+                    explosionInstance.transform.position = transform.position;
+                    Destroy(explosionInstance, 0.5f);
+                }
 
-            DestroyEnemy();
+                if (EnemyHealth == 0)
+                {
+
+                    EventBroker.CallCallUpdateScore();
+
+                    DestroyEnemy();
 
 
-            Destroy(collision.gameObject);
+                    Destroy(collision.gameObject);
+                }
+            }
         }
         
     }
@@ -47,7 +64,7 @@ public class EnemyController : MonoBehaviour
     private void DestroyEnemy()
     {
        GameObject explosionInstance = Instantiate(ExplosionPrefab);
-        explosionInstance.transform.position = transform.position;
+       explosionInstance.transform.position = transform.position;
 
         Destroy(explosionInstance, 1.2f);
 

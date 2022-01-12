@@ -23,7 +23,7 @@ public class GameContoller : MonoBehaviour
     [Header("Player ship settings")]
     [Space]
     [Range(3, 8)]
-    public float playerSpeed = 7;
+    [SerializeField] private float playerSpeed = 7;
 
     private bool pressedPause;
 
@@ -99,7 +99,7 @@ public class GameContoller : MonoBehaviour
             yield return shipSpawnDelay;
 
         PlayerController ship = Instantiate(playerToSpawn, new Vector2(0, -3f), Quaternion.identity);
-       ship.speed = playerSpeed;
+        ship.speed = playerSpeed;
         // ship.shieldDuration = shieldDuration;
         EventBroker.CallRestoreShields();
 

@@ -8,8 +8,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private GameObject PowerUpPrefab;
 
-    [SerializeField] private float paddingLeft = 5f;
-    [SerializeField] private float paddingRight = 5f;
+    private float paddingLeft = 5f;
+    private float paddingRight = 5f;
 
     private Vector2 screenBounds;
 

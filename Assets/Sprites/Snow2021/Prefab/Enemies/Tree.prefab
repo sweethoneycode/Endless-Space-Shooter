@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 193005531235114621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 944008490480360136}
   m_RootOrder: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d8d552215b87e0b4889aca8cae3cf049, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1df9d232a8420f748a725df33273b71f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650b1fa4b862c0c439b8caa93d3478c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 1
+  EnemyHealth: 1000
   EnemySpeed: 1
   ExplosionPrefab: {fileID: 1613842365161332, guid: 2bd995402667a184db1b22b3097a576f, type: 3}
 --- !u!82 &3537854290650902155
