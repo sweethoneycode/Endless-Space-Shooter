@@ -5348,38 +5348,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1334125247643375631, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1334125247643375631, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1334125247643375631, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1334125247643375631, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1334125247643375631, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -780
-      objectReference: {fileID: 0}
-    - target: {fileID: 1334125247643375631, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -1820
-      objectReference: {fileID: 0}
-    - target: {fileID: 1334125247643375631, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1334125247643375631, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1334125247650015222, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5411,14 +5379,6 @@ PrefabInstance:
     - target: {fileID: 1334125247660172270, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1334125247905089698, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
-      propertyPath: m_fontSize
-      value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 1334125247905089698, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1334125248154808302, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5544,6 +5504,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1334125248754686026, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 206
+      objectReference: {fileID: 0}
     - target: {fileID: 1334125248754686029, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
       propertyPath: m_text
       value: Snow Fight
@@ -5567,7 +5531,7 @@ PrefabInstance:
     - target: {fileID: 1334125248754686029, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 749b9069dc4742c5bfa5c74644049926, type: 2}
+      objectReference: {fileID: 3327022823199030415, guid: 9fad9a6eb701b6341b11a5bd36c91877, type: 2}
     - target: {fileID: 1334125248754686029, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
       propertyPath: m_enableAutoSizing
       value: 0
@@ -5575,10 +5539,6 @@ PrefabInstance:
     - target: {fileID: 1334125248889979054, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
       propertyPath: m_fontSize
       value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 1334125248889979054, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1334125248889983228, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5603,10 +5563,6 @@ PrefabInstance:
     - target: {fileID: 1334125248889983228, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2447785952459793723, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4894576381876811309, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
       propertyPath: m_CellSize.x
@@ -5650,8 +5606,6 @@ MonoBehaviour:
   meteorPrefab: {fileID: 944008490480360137, guid: cf10a3a16fc4a384eac507c1a7038a56, type: 3}
   enemyPrefab: {fileID: 342478486816756541, guid: 486a0cc6605b484418396b7770fcedca, type: 3}
   PowerUpPrefab: {fileID: 3281852527058292795, guid: 32a84b7f80a6c11419c9fbfb33ca1aa3, type: 3}
-  paddingLeft: 5
-  paddingRight: 5
 --- !u!4 &1968248402
 Transform:
   m_ObjectHideFlags: 0
