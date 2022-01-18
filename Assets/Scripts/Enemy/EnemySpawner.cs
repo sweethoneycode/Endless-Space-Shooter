@@ -78,6 +78,7 @@ public class EnemySpawner : MonoBehaviour
         StartPowerUpWave = true;
 
         float secondToWait = Random.Range(10f, 30f);
+
         WaitForSeconds wait = new WaitForSeconds(secondToWait);
 
         for (int i = 0; i < 1; i++)
@@ -104,7 +105,10 @@ public class EnemySpawner : MonoBehaviour
     {
         StartAstroidWave = true;
 
-        WaitForSeconds wait = new WaitForSeconds(2f);
+        float secondToWait = Random.Range(1f, 2.5f);
+
+        WaitForSeconds wait = new WaitForSeconds(secondToWait);
+
         yield return wait;
 
         for (int i = 0; i < 50; i++)
@@ -130,8 +134,8 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator SpawnEnemieShips()
     {
         StartShipWave = true;
-        float secondToWait = Random.Range(5f, 10f);
-        
+        float secondToWait = Random.Range(3f, 5f);
+
         WaitForSeconds wait = new WaitForSeconds(secondToWait);
         yield return wait;
 
@@ -146,7 +150,7 @@ public class EnemySpawner : MonoBehaviour
             float shipSpeed = Random.Range(-0.3f, -1f);
 
             enemyToSpawn.GetComponent<Rigidbody2D>().velocity = new Vector2(0, shipSpeed);
-      
+
 
             yield return wait;
         }
