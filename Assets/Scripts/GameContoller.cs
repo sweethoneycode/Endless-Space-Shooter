@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 public class GameContoller : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class GameContoller : MonoBehaviour
     public float playerScore = 0;
     public float checkPause;
 
-   [SerializeField] private float playerLives = 3;
+   [SerializeField] private float playerLives;
 
    [SerializeField] private bool DecreasePlayerLife = false;
 
@@ -40,7 +41,6 @@ public class GameContoller : MonoBehaviour
 
     private void NewGame()
     {
-        playerLives = 3;
         StartCoroutine(SpawnShip(false));
     }
 

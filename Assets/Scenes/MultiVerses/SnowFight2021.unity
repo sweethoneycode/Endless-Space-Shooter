@@ -5711,6 +5711,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 264ee6f30e4949542b947ee833045544, type: 3}
     - target: {fileID: 2748710486873557319, guid: d66adc794cb53b9439400be5a30abc09, type: 3}
+      propertyPath: playerLives
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2748710486873557319, guid: d66adc794cb53b9439400be5a30abc09, type: 3}
       propertyPath: playerToSpawn
       value: 
       objectReference: {fileID: 1256818362081812753, guid: 9265068cc6a182a42ad94dfa9cd2b31e, type: 3}

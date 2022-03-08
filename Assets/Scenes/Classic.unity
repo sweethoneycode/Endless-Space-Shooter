@@ -446,7 +446,7 @@ MonoBehaviour:
   playerToSpawn: {fileID: 1256818362081812753, guid: 17aa02d1136ad6a41a8b494ff149f24a, type: 3}
   playerScore: 0
   checkPause: 0
-  playerLives: 3
+  playerLives: 1
   DecreasePlayerLife: 0
   playerSpeed: 8
 --- !u!82 &1265543561
@@ -971,6 +971,10 @@ PrefabInstance:
     - target: {fileID: 1334125248484300564, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 58.97998
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334125248484300565, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1334125248553647025, guid: 3a44c3478ab08e94abc0f5c1b2e599f0, type: 3}
       propertyPath: m_AnchorMax.y

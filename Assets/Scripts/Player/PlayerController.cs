@@ -11,8 +11,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameObject missleBullet;
     private Rigidbody2D missleRB;
-
-    private Vector2 dPadInputMovement;
     private Vector2 inputMovement;
     public float fireAction;
     private readonly float firingCooldown = 0.4f;
@@ -26,13 +24,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float paddingRight = 0.1f;
     [SerializeField] private float playerHealth = 10f;
 
+    [SerializeField] private Animator animator;
+    [SerializeField] private AnimationClip playHit;
+
     private bool pausedGame = true;
 
     // private bool isFiring = false;
 
     public GameObject explosionPrefab;
 
-    private bool projectileEnabled = true;
+    [SerializeField] private bool projectileEnabled = true;
 
     //Set by GameSceneController
     [SerializeField] public float speed;
@@ -88,11 +89,12 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.Pause.performed += Pause_performed;
 
         //player move event
-        playerMove();
+        
 
         //fire event
         if (projectileEnabled)
         {
+            playerMove();
             OnFire();
         }
 
@@ -120,6 +122,7 @@ public class PlayerController : MonoBehaviour
             if(playerHealth >= 0)
             {
                 EventBroker.CallPlayerHit();
+                animator.Play("shipHit");
                 playerHealth-- ;
             }
 

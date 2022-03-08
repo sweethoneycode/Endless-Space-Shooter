@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650b1fa4b862c0c439b8caa93d3478c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 1
+  EnemyHealth: 4
   EnemySpeed: 1
   ExplosionPrefab: {fileID: 1613842365161332, guid: 5ed6748782991c14dafb9292f1af700f, type: 3}
 --- !u!82 &3537854290650902155

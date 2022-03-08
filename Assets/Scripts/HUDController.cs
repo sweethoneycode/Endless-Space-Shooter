@@ -6,7 +6,7 @@ using TMPro;
 using System;
 
 using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems;
+using UnityEngine.Analytics;
 
 public class HUDController : MonoBehaviour
 {
@@ -24,12 +24,7 @@ public class HUDController : MonoBehaviour
     private Image[] shipImages;
     private int numberOfShips;
 
-   // private GameContoller gameSceneController;
-
-
-    private float timer = 0.0f;
-    private float waitTime = 2.0f;
-    private float visualTime = 0.0f;
+    // private GameContoller gameSceneController;
 
     public int playerScore = 0;
 
@@ -63,6 +58,7 @@ public class HUDController : MonoBehaviour
     [SerializeField] private GameObject EndGameButton;
     private bool restoreShields = true;
 
+    private Scene scene;
     #endregion
 
     private void Awake()
@@ -75,7 +71,7 @@ public class HUDController : MonoBehaviour
         shieldChange = 4f;
 
         numberOfShips = shipImages.Length;
-        
+
         //Subscribe to events
 
         EventBroker.UpdatePlayerScore += UpdateScore;
@@ -95,7 +91,7 @@ public class HUDController : MonoBehaviour
 
     private void RestoreShields()
     {
-        
+
         GetComponent<AudioSource>().PlayOneShot(shieldAudio);
         restoreShields = true;
         CurrentShields = 1;
@@ -112,9 +108,6 @@ public class HUDController : MonoBehaviour
             sheildBar.value = CurrentShields;
 
         }
-        else { 
-        }
-
 
     }
 
@@ -137,7 +130,8 @@ public class HUDController : MonoBehaviour
 
     private void showShips()
     {
-        for (int i = 0; i < 3; i++){
+        for (int i = 0; i < 3; i++)
+        {
             shipImages[i].gameObject.SetActive(true);
         }
     }
@@ -152,11 +146,16 @@ public class HUDController : MonoBehaviour
 
     public void ResetGame()
     {
+        Analytics.CustomEvent("Reset Level",
+            new Dictionary<string, object>{
+                    {"Level:", scene.name },
+                    {"High Score:",SaveManager.instance.activeSave.highScore}
+            });
+
         EventBroker.CallRestartGame();
 
         Time.timeScale = 1.0f;
         isGameOver = false;
-        timer = 0;
         showShips();
         playerScore = 0;
         UpdateScore();
@@ -170,11 +169,18 @@ public class HUDController : MonoBehaviour
         gameUI.SetActive(true);
 
         isGameStart = true;
-        timer = 0;
         showShips();
 
         startScreen.SetActive(false);
         scoreTXT.SetActive(false);
+
+        Scene scene = SceneManager.GetActiveScene();
+
+        Analytics.CustomEvent("Start Level",
+            new Dictionary<string, object>{
+                    {"Level:", scene.name },
+                    {"High Score:",SaveManager.instance.activeSave.highScore}
+            });
     }
 
     public void UpdateScore()
@@ -192,6 +198,11 @@ public class HUDController : MonoBehaviour
 
     public void ExitGame()
     {
+        Analytics.CustomEvent("Quit Level",
+            new Dictionary<string, object>{
+                            {"Level:", scene.name },
+                            {"High Score:",SaveManager.instance.activeSave.highScore}
+            });
         SaveHighScore();
 
         if (isGamePaused) { Time.timeScale = 1.0f; }
@@ -199,7 +210,7 @@ public class HUDController : MonoBehaviour
 
         LoadingData.sceneToLoad = "Start";
         SceneManager.LoadScene("Loading");
- 
+
     }
     public void PauseGame()
     {
@@ -209,14 +220,15 @@ public class HUDController : MonoBehaviour
             isGamePaused = true;
             Time.timeScale = 0.0f;
 
-            
-        } else
+
+        }
+        else
         {
 
             ResumeGame();
         }
 
- 
+
 
     }
 
@@ -229,8 +241,16 @@ public class HUDController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isGameOver)
+        {
+            Analytics.CustomEvent("Game Over",
+                new Dictionary<string, object>{
+                    {"Level:", scene.name },
+                    {"High Score:",SaveManager.instance.activeSave.highScore}
+                });
 
-        pauseMenu.SetActive(isGamePaused);
+            pauseMenu.SetActive(isGamePaused);
+        }
 
         if (restoreShields)
         {
@@ -248,10 +268,12 @@ public class HUDController : MonoBehaviour
                 shieldbarParticles.Stop();
                 restoreShields = false;
             }
-  
-  
+
+
         }
 
+        if (isGameOver)
+            gameUI.SetActive(false);
 
         gameOverMenu.SetActive(isGameOver);
 
@@ -262,15 +284,14 @@ public class HUDController : MonoBehaviour
 
         if (!isGameOver && isGameStart)
         {
-            
+
             cooldownTimer -= Time.deltaTime;
-            if (cooldownTimer <= 0 )
+            if (cooldownTimer <= 0)
             {
                 cooldownTimer = firingCooldown;
-                timer++;
                 EventBroker.CallCallUpdateScore();
             }
- 
+
         }
     }
 
@@ -278,7 +299,8 @@ public class HUDController : MonoBehaviour
     {
         float currentScore = SaveManager.instance.activeSave.highScore;
 
-        if (playerScore > currentScore) {
+        if (playerScore > currentScore)
+        {
             SaveManager.instance.activeSave.highScore = playerScore;
             SaveManager.instance.Save();
         }

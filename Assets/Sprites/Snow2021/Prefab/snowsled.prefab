@@ -100,7 +100,10 @@ MonoBehaviour:
   paddingLeft: 1
   paddingRight: 1
   playerHealth: 10
+  animator: {fileID: -1491707556717839554}
+  playHit: {fileID: 7400000, guid: ff588d0ab4dae35409110ba124db2137, type: 2}
   explosionPrefab: {fileID: 1613842365161332, guid: 2bd995402667a184db1b22b3097a576f, type: 3}
+  projectileEnabled: 1
   speed: 0
 --- !u!82 &1942018464682853943
 AudioSource:
