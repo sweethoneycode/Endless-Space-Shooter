@@ -8,7 +8,10 @@ public class EnemyShip : MonoBehaviour
     [SerializeField] private GameObject ExplosionPrefab;
     [SerializeField] private GameObject laserPrefab;
     [SerializeField] private float EnemyHealth;
+    [SerializeField] private float MaxHealth;
     [SerializeField] AudioClip impactSound;
+
+    [SerializeField] private HealthBarBehavior HealthBarBehavior;
 
     private Rigidbody2D laserRB;
     [SerializeField] private readonly float firingCooldown = 1.5f;
@@ -22,7 +25,7 @@ public class EnemyShip : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        HealthBarBehavior.SetHealth(EnemyHealth, MaxHealth);
     }
 
     // Update is called once per frame
@@ -49,6 +52,8 @@ public class EnemyShip : MonoBehaviour
                 if (EnemyHealth >= 0)
                 {
                     EnemyHealth--;
+                    HealthBarBehavior.SetHealth(EnemyHealth, MaxHealth);
+
                     GetComponent<AudioSource>().PlayOneShot(impactSound);
                     Destroy(collision.gameObject);
                     GameObject explosionInstance = Instantiate(ExplosionPrefab);
