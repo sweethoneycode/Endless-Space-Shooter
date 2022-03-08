@@ -6,10 +6,7 @@ using UnityEngine.UI;
 public class HealthBarBehavior : MonoBehaviour
 {
     [SerializeField] private Slider slider;
-    [SerializeField] private Color Low;
-    [SerializeField] private Color High;
     [SerializeField] private Vector3 Offset;
-    [SerializeField] private Image FillColor;
 
     public void SetHealth(float health, float maxHealth)
     {
@@ -21,5 +18,6 @@ public class HealthBarBehavior : MonoBehaviour
     void Update()
     {
         slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + Offset);
+       // FillColor.color = Color.Lerp(Low, High, slider.normalizedValue);
     }
 }

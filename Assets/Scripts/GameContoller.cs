@@ -61,7 +61,7 @@ public class GameContoller : MonoBehaviour
     private void RestartGame()
     {
         StopAllCoroutines();
-        SceneManager.LoadScene("Classic");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void UpdateLives()

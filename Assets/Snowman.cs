@@ -8,6 +8,7 @@ public class Snowman : MonoBehaviour
     [SerializeField] private GameObject ExplosionPrefab;
     [SerializeField] private GameObject laserPrefab;
     [SerializeField] private float EnemyHealth;
+    [SerializeField] private float EnemyMaxHealth;
     [SerializeField] AudioClip impactSound;
     [SerializeField] private bool fireSnowball;
 
@@ -17,6 +18,7 @@ public class Snowman : MonoBehaviour
 
     //Set by GameSceneController
     [SerializeField] private float speed;
+    [SerializeField] HealthBarBehavior HealthBarBehavior;
 
     bool takeDamage;
 
@@ -24,6 +26,7 @@ public class Snowman : MonoBehaviour
     void Start()
     {
         fireSnowball = false;
+        HealthBarBehavior.SetHealth(EnemyHealth, EnemyMaxHealth);
     }
 
     // Update is called once per frame
@@ -52,6 +55,7 @@ public class Snowman : MonoBehaviour
                 if (EnemyHealth >= 0)
                 {
                     EnemyHealth--;
+                    HealthBarBehavior.SetHealth(EnemyHealth, EnemyMaxHealth);
                     GetComponent<AudioSource>().PlayOneShot(impactSound);
                     Destroy(collision.gameObject);
                     GameObject explosionInstance = Instantiate(ExplosionPrefab);

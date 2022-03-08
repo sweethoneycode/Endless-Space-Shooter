@@ -52,6 +52,7 @@ public class EnemyShip : MonoBehaviour
                 if (EnemyHealth >= 0)
                 {
                     EnemyHealth--;
+
                     HealthBarBehavior.SetHealth(EnemyHealth, MaxHealth);
 
                     GetComponent<AudioSource>().PlayOneShot(impactSound);
