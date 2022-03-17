@@ -80,6 +80,18 @@ public class HUDController : MonoBehaviour
         EventBroker.PauseGame += PauseGame;
         EventBroker.PlayerHit += PlayerHit;
         EventBroker.RestoreShields += RestoreShields;
+        EventBroker.ExtraLife += EventBroker_ExtraLife;
+
+    }
+
+
+
+    private void EventBroker_ExtraLife()
+    {
+        isGameOver = false;
+        gameUI.SetActive(true);
+        GetComponent<AudioSource>().Play();
+        ResumeGame();
     }
 
     public void Start()
@@ -87,6 +99,7 @@ public class HUDController : MonoBehaviour
         float playerHighScore;
         playerHighScore = SaveManager.instance.activeSave.highScore;
         playerHighScoreUI.text = "Player High Score: " + playerHighScore;
+
     }
 
     private void RestoreShields()
@@ -125,6 +138,7 @@ public class HUDController : MonoBehaviour
         EventBroker.PauseGame -= PauseGame;
         EventBroker.PlayerHit -= PlayerHit;
         EventBroker.RestoreShields -= RestoreShields;
+        EventBroker.ExtraLife -= EventBroker_ExtraLife;
 
     }
 
@@ -146,7 +160,7 @@ public class HUDController : MonoBehaviour
 
     public void ResetGame()
     {
-        Analytics.CustomEvent("Reset Level",
+        Analytics.CustomEvent("ResetLevel",
             new Dictionary<string, object>{
                     {"Level:", scene.name },
                     {"High Score:",SaveManager.instance.activeSave.highScore}
@@ -176,7 +190,7 @@ public class HUDController : MonoBehaviour
 
         Scene scene = SceneManager.GetActiveScene();
 
-        Analytics.CustomEvent("Start Level",
+        Analytics.CustomEvent("StartLevel",
             new Dictionary<string, object>{
                     {"Level:", scene.name },
                     {"High Score:",SaveManager.instance.activeSave.highScore}
@@ -198,7 +212,7 @@ public class HUDController : MonoBehaviour
 
     public void ExitGame()
     {
-        Analytics.CustomEvent("Quit Level",
+        Analytics.CustomEvent("QuitLevel",
             new Dictionary<string, object>{
                             {"Level:", scene.name },
                             {"High Score:",SaveManager.instance.activeSave.highScore}

@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
     private bool StartAstroidWave = true;
     private bool StartShipWave = true;
     private bool StartPowerUpWave = true;
-    Camera camera;
+    new Camera camera;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
         EventBroker.EndGame += StopSpawnEnemy;
         EventBroker.RestartGame += StartSpawnEnemy;
         EventBroker.StartGame += StartSpawnEnemy;
-
+        EventBroker.ExtraLife += StartSpawnEnemy;
 
     }
 
@@ -47,6 +47,9 @@ public class EnemySpawner : MonoBehaviour
     private void OnDisable()
     {
         EventBroker.EndGame -= StopSpawnEnemy;
+        EventBroker.RestartGame -= StartSpawnEnemy;
+        EventBroker.StartGame -= StartSpawnEnemy;
+        EventBroker.ExtraLife -= StartSpawnEnemy;
     }
 
     private void StopSpawnEnemy()

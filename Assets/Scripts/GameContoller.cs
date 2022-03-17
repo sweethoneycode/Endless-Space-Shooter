@@ -35,8 +35,21 @@ public class GameContoller : MonoBehaviour
         EventBroker.PlayerDeath += PlayerHasDied;
         EventBroker.RestartGame += RestartGame;
         EventBroker.StartGame += NewGame;
+        EventBroker.ExtraLife += EventBroker_ExtraLife;
+        EventBroker.PlayAd += EventBroker_PlayAd;
 
         playerInput = new PlayerInput();
+    }
+
+    private void EventBroker_PlayAd()
+    {
+        GetComponent<AudioSource>().Pause();
+    }
+    private void EventBroker_ExtraLife()
+    {
+        GetComponent<AudioSource>().Play();
+        playerLives += 1;
+        StartCoroutine(SpawnShip(true));
     }
 
     private void NewGame()
@@ -49,7 +62,8 @@ public class GameContoller : MonoBehaviour
         EventBroker.PlayerDeath -= PlayerHasDied;
         EventBroker.RestartGame -= RestartGame;
         EventBroker.StartGame -= NewGame;
-
+        EventBroker.ExtraLife -= EventBroker_ExtraLife;
+        EventBroker.PlayAd -= EventBroker_PlayAd;
     }
 
     private void PlayerHasDied()

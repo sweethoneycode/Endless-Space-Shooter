@@ -12,7 +12,20 @@ public class EventBroker
     public static event Action RestartGame;
     public static event Action StartGame;
     public static event Action PauseGame;
+    public static event Action ExtraLife;
+    public static event Action PlayAd;
 
+    public static void CallPlayAd()
+    {
+        if (PlayAd != null)
+            PlayAd();
+    }
+
+    public static void CallExtraLife()
+    {
+        if (ExtraLife != null)
+            ExtraLife();
+    }
     public static void CallRestoreShields()
     {
         if (RestoreShields != null)

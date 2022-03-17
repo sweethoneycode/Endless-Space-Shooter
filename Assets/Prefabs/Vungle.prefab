@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8921019868390370955
+--- !u!1 &6777274025865743079
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,44 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8921019868390370952}
-  - component: {fileID: 2137154555163838944}
+  - component: {fileID: 6777274025865743073}
+  - component: {fileID: 6777274025865743078}
   m_Layer: 0
-  m_Name: SaveManager
+  m_Name: Vungle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8921019868390370952
+--- !u!4 &6777274025865743073
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8921019868390370955}
+  m_GameObject: {fileID: 6777274025865743079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.9092836, y: 1.4852734, z: -0.19251862}
+  m_LocalPosition: {x: 0.42322612, y: -1.5151496, z: -10.08404}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2137154555163838944
+--- !u!114 &6777274025865743078
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8921019868390370955}
+  m_GameObject: {fileID: 6777274025865743079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1a7e29616b54514ca0d686deedab64f, type: 3}
+  m_Script: {fileID: 11500000, guid: dd108a69da6a64c4497af940c32f93e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeSave:
-    saveName: 
-    playerName: 
-    highScore: 0
-    soundVolume: 0
-  hasLoaded: 0
