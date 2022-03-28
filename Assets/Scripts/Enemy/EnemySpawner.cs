@@ -27,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
     {
         camera = Camera.main;
 
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        screenBounds = camera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, camera.transform.position.z));
 
         EventBroker.EndGame += StopSpawnEnemy;
         EventBroker.RestartGame += StartSpawnEnemy;
@@ -80,7 +80,7 @@ public class EnemySpawner : MonoBehaviour
     {
         StartPowerUpWave = true;
 
-        float secondToWait = Random.Range(10f, 30f);
+        float secondToWait = Random.Range(50f, 100f);
 
         WaitForSeconds wait = new WaitForSeconds(secondToWait);
 

@@ -222,7 +222,7 @@ public class HUDController : MonoBehaviour
         if (isGamePaused) { Time.timeScale = 1.0f; }
         StopAllCoroutines();
 
-        LoadingData.sceneToLoad = "Start";
+        LoadingData.sceneToLoad = "MultiVerse";
         SceneManager.LoadScene("Loading");
 
     }
