@@ -82,6 +82,7 @@ public class HUDController : MonoBehaviour
         EventBroker.RestoreShields += RestoreShields;
         EventBroker.ExtraLife += EventBroker_ExtraLife;
 
+        scene = SceneManager.GetActiveScene();
     }
 
 
@@ -96,6 +97,12 @@ public class HUDController : MonoBehaviour
 
     public void Start()
     {
+        Analytics.CustomEvent("VisitedLevel",
+        new Dictionary<string, object>{
+                        {"Level:", scene.name },
+                        {"High Score:",SaveManager.instance.activeSave.highScore}
+        });
+
         float playerHighScore;
         playerHighScore = SaveManager.instance.activeSave.highScore;
         playerHighScoreUI.text = "Player High Score: " + playerHighScore;
@@ -189,6 +196,8 @@ public class HUDController : MonoBehaviour
         scoreTXT.SetActive(false);
 
         Scene scene = SceneManager.GetActiveScene();
+
+        Debug.Log(scene.name);
 
         Analytics.CustomEvent("StartLevel",
             new Dictionary<string, object>{

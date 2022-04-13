@@ -53,14 +53,13 @@ GameObject:
   - component: {fileID: 1520178141833279500}
   - component: {fileID: 7826773576501588674}
   - component: {fileID: 6885456091685439344}
-  - component: {fileID: 1954536909679794444}
   m_Layer: 5
   m_Name: WatchAd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8265414331896877770
 RectTransform:
   m_ObjectHideFlags: 0
@@ -163,19 +162,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1954536909679794444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 197099198588220492}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd108a69da6a64c4497af940c32f93e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playAd: {fileID: 6885456091685439344}
 --- !u!1 &1334125247148548125
 GameObject:
   m_ObjectHideFlags: 0
@@ -2912,7 +2898,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2169001377404994984
 RectTransform:
   m_ObjectHideFlags: 0
