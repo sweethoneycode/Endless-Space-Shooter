@@ -9,6 +9,7 @@ TagManager:
   - Missle
   - EnemyLaser
   - PowerUp
+  - Active
   layers:
   - Default
   - TransparentFX

@@ -22,11 +22,6 @@ public class LoadingScene : MonoBehaviour
 
     }
 
-    void Update()
-    {
-
-    }
-
     IEnumerator StartLoad()
     {
         loadingScreen.SetActive(true);

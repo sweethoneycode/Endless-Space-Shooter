@@ -39,6 +39,8 @@ public class GameContoller : MonoBehaviour
         EventBroker.PlayAd += EventBroker_PlayAd;
 
         playerInput = new PlayerInput();
+
+        NewGame();
     }
 
     private void EventBroker_PlayAd()
@@ -114,7 +116,6 @@ public class GameContoller : MonoBehaviour
 
         PlayerController ship = Instantiate(playerToSpawn, new Vector2(0, -3f), Quaternion.identity);
         ship.speed = playerSpeed;
-        // ship.shieldDuration = shieldDuration;
         EventBroker.CallRestoreShields();
 
         yield return null;

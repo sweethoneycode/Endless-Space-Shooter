@@ -2,113 +2,72 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShip : MonoBehaviour
+public class EnemyShip : MonoBehaviour, IDamagable
 {
 
-    [SerializeField] private GameObject ExplosionPrefab;
-    [SerializeField] private GameObject laserPrefab;
-    [SerializeField] private float EnemyHealth;
-    [SerializeField] private float MaxHealth;
+    [SerializeField] EnemyController enemyController;
+
     [SerializeField] AudioClip impactSound;
+    [SerializeField] private int points = 50;
 
     [SerializeField] private HealthBarBehavior HealthBarBehavior;
 
-    private Rigidbody2D laserRB;
-    [SerializeField] private readonly float firingCooldown = 1.5f;
+    [SerializeField] private float firingCooldown = 1.5f;
     private float cooldownTimer;
 
-    //Set by GameSceneController
-    [SerializeField] private float speed;
+    private int laserCount;
+
+    [SerializeField] ChooseWeapon ChooseWeapon; 
 
     bool takeDamage;
 
     // Start is called before the first frame update
     void Start()
     {
-        HealthBarBehavior.SetHealth(EnemyHealth, MaxHealth);
+       HealthBarBehavior.SetHealth( enemyController._enemyData.health, enemyController._enemyData.maxHealth);
+
     }
 
     // Update is called once per frame
     void Update()
-    {
-        if (transform.position.y < 5) { 
-            OnFire();
-        }
 
-        if (transform.position.y < 5)
-        {
-            takeDamage = true;
-        }
+    {
+      // HealthBarBehavior.SetHealth(enemyController.EnemyHealth, enemyController._enemyData.maxHealth);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //TODO determine amount of damage
 
-        if (collision.CompareTag("Missle"))
+        if (collision.CompareTag("Active"))
         {
-            if (takeDamage)
-            {
-                if (EnemyHealth >= 0)
-                {
-                    EnemyHealth--;
-
-                    HealthBarBehavior.SetHealth(EnemyHealth, MaxHealth);
-
-                    GetComponent<AudioSource>().PlayOneShot(impactSound);
-                    Destroy(collision.gameObject);
-                    GameObject explosionInstance = Instantiate(ExplosionPrefab);
-                    explosionInstance.transform.localScale = (new Vector2(0.5f, 0.5f));
-                    explosionInstance.transform.position = transform.position;
-                    Destroy(explosionInstance, 0.5f);
-                }
-
-                if (EnemyHealth == 0)
-                {
-
-                    EventBroker.CallCallUpdateScore();
-
-                    DestroyEnemy();
-
-
-                    Destroy(collision.gameObject);
-                }
-            }
-
+            ChooseWeapon.pickWeapon();
         }
+
+            float currentHealth = enemyController.EnemyHealth;
+            HealthBarBehavior.SetHealth(currentHealth, enemyController._enemyData.maxHealth);
     }
 
-    private void DestroyEnemy()
+
+
+    //private void DestroyEnemy()
+    //{
+    //    GameObject explosionInstance = Instantiate(ExplosionPrefab);
+    //    explosionInstance.transform.position = transform.position;
+
+    //    Destroy(explosionInstance, 1.2f);
+
+    //    levelData.HighScore = points;
+
+    //    EventBroker.CallCallUpdateScore();
+
+    //    Destroy(transform.gameObject, 0.2f);
+    //}
+
+    public void Damage()
     {
-        GameObject explosionInstance = Instantiate(ExplosionPrefab);
-        explosionInstance.transform.position = transform.position;
-
-        Destroy(explosionInstance, 1.2f);
-
+        levelData.HighScore = points;
         EventBroker.CallCallUpdateScore();
-//        EventBroker.CallRestoreShields();
-
-        Destroy(transform.gameObject, 0.2f);
-    }
-
-    public void OnFire()
-    {
-
-        //use the float value from firing to launch missles and reduce spamming by using a bool
-
-        cooldownTimer -= Time.deltaTime;
-
-        if (cooldownTimer <= 0)
-        {
-            cooldownTimer = firingCooldown;
-
-            GameObject laserObject = Instantiate(laserPrefab, transform.position, laserPrefab.transform.rotation, transform.parent);
-
-            laserObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -10f);
-
-
-        }
-
-
+        HealthBarBehavior.SetHealth(enemyController.EnemyHealth, enemyController._enemyData.maxHealth);
     }
 }

@@ -27,16 +27,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private AnimationClip playHit;
 
-    private bool pausedGame = true;
-
-    // private bool isFiring = false;
-
     public GameObject explosionPrefab;
 
     [SerializeField] private bool projectileEnabled = true;
 
     //Set by GameSceneController
     [SerializeField] public float speed;
+
+
 
     private void InitBounds()
     {
@@ -79,7 +77,6 @@ public class PlayerController : MonoBehaviour
     public void EnableProjectile()
     {
         projectileEnabled = true;
-        //availableBullet.SetActive(projectileEnabled);
     }
 
     // Update is called once per frame
@@ -89,7 +86,7 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.Pause.performed += Pause_performed;
 
         //player move event
-        
+
 
         //fire event
         if (projectileEnabled)
@@ -111,28 +108,26 @@ public class PlayerController : MonoBehaviour
     {
         //TODO determine amount of damage
 
-
-
         if (collision.CompareTag("Enemy"))
         {
             GameObject explosionInstance = Instantiate(explosionPrefab);
             explosionInstance.transform.position = transform.position;
             Destroy(explosionInstance, 1f);
 
-            if(playerHealth >= 0)
+            if (playerHealth >= 0)
             {
+                playerHealth--;
                 EventBroker.CallPlayerHit();
                 animator.Play("shipHit");
-                playerHealth-- ;
+
             }
 
-            if(playerHealth == 0)
+            if (playerHealth == 0)
             {
                 EventBroker.CallPlayerDeath();
                 Destroy(gameObject);
             }
 
-          ///  Debug.Log("Player Health " + playerHealth);
         }
     }
 
@@ -142,14 +137,11 @@ public class PlayerController : MonoBehaviour
 
     public void playerMove()
     {
-        //using new input system
-       // dPadInputMovement.x = playerInput.Player.Move.ReadValue<float>();
-
         inputMovement = playerInput.Player.Move.ReadValue<Vector2>();
 
         Vector2 currPosition = transform.position;
 
-       if (inputMovement.x < -1 || inputMovement.x >1)
+        if (inputMovement.x < -1 || inputMovement.x > 1)
         {
             if (Application.platform == RuntimePlatform.WSAPlayerX64)
             {
@@ -159,7 +151,7 @@ public class PlayerController : MonoBehaviour
             {
                 speed = 5;
             }
-                
+
         }
 
         currPosition.x += Mathf.Clamp(inputMovement.x, -1, 1) * Time.deltaTime * speed;
@@ -173,10 +165,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnFire()
     {
-
-       // fireAction = playerInput.Player.Fire.ReadValue<float>();
-
-        //use the float value from firing to launch missles and reduce spamming by using a bool
 
         cooldownTimer -= Time.deltaTime;
 

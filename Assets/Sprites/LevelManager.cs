@@ -7,11 +7,6 @@ public class LevelManager : MonoBehaviour
 {
     public string targetScene;
 
-    public void Awake()
-    {
-     //   DontDestroyOnLoad(gameObject);
-    }
-
     public void LoadScene(string targetScene)
     {
         LoadingData.sceneToLoad = targetScene;

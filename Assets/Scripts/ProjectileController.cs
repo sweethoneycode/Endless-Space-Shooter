@@ -6,18 +6,15 @@ public class ProjectileController : MonoBehaviour
 {
     // Start is called before the first frame update
 
-
+    [SerializeField] private Rigidbody2D laserRB;
     [SerializeField] AudioClip impactSound;
-
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        Destroy(gameObject, 2f);
+        if (laserRB != null)
+            laserRB.velocity = new Vector2(0, -10f);
+
     }
 
 }

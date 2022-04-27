@@ -14,6 +14,13 @@ public class EventBroker
     public static event Action PauseGame;
     public static event Action ExtraLife;
     public static event Action PlayAd;
+    public static event Action ProtectileActive;
+
+    public static void CallProjectileActive()
+    {
+        if (ProtectileActive != null)
+            ProtectileActive();
+    }
 
     public static void CallPlayAd()
     {
