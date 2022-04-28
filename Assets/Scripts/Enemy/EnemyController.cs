@@ -91,7 +91,7 @@ public class EnemyController : MonoBehaviour, IDamagable
 
         Destroy(explosionInstance, 1.2f);
 
-        Destroy(transform.gameObject, 0.1f);
+        Destroy(gameObject, 0.1f);
     }
 
     private void OnDisable()

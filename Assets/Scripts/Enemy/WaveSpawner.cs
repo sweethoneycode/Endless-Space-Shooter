@@ -17,8 +17,6 @@ public class WaveSpawner : MonoBehaviour
     private Vector2 screenBounds;
     new Camera camera;
 
-    private bool StartWave = true;
-
 
     private void Awake()
     {
@@ -52,7 +50,7 @@ public class WaveSpawner : MonoBehaviour
 
     private void StartSpawnEnemy()
     {
-        StartWave = false;
+        StartCoroutine(SpawnEnemies());
     }
 
     // Update is called once per frame
@@ -87,12 +85,9 @@ public class WaveSpawner : MonoBehaviour
 
     private IEnumerator SpawnEnemies()
     {
-        StartWave = true;
         float secondToWait = Random.Range(1f, 2f);
 
         WaitForSeconds wait = new WaitForSeconds(secondToWait);
-
-        yield return wait;
 
         for (int i = 0; i < currentWave.NumberToSpawn; i++)
         {

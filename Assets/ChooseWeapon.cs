@@ -12,14 +12,9 @@ public class ChooseWeapon : MonoBehaviour
     void Start()
     {
         
-        //  EventBroker.ProtectileActive += pickWeapon;
+       
     }
 
-    private void EventBroker_ProtectileActive()
-    {
-        pickWeapon();
-
-    }
 
     public void pickWeapon()
     {

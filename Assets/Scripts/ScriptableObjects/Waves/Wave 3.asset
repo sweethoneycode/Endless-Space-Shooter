@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <EnemiesinWave>k__BackingField:
   - {fileID: 8349017584824185177, guid: 513433900ead596409a4d07680134ab4, type: 3}
-  <TimeBeforeThisWave>k__BackingField: 30
+  <TimeBeforeThisWave>k__BackingField: 2
   <NumberToSpawn>k__BackingField: 1
