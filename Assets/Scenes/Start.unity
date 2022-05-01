@@ -512,7 +512,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Endless Space Shooter
+  m_text: 'Endless
+
+    Space Shooter'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9fad9a6eb701b6341b11a5bd36c91877, type: 2}
   m_sharedMaterial: {fileID: 3327022823199030415, guid: 9fad9a6eb701b6341b11a5bd36c91877, type: 2}
@@ -1129,7 +1131,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1809692928023861472
 PrefabInstance:
@@ -1346,7 +1348,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5310772012438279926, guid: e4df0024946755d439ec22d3c458086b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5310772012438279926, guid: e4df0024946755d439ec22d3c458086b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1431,7 +1433,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: -3274992977076774755, guid: c8ee1ce65af948e4484a7018edfb2da3, type: 3}
+    m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -1683,7 +1685,7 @@ RectTransform:
   - {fileID: 8140671147192804213}
   - {fileID: 675373775}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2060,7 +2062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8921019868390370952, guid: 9754bc874f9505c499bd969f266ac139, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8921019868390370952, guid: 9754bc874f9505c499bd969f266ac139, type: 3}
       propertyPath: m_LocalPosition.x

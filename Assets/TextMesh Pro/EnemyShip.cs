@@ -11,7 +11,6 @@ public class EnemyShip : MonoBehaviour, IDamagable
     [SerializeField] private int points = 50;
 
     [SerializeField] private HealthBarBehavior HealthBarBehavior;
-
     [SerializeField] private float firingCooldown = 1.5f;
 
     [SerializeField] ChooseWeapon ChooseWeapon; 

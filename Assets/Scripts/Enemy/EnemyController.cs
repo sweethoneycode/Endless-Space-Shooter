@@ -113,8 +113,6 @@ public class EnemyController : MonoBehaviour, IDamagable
     public void EnemyMove()
     {
 
-       // EnemySpeed = transform.localScale.y * _enemyData.speed;
-
         EnemyRB.gameObject.transform.Translate(Vector3.down * Time.deltaTime * _enemyData.speed);
 
     }

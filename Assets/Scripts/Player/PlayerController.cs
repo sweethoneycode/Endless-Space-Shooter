@@ -20,8 +20,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 minBounds;
     private Vector2 maxBounds;
 
-    [SerializeField] private float paddingLeft = 0.1f;
-    [SerializeField] private float paddingRight = 0.1f;
+    private float paddingLeft = 0.1f;
+    private float paddingRight = 0.1f;
     [SerializeField] private float playerHealth = 10f;
 
     [SerializeField] private Animator animator;
@@ -34,8 +34,9 @@ public class PlayerController : MonoBehaviour
     //Set by GameSceneController
     [SerializeField] public float speed;
 
+    float waitTimer;
 
-
+    int playerPoints;
     private void InitBounds()
     {
         Camera mainCamera = Camera.main;
@@ -55,6 +56,7 @@ public class PlayerController : MonoBehaviour
         playerPos = new Vector3(transform.position.x, transform.position.y, 0);
         EventBroker.ProjectileOutOfBounds += EnableProjectile;
         EventBroker.RestoreShields += RestoreShields;
+ 
     }
 
     private void RestoreShields()
@@ -124,14 +126,21 @@ public class PlayerController : MonoBehaviour
 
             if (playerHealth == 0)
             {
-                EventBroker.CallPlayerDeath();
-                Destroy(gameObject);
+
+                StartCoroutine(PlayerDeath());
             }
 
         }
     }
 
-
+    private IEnumerator PlayerDeath() 
+    {
+        WaitForSeconds wait = new WaitForSeconds(1f);
+        EventBroker.CallPlayerDeath();
+        Destroy(gameObject);
+        yield return wait;
+        
+    }
 
     //Move the Player
 

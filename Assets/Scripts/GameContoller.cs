@@ -11,13 +11,14 @@ public class GameContoller : MonoBehaviour
 
     [SerializeField] private PlayerController playerToSpawn;
 
-    private float timer;
     public float playerScore = 0;
     public float checkPause;
 
    [SerializeField] private float playerLives;
 
    [SerializeField] private bool DecreasePlayerLife = false;
+
+   [SerializeField] private AudioClip[] audioClips;
 
     private WaitForSeconds shipSpawnDelay = new WaitForSeconds(2);
 
@@ -36,17 +37,12 @@ public class GameContoller : MonoBehaviour
         EventBroker.RestartGame += RestartGame;
         EventBroker.StartGame += NewGame;
         EventBroker.ExtraLife += EventBroker_ExtraLife;
-        EventBroker.PlayAd += EventBroker_PlayAd;
 
         playerInput = new PlayerInput();
 
         NewGame();
     }
 
-    private void EventBroker_PlayAd()
-    {
-        GetComponent<AudioSource>().Pause();
-    }
     private void EventBroker_ExtraLife()
     {
         GetComponent<AudioSource>().Play();
@@ -65,7 +61,6 @@ public class GameContoller : MonoBehaviour
         EventBroker.RestartGame -= RestartGame;
         EventBroker.StartGame -= NewGame;
         EventBroker.ExtraLife -= EventBroker_ExtraLife;
-        EventBroker.PlayAd -= EventBroker_PlayAd;
     }
 
     private void PlayerHasDied()

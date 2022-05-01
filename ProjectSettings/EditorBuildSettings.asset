@@ -17,11 +17,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: 438ecb6b8e9db1e408088122e7e4f500
-  - enabled: 1
-    path: Assets/Scenes/MultiVerse.unity
-    guid: 482024a7b43812b4aa3c486052b07f57
-  - enabled: 1
-    path: Assets/Scenes/MultiVerses/SnowFight2021.unity
-    guid: cd0918450b4ebac41a546c5bc0c773d3
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 8d177b06824bf44489ddc0d0018b1253, type: 2}

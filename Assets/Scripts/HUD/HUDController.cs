@@ -269,7 +269,6 @@ public class HUDController : MonoBehaviour
         {
             Analytics.CustomEvent("Game Over",
                 new Dictionary<string, object>{
-                    {"Level:", scene.name },
                     {"High Score:",SaveManager.instance.activeSave.highScore}
                 });
 

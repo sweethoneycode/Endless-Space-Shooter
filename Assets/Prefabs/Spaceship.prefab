@@ -98,8 +98,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missleBullet: {fileID: 7144509516714269125, guid: 55a54d637529c9549b8b76a870ff4a38, type: 3}
   fireAction: 0
-  paddingLeft: 1
-  paddingRight: 1
   playerHealth: 10
   animator: {fileID: 163929771197982500}
   playHit: {fileID: 7400000, guid: 38984cfdd635ae242b4e0f084e977d2d, type: 2}
@@ -153,8 +151,8 @@ Transform:
   m_GameObject: {fileID: 1256818363372187828}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1256818362081812754}
   m_RootOrder: 0
@@ -173,8 +171,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missleBullet: {fileID: 0}
   fireAction: 0
-  paddingLeft: 0
-  paddingRight: 0
   playerHealth: 1
   animator: {fileID: 0}
   playHit: {fileID: 0}
@@ -222,7 +218,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0209372f8d5e0f14cac5aabae9f63e55, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bcbd280a96d988c4fa820947eb26ab30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -259,8 +255,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5825838078607531966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 1.03, z: 0}
-  m_LocalScale: {x: 0.138125, y: 1, z: 1}
+  m_LocalPosition: {x: -0.001, y: 0.853, z: 0}
+  m_LocalScale: {x: 0.4771787, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1256818362081812754}
@@ -349,7 +345,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -456,18 +452,18 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.4026344, g: 0.8883825, b: 0.9811321, a: 1}
+      maxColor: {r: 0.8474102, g: 0.8784314, b: 0.011764714, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 1, g: 0.95084643, b: 0, a: 1}
+        key1: {r: 1, g: 0.6777429, b: 0, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 0
+        ctime0: 39707
         ctime1: 65535
         ctime2: 0
         ctime3: 0
@@ -841,7 +837,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 3
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -894,7 +890,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 12
+    type: 19
     angle: 0
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -1719,7 +1715,7 @@ ParticleSystem:
     flipU: 0
     flipV: 0
   VelocityModule:
-    enabled: 1
+    enabled: 0
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -2361,7 +2357,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   LifetimeByEmitterSpeedModule:
-    enabled: 1
+    enabled: 0
     m_Curve:
       serializedVersion: 2
       minMaxState: 1
@@ -2417,7 +2413,7 @@ ParticleSystem:
         m_RotationOrder: 4
     m_Range: {x: 0, y: 1}
   ForceModule:
-    enabled: 1
+    enabled: 0
     x:
       serializedVersion: 2
       minMaxState: 0
