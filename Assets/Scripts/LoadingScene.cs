@@ -11,15 +11,20 @@ public class LoadingScene : MonoBehaviour
     [SerializeField] private string sceneToLoad;
     [SerializeField] private TMP_Text percentLoaded;
     [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] private AudioClip AudioClip;
 
     public GameObject loadingScreen;
 
-    AsyncOperation loadingOperation;
+   // AsyncOperation loadingOperation;
 
     void Start()
     {
         StartCoroutine(StartLoad());
-
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlayStageMusic(AudioClip);
+        }
+            
     }
 
     IEnumerator StartLoad()

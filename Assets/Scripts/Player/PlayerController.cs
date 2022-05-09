@@ -4,24 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamagable
 {
     public PlayerInput playerInput;
     private Vector3 playerPos;
 
-    [SerializeField] private GameObject missleBullet;
-    private Rigidbody2D missleRB;
+   // [SerializeField] private GameObject missleBullet;
+   // private Rigidbody2D missleRB;
     private Vector2 inputMovement;
     public float fireAction;
     private readonly float firingCooldown = 0.4f;
     private float cooldownTimer;
 
-
     private Vector2 minBounds;
     private Vector2 maxBounds;
 
-    private float paddingLeft = 0.1f;
-    private float paddingRight = 0.1f;
     [SerializeField] private float playerHealth = 10f;
 
     [SerializeField] private Animator animator;
@@ -37,6 +34,8 @@ public class PlayerController : MonoBehaviour
     float waitTimer;
 
     int playerPoints;
+
+    [SerializeField] ChooseWeapon ChooseWeapon;
     private void InitBounds()
     {
         Camera mainCamera = Camera.main;
@@ -106,33 +105,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //TODO determine amount of damage
-
-        if (collision.CompareTag("Enemy"))
-        {
-            GameObject explosionInstance = Instantiate(explosionPrefab);
-            explosionInstance.transform.position = transform.position;
-            Destroy(explosionInstance, 1f);
-
-            if (playerHealth >= 0)
-            {
-                playerHealth--;
-                EventBroker.CallPlayerHit();
-                animator.Play("shipHit");
-
-            }
-
-            if (playerHealth == 0)
-            {
-
-                StartCoroutine(PlayerDeath());
-            }
-
-        }
-    }
-
     private IEnumerator PlayerDeath() 
     {
         WaitForSeconds wait = new WaitForSeconds(1f);
@@ -163,12 +135,18 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        currPosition.x += Mathf.Clamp(inputMovement.x, -1, 1) * Time.deltaTime * speed;
+        currPosition.x -= Mathf.Clamp(inputMovement.x, -1, 1) * Time.deltaTime * speed;
 
         Vector2 newPos = currPosition;
         newPos.x = Mathf.Clamp(currPosition.x, minBounds.x, maxBounds.x);
 
         transform.position = newPos;
+
+    }
+
+    private void CreateWeapon()
+    {
+        ChooseWeapon.pickWeapon(10f, tag);
 
     }
 
@@ -180,16 +158,35 @@ public class PlayerController : MonoBehaviour
         if (cooldownTimer <= 0)
         {
             cooldownTimer = firingCooldown;
-
-            GameObject laserObject = Instantiate(missleBullet, transform.position, missleBullet.transform.rotation, transform.parent);
-
-            missleRB = laserObject.GetComponent<Rigidbody2D>();
-
-            missleRB.velocity = new Vector2(0, 10f);
-
+                       
+            CreateWeapon();
 
         }
 
 
+    }
+
+    public void Damage(float lazorDamage, string lazorTag)
+    {
+        if (lazorTag != tag)
+        {
+            GameObject explosionInstance = Instantiate(explosionPrefab);
+            explosionInstance.transform.position = transform.position;
+            Destroy(explosionInstance, 1f);
+
+            if (playerHealth >= 0)
+            {
+                playerHealth = playerHealth - lazorDamage;
+                EventBroker.CallPlayerHit();
+                animator.Play("shipHit");
+
+            }
+
+            if (playerHealth == 0)
+            {
+
+                StartCoroutine(PlayerDeath());
+            }
+        }
     }
 }

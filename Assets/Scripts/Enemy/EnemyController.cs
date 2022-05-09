@@ -18,21 +18,6 @@ public class EnemyController : MonoBehaviour, IDamagable
 
     bool takeDamage;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-        if (collision.CompareTag("Missle"))
-        {
-
-            if (takeDamage)
-            {
-                Damage();
-                Destroy(collision.gameObject);
-            }
-        }
-
-    }
-
 
     // Start is called before the first frame update
     void Start()
@@ -45,42 +30,31 @@ public class EnemyController : MonoBehaviour, IDamagable
 
     private void LoadEnemy(EnemyData data)
     {
-        //foreach (Transform child in transform)
-        //{
-        //    if (Application.isEditor)
-        //    {
-        //        DestroyImmediate(child.gameObject);
-        //    }
-        //    else
-        //    {
-        //        Destroy(child.gameObject);
-        //    }
-        //}
-
-        //GameObject enemyPrefab  = Instantiate(_enemyData.enemyModel);
-        //enemyPrefab.transform.SetParent(transform, false);
-        //enemyPrefab.transform.localPosition = Vector3.zero;
-        //enemyPrefab.transform.localRotation = Quaternion.identity;
- 
         EnemyHealth = _enemyData.health;
     }
 
 
-    public void Damage()
+    public void Damage(float lazorDamage, string lazorTag)
     {
-        if (EnemyHealth >= 0)
+        if (takeDamage)
         {
-            EnemyHealth--;
-            GameObject explosionInstance = Instantiate(ExplosionPrefab);
-            explosionInstance.transform.localScale = (new Vector2(0.5f, 0.5f));
-            explosionInstance.transform.position = transform.position;
-            Destroy(explosionInstance, 0.5f); 
-        }
-        if (EnemyHealth == 0)
-        {
-            DestroyEnemy();
-            levelData.HighScore = _enemyData.points;
-            EventBroker.CallCallUpdateScore();
+            if (lazorTag != tag.ToString())
+            {
+                if (EnemyHealth >= 0)
+                {
+                    EnemyHealth--;
+                    GameObject explosionInstance = Instantiate(ExplosionPrefab);
+                    explosionInstance.transform.localScale = (new Vector2(0.5f, 0.5f));
+                    explosionInstance.transform.position = transform.position;
+                    Destroy(explosionInstance, 0.5f);
+                }
+                if (EnemyHealth == 0)
+                {
+                    DestroyEnemy();
+                    levelData.HighScore = _enemyData.points;
+                    EventBroker.CallCallUpdateScore();
+                }
+            }
         }
 
     }
@@ -109,6 +83,7 @@ public class EnemyController : MonoBehaviour, IDamagable
 
         EnemyMove();
     }
+
 
     public void EnemyMove()
     {

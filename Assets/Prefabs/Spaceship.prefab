@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 1256818362081812752}
   - component: {fileID: 1256818362081812755}
   - component: {fileID: 1256818362081812753}
+  - component: {fileID: 534794554334036081}
   - component: {fileID: 163929771197982500}
   m_Layer: 0
   m_Name: Spaceship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,14 +97,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afca80c975ca9e343be627f879de4104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missleBullet: {fileID: 7144509516714269125, guid: 55a54d637529c9549b8b76a870ff4a38, type: 3}
   fireAction: 0
   playerHealth: 10
   animator: {fileID: 163929771197982500}
-  playHit: {fileID: 7400000, guid: 38984cfdd635ae242b4e0f084e977d2d, type: 2}
+  playHit: {fileID: 0}
   explosionPrefab: {fileID: 1613842365161332, guid: 5ed6748782991c14dafb9292f1af700f, type: 3}
   projectileEnabled: 1
   speed: 0
+  ChooseWeapon: {fileID: 534794554334036081}
+--- !u!114 &534794554334036081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256818362081812749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42db365682c0c714b95f11724c2c057f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 08d020981daaf734a8f1ca4d67c93a94, type: 2}
+  weaponDamage: 1
 --- !u!95 &163929771197982500
 Animator:
   serializedVersion: 4
@@ -114,10 +129,10 @@ Animator:
   m_GameObject: {fileID: 1256818362081812749}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f3f75ef12264de441b2bf17981503762, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -169,7 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afca80c975ca9e343be627f879de4104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missleBullet: {fileID: 0}
   fireAction: 0
   playerHealth: 1
   animator: {fileID: 0}
@@ -177,6 +191,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 0}
   projectileEnabled: 1
   speed: 0
+  ChooseWeapon: {fileID: 0}
 --- !u!212 &1256818363372187835
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -218,7 +233,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bcbd280a96d988c4fa820947eb26ab30, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0209372f8d5e0f14cac5aabae9f63e55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

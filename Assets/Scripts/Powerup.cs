@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Powerup : MonoBehaviour
+public class Powerup : MonoBehaviour, IConsumable
 {
     bool takeDamage = false;
     private Vector3 meteorScale;
+
+    public void Energy()
+    {
+        if (takeDamage)
+            EventBroker.CallRestoreShields();
+    }
 
     private void Awake()
     {
@@ -13,21 +19,23 @@ public class Powerup : MonoBehaviour
         meteorScale = new Vector2(randomScale, randomScale);
         transform.localScale = meteorScale;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-        if (collision.CompareTag("Missle"))
-        {
-            if(takeDamage)
-                EventBroker.CallRestoreShields();
-        }
-    }
 
     private void Update()
     {
         if (transform.position.y < 5)
         {
             takeDamage = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (tag == "Player")
+        {
+            Energy();
+            Destroy(gameObject, 2f);
+            Destroy(collision.gameObject, 1f);
         }
     }
 }

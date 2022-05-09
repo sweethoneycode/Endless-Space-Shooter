@@ -4,37 +4,51 @@ using UnityEngine;
 
 public class ChooseWeapon : MonoBehaviour
 {
-    [SerializeField] private GameObject[] weapons;
+    [SerializeField] private WeaponData weaponData;
+    private float cooldownTimer;
+    private float delayFire;
+    private float newVelocityRate;
+    private string newWeaponTag;
+    public float weaponDamage;
 
-    int laserCount;
     private bool FireOn = false;
     // Start is called before the first frame update
-    void Start()
+
+
+    public void pickWeapon(float velocityRate, string weaponTag)
     {
-        
-       
-    }
-
-
-    public void pickWeapon()
-    {
-        laserCount = 0;
-
-        if (weapons.Length > 0)
+        if (weaponData != null)
         {
-            if (levelData.HighScore > 20)
-                laserCount = 1;
-
-            if (levelData.HighScore > 100)
-                laserCount = 2;
-
-            if (levelData.HighScore > 200)
-                laserCount = Random.Range(0, weapons.Length);
+            FireOn = true;
+            delayFire = weaponData.fireDelay;
+            newVelocityRate = velocityRate;
+            newWeaponTag = weaponTag;
         }
-
-        EventBroker.CallProjectileActive();
-        GameObject laserObject = Instantiate(weapons[laserCount], transform.position, weapons[laserCount].transform.rotation, transform.parent);
     }
 
+    public IEnumerator Fire()
+    {
+
+        cooldownTimer -= Time.deltaTime;
+
+        if (cooldownTimer <= 0)
+        {
+            cooldownTimer = weaponData.coolDown;
+            GameObject lazor = Instantiate(weaponData.weapon, transform.position, weaponData.weapon.transform.rotation, transform.parent);
+            lazor.GetComponent<ProjectileController>().velocityRate = newVelocityRate;
+            lazor.tag = newWeaponTag;
+            lazor.GetComponent<ProjectileController>().lazorDamage = weaponDamage;
+
+            yield return new WaitForSeconds(delayFire);
+        }
+    }
+
+
+
+    private void Update()
+    {
+        if (FireOn)
+            StartCoroutine(Fire());
+    }
 }
 

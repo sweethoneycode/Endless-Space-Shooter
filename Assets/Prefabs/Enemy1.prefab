@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 342478486816756531}
   - component: {fileID: -6689863940179739906}
   - component: {fileID: 342478486816756540}
+  - component: {fileID: 7314727848929229625}
   - component: {fileID: 342478486816756528}
   m_Layer: 0
   m_Name: Enemy1
@@ -101,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: c0e360b02c78d684cb42a2a8c2a05c05, type: 2}
   ExplosionPrefab: {fileID: 1613842365161332, guid: 5ed6748782991c14dafb9292f1af700f, type: 3}
+  EnemyShip: {fileID: 342478486816756540}
 --- !u!114 &342478486816756540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,8 +119,21 @@ MonoBehaviour:
   impactSound: {fileID: 8300000, guid: 3a6952287e3370946a9c5b44fd07ef17, type: 3}
   points: 10
   HealthBarBehavior: {fileID: 4928946005855916979}
-  firingCooldown: 1.5
-  ChooseWeapon: {fileID: 2519881707540530607}
+  ChooseWeapon: {fileID: 7314727848929229625}
+--- !u!114 &7314727848929229625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342478486816756541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42db365682c0c714b95f11724c2c057f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: d0fc258fc1e925d4180d2901ddcf7d81, type: 2}
+  weaponDamage: 1
 --- !u!82 &342478486816756528
 AudioSource:
   m_ObjectHideFlags: 0
@@ -288,7 +303,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 37b92bdedb77b1b49b569f069a0ba7a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 793d4ea9a53ae7944b04d81290024b59, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -343,10 +358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42db365682c0c714b95f11724c2c057f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 4697521571834903400, guid: f3e7032021314564780b1d4911139ded, type: 3}
-  - {fileID: 1905031921327267309, guid: b0d037658d5244d459a479940735b02e, type: 3}
-  - {fileID: 3555824437896035169, guid: b3595e6d083c05747a79cefaddf41893, type: 3}
+  weaponData: {fileID: 0}
+  weaponDamage: 0
 --- !u!1 &2495611575499755141
 GameObject:
   m_ObjectHideFlags: 0

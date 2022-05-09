@@ -5,8 +5,9 @@ using TMPro;
 
 public class StartMenu : MonoBehaviour
 {
-    float playerScore;
-    [SerializeField] TMP_Text currentPlayerScore;
+    private float playerScore;
+    [SerializeField] private TMP_Text currentPlayerScore;
+    [SerializeField] private AudioClip AudioClip;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,9 @@ public class StartMenu : MonoBehaviour
         Time.timeScale = 1;
         playerScore = SaveManager.instance.activeSave.highScore;
         currentPlayerScore.text = "Player High Score: " + playerScore.ToString();
+
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.PlayStageMusic(AudioClip);
     }
 
 }

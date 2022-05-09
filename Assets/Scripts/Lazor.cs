@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Lazor : MonoBehaviour
 {
-    [SerializeField] private float firingCooldown = 1.5f;
+    [SerializeField] private float firingCooldown;
     private float cooldownTimer;
+
     [SerializeField] private GameObject laserPrefab;
     private bool FireOn = false;
 
@@ -17,37 +18,14 @@ public class Lazor : MonoBehaviour
         {
             cooldownTimer = firingCooldown;
 
-            Instantiate(laserPrefab, transform.position, laserPrefab.transform.rotation, transform.parent);
-
+           GameObject lazor = Instantiate(laserPrefab, transform.position, laserPrefab.transform.rotation, transform.parent);
         }
     }
 
-    void Start()
-    {
-
-        EventBroker.ProtectileActive += EventBroker_ProtectileActive;
-    }
-
-    private void OnDestroy()
-    {
-        EventBroker.ProtectileActive -= EventBroker_ProtectileActive;
-    }
-
-    private void OnDisable()
-    {
-        EventBroker.ProtectileActive -= EventBroker_ProtectileActive;
-    }
-
-    private void EventBroker_ProtectileActive()
-    {
-        FireOn = true;
-    }
 
     private void Update()
     {
-        if (FireOn)
-        {
+
             Fire();
-        }
     }
 }

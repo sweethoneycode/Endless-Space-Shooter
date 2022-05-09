@@ -41,11 +41,14 @@ public class GameContoller : MonoBehaviour
         playerInput = new PlayerInput();
 
         NewGame();
+
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.PlayStageMusic(audioClips[0]);
     }
 
     private void EventBroker_ExtraLife()
     {
-        GetComponent<AudioSource>().Play();
+       // GetComponent<AudioSource>().Play();
         playerLives += 1;
         StartCoroutine(SpawnShip(true));
     }

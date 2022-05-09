@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 8568822813101790388}
   m_Layer: 0
   m_Name: laser 1
-  m_TagString: Missle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,8 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17bbd45f5729aac4dbadcb4597fe296d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserRB: {fileID: 0}
-  impactSound: {fileID: 8300000, guid: c691aec0b0da2b541b22e1d9f3102dfd, type: 3}
+  laserRB: {fileID: 1460837011149225741}
+  audioClip: {fileID: 8300000, guid: 10ccc4f152ae0e64b9622857b2adce86, type: 3}
 --- !u!82 &8568822813101790388
 AudioSource:
   m_ObjectHideFlags: 0
@@ -191,10 +191,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 00dad665a8af48b4f897bbc66b84dd9e, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 0.3
-  m_Pitch: 1
+  m_Pitch: 0.31
   Loop: 0
   Mute: 0
   Spatialize: 0
