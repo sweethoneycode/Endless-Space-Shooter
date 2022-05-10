@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource _musicSource, _audioSource;
+    [SerializeField] private AudioSource _musicSource, _audioSource, _enemyAudioSource;
 
     public static SoundManager Instance;
 
@@ -36,5 +36,11 @@ public class SoundManager : MonoBehaviour
         _audioSource.clip = clip;
         _audioSource.PlayOneShot(_audioSource.clip);
 
+    }
+
+    public void PlayEnemySound(AudioClip audioClip)
+    {
+        _enemyAudioSource.clip = audioClip;
+        _enemyAudioSource.PlayOneShot(_enemyAudioSource.clip);
     }
 }

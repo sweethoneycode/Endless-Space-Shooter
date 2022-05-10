@@ -9,8 +9,8 @@ public class Powerup : MonoBehaviour, IConsumable
 
     public void Energy()
     {
-        if (takeDamage)
-            EventBroker.CallRestoreShields();
+        EventBroker.CallRestoreShields();
+        Destroy(gameObject, 1f);
     }
 
     private void Awake()
@@ -31,11 +31,10 @@ public class Powerup : MonoBehaviour, IConsumable
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (tag == "Player")
+        if (collision.tag == "Player" && takeDamage)
         {
             Energy();
-            Destroy(gameObject, 2f);
-            Destroy(collision.gameObject, 1f);
+
         }
     }
 }

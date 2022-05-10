@@ -10,7 +10,7 @@ public class Meteor : MonoBehaviour
     private void Awake()
     {
         float randomScale = Random.Range(0.5f, 1f);
-        float randomDamage = randomScale * 2;
+        float randomDamage = 2;
         lazorDamage = randomDamage;
 
         meteorScale = new Vector2(randomScale, randomScale);

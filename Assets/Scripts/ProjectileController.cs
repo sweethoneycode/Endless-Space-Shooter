@@ -16,7 +16,7 @@ public class ProjectileController : MonoBehaviour
 
     private void Awake()
     {
-        this.GetComponent<AudioSource>().PlayOneShot(audioClip);
+        SoundManager.Instance.PlayEnemySound(audioClip);
     }
     void Update()
     {
