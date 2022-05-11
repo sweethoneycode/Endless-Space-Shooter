@@ -179,4 +179,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserRB: {fileID: 1460837011149225741}
-  audioClip: {fileID: 8300000, guid: 25882e776b059e44ebd1d5f21345a5ca, type: 3}

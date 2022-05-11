@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 08d020981daaf734a8f1ca4d67c93a94, type: 2}
   weaponDamage: 1
+  audioClip: {fileID: 8300000, guid: 969c3095dceddfa46a0de060bf4e9548, type: 3}
 --- !u!95 &163929771197982500
 Animator:
   serializedVersion: 4

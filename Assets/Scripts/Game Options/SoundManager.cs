@@ -40,7 +40,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayEnemySound(AudioClip audioClip)
     {
-        _enemyAudioSource.clip = audioClip;
-        _enemyAudioSource.PlayOneShot(_enemyAudioSource.clip);
+            _enemyAudioSource.clip = audioClip;
+            _enemyAudioSource.PlayOneShot(_enemyAudioSource.clip);
     }
 }

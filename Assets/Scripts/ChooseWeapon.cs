@@ -14,6 +14,7 @@ public class ChooseWeapon : MonoBehaviour
     private bool FireOn = false;
     // Start is called before the first frame update
 
+    [SerializeField] private AudioClip audioClip;
 
     public void pickWeapon(float velocityRate, string weaponTag)
     {
@@ -38,6 +39,8 @@ public class ChooseWeapon : MonoBehaviour
             lazor.GetComponent<ProjectileController>().velocityRate = newVelocityRate;
             lazor.tag = newWeaponTag;
             lazor.GetComponent<ProjectileController>().lazorDamage = weaponDamage;
+
+            SoundManager.Instance.PlayEnemySound(audioClip);
 
             yield return new WaitForSeconds(delayFire);
         }

@@ -10,7 +10,7 @@ public class Powerup : MonoBehaviour, IConsumable
     public void Energy()
     {
         EventBroker.CallRestoreShields();
-        Destroy(gameObject, 1f);
+        Destroy(gameObject);
     }
 
     private void Awake()

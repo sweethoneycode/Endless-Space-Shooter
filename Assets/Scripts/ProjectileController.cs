@@ -10,14 +10,7 @@ public class ProjectileController : MonoBehaviour
     [SerializeField] public float velocityRate { private get; set; }
     [SerializeField] public float lazorDamage { private get; set; }
 
-    [SerializeField] private AudioClip audioClip;
 
-    // Update is called once per frame
-
-    private void Awake()
-    {
-        SoundManager.Instance.PlayEnemySound(audioClip);
-    }
     void Update()
     {
         if (laserRB != null)

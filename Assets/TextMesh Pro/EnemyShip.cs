@@ -51,4 +51,6 @@ public class EnemyShip : MonoBehaviour
 
         HealthBarBehavior.SetHealth(enemyHealth, enemyController._enemyData.maxHealth);
     }
+
+
 }
