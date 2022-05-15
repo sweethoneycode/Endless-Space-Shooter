@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour, IDamagable
     int playerPoints;
 
     [SerializeField] ChooseWeapon ChooseWeapon;
+
+    [SerializeField] private AudioClip PlayerHit;
     private void InitBounds()
     {
         Camera mainCamera = Camera.main;
@@ -170,6 +172,8 @@ public class PlayerController : MonoBehaviour, IDamagable
     {
         if (lazorTag != tag)
         {
+            SoundManager.Instance.PlaySFX(PlayerHit);
+
             GameObject explosionInstance = Instantiate(explosionPrefab);
             explosionInstance.transform.position = transform.position;
             Destroy(explosionInstance, 1f);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShip : MonoBehaviour
+public class EnemyShip : MonoBehaviour, IDamagable
 {
 
     [SerializeField] EnemyController enemyController;
@@ -12,7 +12,7 @@ public class EnemyShip : MonoBehaviour
 
     [SerializeField] private HealthBarBehavior HealthBarBehavior;
 
-
+    public float EnemyHealth { get; private set; }
     [SerializeField] ChooseWeapon ChooseWeapon;
 
     private float currentHealth;
@@ -20,10 +20,19 @@ public class EnemyShip : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LoadEnemy(enemyController._enemyData);
+
         HealthBarBehavior.SetHealth(enemyController._enemyData.health, enemyController._enemyData.maxHealth);
 
-        currentHealth = enemyController.EnemyHealth;
+        currentHealth = EnemyHealth;
         HealthBarBehavior.SetHealth(currentHealth, enemyController._enemyData.maxHealth);
+
+
+    }
+
+    private void LoadEnemy(EnemyData data)
+    {
+        EnemyHealth = enemyController._enemyData.health;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,15 +51,41 @@ public class EnemyShip : MonoBehaviour
 
     private void Update()
     {
-        currentHealth = enemyController.EnemyHealth;
+        currentHealth = EnemyHealth;
         ChangeHealth(currentHealth);
     }
 
     public void ChangeHealth(float enemyHealth)
     {
+        
 
         HealthBarBehavior.SetHealth(enemyHealth, enemyController._enemyData.maxHealth);
     }
 
+    public void Damage(float lazorDamage, string lazorTag)
+    {
+        if (enemyController.takeDamage)
+        {
+            if (lazorTag != tag.ToString())
+            {
+                if (EnemyHealth >= 0)
+                {
+                    EnemyHealth--;
+                    GameObject explosionInstance = Instantiate(enemyController.ExplosionPrefab);
 
+                    explosionInstance.transform.localScale = (new Vector2(0.5f, 0.5f));
+                    explosionInstance.transform.position = transform.position;
+                    
+                    Destroy(explosionInstance, 0.5f);
+                }
+                if (EnemyHealth == 0)
+                {
+                    enemyController.DestroyEnemy();
+                    levelData.HighScore = enemyController._enemyData.points;
+                    EventBroker.CallCallUpdateScore();
+                }
+            }
+        }
+
+    }
 }

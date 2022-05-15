@@ -16,6 +16,6 @@ MonoBehaviour:
   enemyModel: {fileID: 342478486816756541, guid: 8e8cb1fb8c0e25a47a9cd6d5d400b81d, type: 3}
   health: 5
   maxHealth: 5
-  speed: 1
+  speed: 0.7
   damage: 1
   points: 10

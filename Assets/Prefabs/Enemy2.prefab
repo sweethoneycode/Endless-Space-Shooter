@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyController: {fileID: 4688333156864189077}
-  impactSound: {fileID: 8300000, guid: 3a6952287e3370946a9c5b44fd07ef17, type: 3}
+  impactSound: {fileID: 8300000, guid: 0389d3b475ab02449a2d732410cb5085, type: 3}
   points: 50
   HealthBarBehavior: {fileID: 4928946005855916979}
   ChooseWeapon: {fileID: -4036625197583479546}

@@ -13,4 +13,8 @@ public class Wave : ScriptableObject
 
     [field: SerializeField]
     public float NumberToSpawn { get; private set; }
+
+    [field: SerializeField]
+
+    public bool CountEnemies { get; private set; }
 }

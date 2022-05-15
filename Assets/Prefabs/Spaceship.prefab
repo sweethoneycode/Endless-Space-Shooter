@@ -105,6 +105,7 @@ MonoBehaviour:
   projectileEnabled: 1
   speed: 0
   ChooseWeapon: {fileID: 534794554334036081}
+  PlayerHit: {fileID: 8300000, guid: 5bbd7c2370e23794eb09659bc04e24ec, type: 3}
 --- !u!114 &534794554334036081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +194,7 @@ MonoBehaviour:
   projectileEnabled: 1
   speed: 0
   ChooseWeapon: {fileID: 0}
+  PlayerHit: {fileID: 0}
 --- !u!212 &1256818363372187835
 SpriteRenderer:
   m_ObjectHideFlags: 0
