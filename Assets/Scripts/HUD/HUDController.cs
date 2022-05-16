@@ -37,15 +37,6 @@ public class HUDController : MonoBehaviour
     private float cooldownTimer;
     private readonly float firingCooldown = 1f;
 
-    [SerializeField] private Slider sheildBar;
-    [SerializeField] private float CurrentShields { get; set; }
-    [SerializeField] private float MaxShields { get; set; }
-
-    [SerializeField] private float shieldChange;
-    [SerializeField] private float shieldStart;
-    [SerializeField] private ParticleSystem shieldbarParticles;
-
-    [SerializeField] private AudioClip shieldAudio;
 
     //Load Menus
 
@@ -56,7 +47,7 @@ public class HUDController : MonoBehaviour
 
     [SerializeField] private GameObject ResumeButton;
     [SerializeField] private GameObject EndGameButton;
-    private bool restoreShields = true;
+
 
     private Scene scene;
     #endregion
@@ -64,11 +55,6 @@ public class HUDController : MonoBehaviour
     private void Awake()
     {
         SaveManager.instance.Load();
-        MaxShields = 1f;
-        CurrentShields = MaxShields;
-
-        shieldStart = 8f;
-        shieldChange = 4f;
 
         numberOfShips = shipImages.Length;
 
@@ -78,8 +64,6 @@ public class HUDController : MonoBehaviour
         EventBroker.PlayerLives += HideShip;
         EventBroker.EndGame += GameOver;
         EventBroker.PauseGame += PauseGame;
-        EventBroker.PlayerHit += PlayerHit;
-        EventBroker.RestoreShields += RestoreShields;
         EventBroker.ExtraLife += EventBroker_ExtraLife;
 
         scene = SceneManager.GetActiveScene();
@@ -109,27 +93,7 @@ public class HUDController : MonoBehaviour
         StartNewGame();
     }
 
-    private void RestoreShields()
-    {
 
-        GetComponent<AudioSource>().PlayOneShot(shieldAudio);
-        restoreShields = true;
-        CurrentShields = 1;
-
-    }
-
-    private void PlayerHit()
-    {
-
-        if (CurrentShields > 0)
-        {
-
-            CurrentShields = CurrentShields - 0.1f;
-            sheildBar.value = CurrentShields;
-
-        }
-
-    }
 
     private void GameOver()
     {
@@ -143,8 +107,6 @@ public class HUDController : MonoBehaviour
         EventBroker.PlayerLives -= HideShip;
         EventBroker.EndGame -= GameOver;
         EventBroker.PauseGame -= PauseGame;
-        EventBroker.PlayerHit -= PlayerHit;
-        EventBroker.RestoreShields -= RestoreShields;
         EventBroker.ExtraLife -= EventBroker_ExtraLife;
 
     }
@@ -275,25 +237,7 @@ public class HUDController : MonoBehaviour
             pauseMenu.SetActive(isGamePaused);
         }
 
-        if (restoreShields)
-        {
-
-
-            if (sheildBar.value < 1)
-            {
-                sheildBar.value += 0.5f * Time.deltaTime;
-                if (!shieldbarParticles.isPlaying)
-                    shieldbarParticles.Play();
-
-            }
-            else
-            {
-                shieldbarParticles.Stop();
-                restoreShields = false;
-            }
-
-
-        }
+  
 
         if (isGameOver)
             gameUI.SetActive(false);

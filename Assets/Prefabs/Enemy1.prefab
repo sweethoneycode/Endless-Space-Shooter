@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: c0e360b02c78d684cb42a2a8c2a05c05, type: 2}
   ExplosionPrefab: {fileID: 1613842365161332, guid: 5ed6748782991c14dafb9292f1af700f, type: 3}
+  takeDamage: 0
 --- !u!114 &342478486816756540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyController: {fileID: -6689863940179739906}
+  explosionSound: {fileID: 8300000, guid: 03dab0b8fc321924a9d5f51c72778ec3, type: 3}
   impactSound: {fileID: 8300000, guid: 0389d3b475ab02449a2d732410cb5085, type: 3}
   points: 10
   HealthBarBehavior: {fileID: 4928946005855916979}

@@ -3,14 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour, IDamagable
 {
     public PlayerInput playerInput;
     private Vector3 playerPos;
 
-   // [SerializeField] private GameObject missleBullet;
-   // private Rigidbody2D missleRB;
+    // [SerializeField] private GameObject missleBullet;
+    // private Rigidbody2D missleRB;
     private Vector2 inputMovement;
     public float fireAction;
     private readonly float firingCooldown = 0.4f;
@@ -38,6 +39,14 @@ public class PlayerController : MonoBehaviour, IDamagable
     [SerializeField] ChooseWeapon ChooseWeapon;
 
     [SerializeField] private AudioClip PlayerHit;
+    [SerializeField] private AudioClip PlayerExplode;
+    [SerializeField] private AudioClip shieldAudio;
+
+    [SerializeField] private HealthBarBehavior HealthBarBehavior;
+
+    [SerializeField] private float CurrentShields { get; set; }
+
+    private bool restoreShields = true;
     private void InitBounds()
     {
         Camera mainCamera = Camera.main;
@@ -57,12 +66,11 @@ public class PlayerController : MonoBehaviour, IDamagable
         playerPos = new Vector3(transform.position.x, transform.position.y, 0);
         EventBroker.ProjectileOutOfBounds += EnableProjectile;
         EventBroker.RestoreShields += RestoreShields;
- 
-    }
 
-    private void RestoreShields()
-    {
-        playerHealth = 10f;
+        RestoreShields();
+
+        HealthBarBehavior.SetHealth(playerHealth, 10f);
+
     }
 
     private void OnEnable()
@@ -82,6 +90,20 @@ public class PlayerController : MonoBehaviour, IDamagable
         projectileEnabled = true;
     }
 
+    private void RestoreShields()
+    {
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.PlaySFX(shieldAudio);
+
+        playerHealth = 10f;
+        HealthBarBehavior.RestoreHealth();
+    }
+
+    public void ChangeHealth(float enemyHealth)
+    {
+        HealthBarBehavior.SetHealth(enemyHealth, 10f);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -98,6 +120,9 @@ public class PlayerController : MonoBehaviour, IDamagable
             OnFire();
         }
 
+
+        ChangeHealth(playerHealth);
+
     }
 
     private void Pause_performed(InputAction.CallbackContext obj)
@@ -107,13 +132,14 @@ public class PlayerController : MonoBehaviour, IDamagable
 
     }
 
-    private IEnumerator PlayerDeath() 
+    private IEnumerator PlayerDeath()
     {
+
         WaitForSeconds wait = new WaitForSeconds(1f);
-        EventBroker.CallPlayerDeath();
-        Destroy(gameObject);
         yield return wait;
-        
+        EventBroker.CallPlayerDeath();
+
+
     }
 
     //Move the Player
@@ -160,7 +186,7 @@ public class PlayerController : MonoBehaviour, IDamagable
         if (cooldownTimer <= 0)
         {
             cooldownTimer = firingCooldown;
-                       
+
             CreateWeapon();
 
         }
@@ -172,25 +198,33 @@ public class PlayerController : MonoBehaviour, IDamagable
     {
         if (lazorTag != tag)
         {
-            SoundManager.Instance.PlaySFX(PlayerHit);
+
+            if (playerHealth > 0)
+            {
+                if (SoundManager.Instance != null)
+                    SoundManager.Instance.PlaySFX(PlayerHit);
+
+                playerHealth -= lazorDamage;
+
+
+            }
+
+            if (playerHealth <= 0)
+            {
+                playerHealth = 0;
+
+                animator.SetBool("PlayerDeath", true);
+
+                if (SoundManager.Instance != null)
+                    SoundManager.Instance.PlaySFX(PlayerExplode);
+
+
+                StartCoroutine(PlayerDeath());
+            }
 
             GameObject explosionInstance = Instantiate(explosionPrefab);
             explosionInstance.transform.position = transform.position;
             Destroy(explosionInstance, 1f);
-
-            if (playerHealth >= 0)
-            {
-                playerHealth = playerHealth - lazorDamage;
-                EventBroker.CallPlayerHit();
-                animator.Play("shipHit");
-
-            }
-
-            if (playerHealth == 0)
-            {
-
-                StartCoroutine(PlayerDeath());
-            }
         }
     }
 }

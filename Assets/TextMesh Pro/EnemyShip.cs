@@ -6,14 +6,19 @@ public class EnemyShip : MonoBehaviour, IDamagable
 {
 
     [SerializeField] EnemyController enemyController;
-
-    [SerializeField] AudioClip impactSound;
     [SerializeField] private int points = 50;
-
     [SerializeField] private HealthBarBehavior HealthBarBehavior;
-
     public float EnemyHealth { get; private set; }
     [SerializeField] ChooseWeapon ChooseWeapon;
+
+    [Header("Sound Settings")]
+
+    [SerializeField] AudioClip explosionSound;
+    [SerializeField] AudioClip impactSound;
+
+
+
+
 
     private float currentHealth;
 
@@ -70,7 +75,17 @@ public class EnemyShip : MonoBehaviour, IDamagable
             {
                 if (EnemyHealth >= 0)
                 {
-                    EnemyHealth--;
+                    if(SoundManager.Instance != null)
+                        SoundManager.Instance.PlayEnemySound(impactSound);
+
+                    if (lazorDamage > 0)
+                    {
+                        EnemyHealth -= lazorDamage;
+                    }
+                    else
+                    {
+                        EnemyHealth--;
+                    }
                     GameObject explosionInstance = Instantiate(enemyController.ExplosionPrefab);
 
                     explosionInstance.transform.localScale = (new Vector2(0.5f, 0.5f));
@@ -80,6 +95,9 @@ public class EnemyShip : MonoBehaviour, IDamagable
                 }
                 if (EnemyHealth == 0)
                 {
+                    if (SoundManager.Instance != null)
+                        SoundManager.Instance.PlayEnemySound(explosionSound);
+
                     enemyController.DestroyEnemy();
                     levelData.HighScore = enemyController._enemyData.points;
                     EventBroker.CallCallUpdateScore();

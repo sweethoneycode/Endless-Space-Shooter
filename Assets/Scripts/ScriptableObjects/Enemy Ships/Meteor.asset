@@ -17,5 +17,5 @@ MonoBehaviour:
   health: 2000
   maxHealth: 2000
   speed: 5
-  damage: 5
+  damage: 2
   points: 0

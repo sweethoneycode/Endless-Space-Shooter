@@ -181,6 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: dca912d3d55a58e44ad2ff8df3aa4982, type: 2}
   ExplosionPrefab: {fileID: 1613842365161332, guid: 5ed6748782991c14dafb9292f1af700f, type: 3}
+  takeDamage: 0
 --- !u!114 &-6948798917438006226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,3 +194,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def433a1b61e0fa40b15728a16fccd57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyController: {fileID: 1918919373321120230}
