@@ -51,7 +51,7 @@ public class EnemyShip : MonoBehaviour, IDamagable
             EventBroker.CallProjectileActive();
         }
 
-       
+
     }
 
     private void Update()
@@ -62,7 +62,7 @@ public class EnemyShip : MonoBehaviour, IDamagable
 
     public void ChangeHealth(float enemyHealth)
     {
-        
+
 
         HealthBarBehavior.SetHealth(enemyHealth, enemyController._enemyData.maxHealth);
     }
@@ -71,26 +71,21 @@ public class EnemyShip : MonoBehaviour, IDamagable
     {
         if (enemyController.takeDamage)
         {
-            if (lazorTag != tag.ToString())
+            if (lazorTag != tag)
             {
                 if (EnemyHealth >= 0)
                 {
-                    if(SoundManager.Instance != null)
+                    if (SoundManager.Instance != null)
                         SoundManager.Instance.PlayEnemySound(impactSound);
 
-                    if (lazorDamage > 0)
-                    {
-                        EnemyHealth -= lazorDamage;
-                    }
-                    else
-                    {
-                        EnemyHealth--;
-                    }
+                    
+                    EnemyHealth = EnemyHealth - lazorDamage;
+
                     GameObject explosionInstance = Instantiate(enemyController.ExplosionPrefab);
 
                     explosionInstance.transform.localScale = (new Vector2(0.5f, 0.5f));
                     explosionInstance.transform.position = transform.position;
-                    
+
                     Destroy(explosionInstance, 0.5f);
                 }
                 if (EnemyHealth == 0)

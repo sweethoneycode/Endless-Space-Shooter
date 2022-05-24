@@ -34,7 +34,6 @@ public class Meteor : MonoBehaviour, IDamagable
 
         if (damagable != null)
         {
-            Debug.Log("Damage " + lazorDamage);
             damagable.Damage(lazorDamage, "Meteor");
         }
     }

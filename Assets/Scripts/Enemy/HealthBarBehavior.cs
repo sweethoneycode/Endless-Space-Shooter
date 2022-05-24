@@ -10,10 +10,20 @@ public class HealthBarBehavior : MonoBehaviour
     [SerializeField] ParticleSystem ParticleSystem;
     private bool restoreHealth = false;
     private bool updateHealth = false;
+    public bool fixedPosition = false;
 
     public void SetHealth(float health, float maxHealth)
     {
-        slider.gameObject.SetActive(health < maxHealth);
+        if (!fixedPosition)
+        {
+            slider.gameObject.SetActive(health < maxHealth);
+        }
+        else
+        {
+            slider.gameObject.SetActive(true);
+        }
+        
+
         slider.value = health;
         slider.maxValue = maxHealth;
     }
@@ -34,7 +44,8 @@ public class HealthBarBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + Offset);
+        if(!fixedPosition)
+            slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + Offset);
 
         if (restoreHealth)
         {

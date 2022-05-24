@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour, IDamagable
     {
         playerInput = new PlayerInput();
         InitBounds();
-
+        HealthBarBehavior.fixedPosition = true;
     }
     // Start is called before the first frame update
     void Start()
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour, IDamagable
         RestoreShields();
 
         HealthBarBehavior.SetHealth(playerHealth, 10f);
-
+        
     }
 
     private void OnEnable()

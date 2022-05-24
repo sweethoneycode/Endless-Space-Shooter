@@ -5191,6 +5191,7 @@ MonoBehaviour:
   slider: {fileID: 4168213198155283543}
   Offset: {x: 0, y: -1, z: 0}
   ParticleSystem: {fileID: 5517968804290578312}
+  fixedPosition: 0
 --- !u!1001 &1809994749788576334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5247,6 +5248,18 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7908123522797214328, guid: 130deab5f826ddb4bbd2761949673f8c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9369
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908123522797214328, guid: 130deab5f826ddb4bbd2761949673f8c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.9369
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908123522797214328, guid: 130deab5f826ddb4bbd2761949673f8c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.9369
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908123522797214328, guid: 130deab5f826ddb4bbd2761949673f8c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -5276,11 +5289,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7908123522797214328, guid: 130deab5f826ddb4bbd2761949673f8c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -6.0040894
+      value: -321
       objectReference: {fileID: 0}
     - target: {fileID: 7908123522797214328, guid: 130deab5f826ddb4bbd2761949673f8c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -192
       objectReference: {fileID: 0}
     - target: {fileID: 7908123522797214328, guid: 130deab5f826ddb4bbd2761949673f8c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

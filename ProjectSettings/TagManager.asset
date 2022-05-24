@@ -10,6 +10,7 @@ TagManager:
   - EnemyLaser
   - PowerUp
   - Active
+  - Meteor
   layers:
   - Default
   - TransparentFX
