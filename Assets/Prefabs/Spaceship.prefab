@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1256818362081812752}
   - component: {fileID: 1256818362081812755}
   - component: {fileID: 1256818362081812753}
-  - component: {fileID: 534794554334036081}
   - component: {fileID: 163929771197982500}
   m_Layer: 0
   m_Name: Spaceship
@@ -104,26 +103,11 @@ MonoBehaviour:
   explosionPrefab: {fileID: 1613842365161332, guid: 5ed6748782991c14dafb9292f1af700f, type: 3}
   projectileEnabled: 1
   speed: 0
-  ChooseWeapon: {fileID: 534794554334036081}
+  PlayerWeapon: {fileID: 8614297763145017166, guid: 46c91724084606a4dbb07cd8ad9a9853, type: 3}
   PlayerHit: {fileID: 8300000, guid: 5bbd7c2370e23794eb09659bc04e24ec, type: 3}
   PlayerExplode: {fileID: 8300000, guid: df78dd6eb1303444a9b9e929b2ba64cf, type: 3}
   shieldAudio: {fileID: 8300000, guid: e65c2af7ee625e54b942748530236649, type: 3}
   HealthBarBehavior: {fileID: 2241981458544115512}
---- !u!114 &534794554334036081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256818362081812749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42db365682c0c714b95f11724c2c057f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 08d020981daaf734a8f1ca4d67c93a94, type: 2}
-  weaponDamage: 1
-  audioClip: {fileID: 8300000, guid: 969c3095dceddfa46a0de060bf4e9548, type: 3}
 --- !u!95 &163929771197982500
 Animator:
   serializedVersion: 4

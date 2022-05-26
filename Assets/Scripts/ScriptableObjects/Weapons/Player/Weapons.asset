@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d2cff79dc32e44dbdef40f23e5b3b8, type: 3}
   m_Name: Weapons
   m_EditorClassIdentifier: 
-  fireDelay: 1
+  fireDelay: 3
   weapon: {fileID: 7144509516714269125, guid: 55a54d637529c9549b8b76a870ff4a38, type: 3}
   coolDown: 1

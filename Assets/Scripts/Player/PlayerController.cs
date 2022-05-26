@@ -10,8 +10,6 @@ public class PlayerController : MonoBehaviour, IDamagable
     public PlayerInput playerInput;
     private Vector3 playerPos;
 
-    // [SerializeField] private GameObject missleBullet;
-    // private Rigidbody2D missleRB;
     private Vector2 inputMovement;
     public float fireAction;
     private readonly float firingCooldown = 0.4f;
@@ -32,11 +30,7 @@ public class PlayerController : MonoBehaviour, IDamagable
     //Set by GameSceneController
     [SerializeField] public float speed;
 
-    float waitTimer;
-
-    int playerPoints;
-
-    [SerializeField] ChooseWeapon ChooseWeapon;
+    [SerializeField] private GameObject PlayerWeapon;
 
     [SerializeField] private AudioClip PlayerHit;
     [SerializeField] private AudioClip PlayerExplode;
@@ -109,7 +103,8 @@ public class PlayerController : MonoBehaviour, IDamagable
     {
 
         playerInput.Player.Pause.performed += Pause_performed;
-
+        if(PlayerWeapon)
+            PlayerWeapon.transform.position = transform.position;
         //player move event
 
 
@@ -174,7 +169,7 @@ public class PlayerController : MonoBehaviour, IDamagable
 
     private void CreateWeapon()
     {
-        ChooseWeapon.pickWeapon(10f, tag);
+      //  ChooseWeapon.pickWeapon(10f, tag);
 
     }
 
@@ -226,5 +221,17 @@ public class PlayerController : MonoBehaviour, IDamagable
             explosionInstance.transform.position = transform.position;
             Destroy(explosionInstance, 1f);
         }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "weapon")
+        {
+            Debug.Log("Hit weapon");
+            PlayerWeapon = collision.gameObject;
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            PlayerWeapon.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            PlayerWeapon.GetComponent<ChooseWeapon>().pickWeapon(10f, tag);
+        }
+
     }
 }

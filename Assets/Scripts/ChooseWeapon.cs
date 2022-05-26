@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ChooseWeapon : MonoBehaviour
 {
-    [SerializeField] private WeaponData weaponData;
+    [SerializeField] public WeaponData weaponData;
+
     private float cooldownTimer;
     private float delayFire;
     private float newVelocityRate;
@@ -36,6 +37,7 @@ public class ChooseWeapon : MonoBehaviour
         {
             cooldownTimer = weaponData.coolDown;
             GameObject lazor = Instantiate(weaponData.weapon, transform.position, weaponData.weapon.transform.rotation, transform.parent);
+
             lazor.GetComponent<ProjectileController>().velocityRate = newVelocityRate;
             lazor.tag = newWeaponTag;
             lazor.GetComponent<ProjectileController>().lazorDamage = weaponDamage;
@@ -46,7 +48,10 @@ public class ChooseWeapon : MonoBehaviour
         }
     }
 
-
+    public void ChangeWeapon(WeaponData newWeaponData)
+    {
+        weaponData = newWeaponData;
+    }
 
     private void Update()
     {

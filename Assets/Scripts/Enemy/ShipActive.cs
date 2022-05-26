@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShipActive : MonoBehaviour
 {    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Missle"))
+        if (collision.CompareTag("Player"))
             Destroy(collision.gameObject);
     }
 }
