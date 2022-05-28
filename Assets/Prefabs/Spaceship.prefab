@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1256818362081812755}
   - component: {fileID: 1256818362081812753}
   - component: {fileID: 163929771197982500}
+  - component: {fileID: 8744427804249983783}
   m_Layer: 0
   m_Name: Spaceship
   m_TagString: Player
@@ -108,6 +109,7 @@ MonoBehaviour:
   PlayerExplode: {fileID: 8300000, guid: df78dd6eb1303444a9b9e929b2ba64cf, type: 3}
   shieldAudio: {fileID: 8300000, guid: e65c2af7ee625e54b942748530236649, type: 3}
   HealthBarBehavior: {fileID: 2241981458544115512}
+  chooseWeapon: {fileID: 8744427804249983783}
 --- !u!95 &163929771197982500
 Animator:
   serializedVersion: 4
@@ -128,6 +130,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8744427804249983783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256818362081812749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42db365682c0c714b95f11724c2c057f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 08d020981daaf734a8f1ca4d67c93a94, type: 2}
+  weaponDamage: 1
+  audioClip: {fileID: 8300000, guid: 969c3095dceddfa46a0de060bf4e9548, type: 3}
 --- !u!1 &1256818363372187828
 GameObject:
   m_ObjectHideFlags: 0

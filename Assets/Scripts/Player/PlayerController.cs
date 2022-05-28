@@ -30,8 +30,6 @@ public class PlayerController : MonoBehaviour, IDamagable
     //Set by GameSceneController
     [SerializeField] public float speed;
 
-    [SerializeField] private GameObject PlayerWeapon;
-
     [SerializeField] private AudioClip PlayerHit;
     [SerializeField] private AudioClip PlayerExplode;
     [SerializeField] private AudioClip shieldAudio;
@@ -39,6 +37,8 @@ public class PlayerController : MonoBehaviour, IDamagable
     [SerializeField] private HealthBarBehavior HealthBarBehavior;
 
     [SerializeField] private float CurrentShields { get; set; }
+
+    [SerializeField] private ChooseWeapon chooseWeapon;
 
     private bool restoreShields = true;
     private void InitBounds()
@@ -103,8 +103,7 @@ public class PlayerController : MonoBehaviour, IDamagable
     {
 
         playerInput.Player.Pause.performed += Pause_performed;
-        if(PlayerWeapon)
-            PlayerWeapon.transform.position = transform.position;
+  
         //player move event
 
 
@@ -169,7 +168,7 @@ public class PlayerController : MonoBehaviour, IDamagable
 
     private void CreateWeapon()
     {
-      //  ChooseWeapon.pickWeapon(10f, tag);
+      chooseWeapon.pickWeapon(10f, tag);
 
     }
 
@@ -226,11 +225,10 @@ public class PlayerController : MonoBehaviour, IDamagable
     {
         if(collision.tag == "weapon")
         {
-            Debug.Log("Hit weapon");
-            PlayerWeapon = collision.gameObject;
-            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            PlayerWeapon.GetComponentInChildren<SpriteRenderer>().enabled = false;
-            PlayerWeapon.GetComponent<ChooseWeapon>().pickWeapon(10f, tag);
+            chooseWeapon.weaponData = collision.GetComponent<ChooseWeapon>().weaponData;
+
+            Destroy(collision.gameObject);
+
         }
 
     }
