@@ -6,7 +6,7 @@ using TMPro;
 using System;
 
 using UnityEngine.SceneManagement;
-using UnityEngine.Analytics;
+
 
 public class HUDController : MonoBehaviour
 {
@@ -81,10 +81,6 @@ public class HUDController : MonoBehaviour
 
     public void Start()
     {
-        Analytics.CustomEvent("VisitedLevel",
-        new Dictionary<string, object>{
-                        {"Level:", scene.name }
-        });
 
         float playerHighScore;
         playerHighScore = SaveManager.instance.activeSave.highScore;
@@ -129,11 +125,6 @@ public class HUDController : MonoBehaviour
 
     public void ResetGame()
     {
-        Analytics.CustomEvent("ResetLevel",
-            new Dictionary<string, object>{
-                    {"Level:", scene.name },
-                    {"High Score:",SaveManager.instance.activeSave.highScore}
-            });
 
         EventBroker.CallRestartGame();
 
@@ -159,13 +150,6 @@ public class HUDController : MonoBehaviour
 
         Scene scene = SceneManager.GetActiveScene();
 
-
-        Analytics.CustomEvent("StartLevel",
-            new Dictionary<string, object>{
-                    {"Level:", scene.name },
-                    {"High Score:",SaveManager.instance.activeSave.highScore}
-            });
-
         EventBroker.CallStartGame();
     }
 
@@ -184,11 +168,7 @@ public class HUDController : MonoBehaviour
 
     public void ExitGame()
     {
-        Analytics.CustomEvent("QuitLevel",
-            new Dictionary<string, object>{
-                            {"Level:", scene.name },
-                            {"High Score:",SaveManager.instance.activeSave.highScore}
-            });
+
         SaveHighScore();
 
         if (isGamePaused) { Time.timeScale = 1.0f; }
@@ -229,11 +209,6 @@ public class HUDController : MonoBehaviour
     {
         if (!isGameOver)
         {
-            Analytics.CustomEvent("Game Over",
-                new Dictionary<string, object>{
-                    {"High Score:",SaveManager.instance.activeSave.highScore}
-                });
-
             pauseMenu.SetActive(isGamePaused);
         }
 
